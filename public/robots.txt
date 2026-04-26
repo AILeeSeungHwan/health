@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /search
+Disallow: /searchAnalytics
+
+Sitemap: https://healthmoa.ambitstock.com/sitemap.xml

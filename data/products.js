@@ -1,0 +1,46 @@
+// data/products.js — 건강제품 (Level C, 커머스 주력)
+
+const products = [
+  {
+    id: 'P0001',
+    slug: 'chicken-breast-sausage',
+    title: '닭가슴살 소시지 추천·선택 가이드 — 건강모아',
+    description: '닭가슴살 소시지 100g 당 단백질 18g 수준, 지방 2g 이하. 나트륨·원재료 체크포인트, 다이어트·근육 유지용 섭취 전략, 브랜드별 비교 포인트까지 정리합니다.',
+    category: 'product',
+    ymylLevel: 'C',
+    medicallyReviewed: false,
+    author: 'healthmoa',
+    publishedAt: '2026-04-24',
+    updatedAt: '2026-04-24',
+    tags: ['닭가슴살', '단백질', '다이어트', '간편식'],
+    productName: '닭가슴살 소시지',
+    productCategory: '고단백 식품',
+    subCategory: '가공 닭가슴살',
+    priceRange: '개당 800~1,500원',
+    coupangProductKey: 'chicken-breast-sausage',
+    relatedSymptomsOrGoals: ['diet', 'muscle-gain'],
+    relatedSlugs: ['whey-protein'],
+  },
+  {
+    id: 'P0002',
+    slug: 'whey-protein',
+    title: '유청 단백질(웨이 프로틴) 선택 가이드 — 건강모아',
+    description: '유청 단백질 농축(WPC)·분리(WPI)·가수분해(WPH) 차이, 하루 단백질 권장량, 운동 후 섭취 타이밍, 유당 불내증·신장 질환자 주의까지 정리합니다.',
+    category: 'product',
+    ymylLevel: 'C',
+    medicallyReviewed: false,
+    author: 'healthmoa',
+    publishedAt: '2026-04-24',
+    updatedAt: '2026-04-24',
+    tags: ['웨이프로틴', 'WPC', 'WPI', '단백질보충제'],
+    productName: '유청 단백질',
+    productCategory: '프로틴',
+    subCategory: '유청 단백질',
+    priceRange: '1kg 기준 25,000~70,000원',
+    coupangProductKey: 'whey-protein',
+    relatedSymptomsOrGoals: ['muscle-gain', 'diet'],
+    relatedSlugs: ['chicken-breast-sausage'],
+  },
+]
+
+module.exports = products
