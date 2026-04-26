@@ -51,7 +51,7 @@ export default function Layout({ children, title, description, topAd = true, sid
         <meta property="og:locale" content="ko_KR" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDesc} />
-        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDesc} />
