@@ -6,3 +6,4 @@ Disallow: /search
 Disallow: /searchAnalytics
 
 Sitemap: https://health.ambitstock.com/sitemap.xml
+#DaumWebMasterTool:c0c416acddc71eb8ef66cc348624e99e88c02dca37f5cf2f192e2c199239d1f0:MXew3+NghikGqOqbWdFHbA==
