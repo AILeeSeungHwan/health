@@ -21,7 +21,11 @@ export default async function handler(req, res) {
     if (sort === 'traffic' && data && data.length > 0) {
       const allSlugs = [...new Set(data.flatMap(p => p.post_slugs || []))]
       if (allSlugs.length > 0) {
-        const { data: pv } = await supabase.from('pageviews').select('slug').in('slug', allSlugs)
+        const { data: pv } = await supabase
+          .from('pageview_events')
+          .select('slug')
+          .eq('site', 'health')
+          .in('slug', allSlugs)
         const cnt = {}
         ;(pv || []).forEach(r => { cnt[r.slug] = (cnt[r.slug] || 0) + 1 })
         const scored = data.map(p => ({
