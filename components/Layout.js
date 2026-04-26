@@ -12,7 +12,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://health.ambitstock.
 const SITE_DESC = '증상·일반의약품·영양제·건강제품을 한 곳에서 — 식약처 기준에 따른 안전한 건강 정보. 계산기·비교·상황별 가이드까지.'
 const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || ''
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
-const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || ''
+// 사이트 운영용 기본값 (Vercel 환경변수에서 덮어쓸 수 있음)
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || 'whsi4s1oc4'
+const GSC_VERIFICATION = '2DAD_BGWxdRXKWrw6lYKe6e0p3BLAiAXbMHVYXrU48k'
+const NAVER_VERIFICATION = 'df9a101d8027c77c492d7fe1c14fc1a0cf46fa62'
+const BING_VERIFICATION = '1E4F2FA1D46763B9C53162346F20C68D'
 
 const FONT_URL = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css'
 const FONT_FAMILY = "'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif"
@@ -45,6 +49,11 @@ export default function Layout({ children, title, description, topAd = true, sid
         <title>{pageTitle}</title>
         <meta name="description" content={pageDesc} />
         <meta name="keywords" content="건강,증상,일반의약품,영양제,건강기능식품,식약처,두통,불면,오메가3,마그네슘,BMI" />
+
+        {/* 검색엔진 사이트 소유 인증 */}
+        <meta name="google-site-verification" content={GSC_VERIFICATION} />
+        <meta name="naver-site-verification" content={NAVER_VERIFICATION} />
+        <meta name="msvalidate.01" content={BING_VERIFICATION} />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={SITE_NAME} />
