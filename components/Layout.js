@@ -45,6 +45,7 @@ export default function Layout({ children, title, description, topAd = true, sid
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
         <link rel="stylesheet" href={FONT_URL} />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} RSS`} href="/rss.xml" />
 
         <title>{pageTitle}</title>
         <meta name="description" content={pageDesc} />

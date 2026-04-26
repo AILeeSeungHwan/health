@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/regenerate-feeds.js",
     "build": "next build",
     "start": "next start",
+    "feeds": "node scripts/regenerate-feeds.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
+    "generate-rss": "node scripts/generate-rss.js",
     "validate": "for f in posts/**/*.js; do node --check \"$f\" || echo \"FAIL: $f\"; done"
   },
   "dependencies": {
