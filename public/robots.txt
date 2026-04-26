@@ -5,4 +5,4 @@ Disallow: /api/
 Disallow: /search
 Disallow: /searchAnalytics
 
-Sitemap: https://healthmoa.ambitstock.com/sitemap.xml
+Sitemap: https://health.ambitstock.com/sitemap.xml

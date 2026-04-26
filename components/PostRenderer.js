@@ -14,7 +14,7 @@ import {
   articleSchema, breadcrumbSchema, medicalWebPageSchema, drugSchema, faqSchema
 } from '../lib/jsonld'
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://healthmoa.ambitstock.com'
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://health.ambitstock.com'
 const SITE_NAME = '건강모아'
 
 const PREFIX = {

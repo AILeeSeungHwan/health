@@ -6,7 +6,7 @@ const path = require('path')
 const posts = require('../data/posts')
 const bodyParts = require('../data/bodyParts')
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://healthmoa.ambitstock.com'
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://health.ambitstock.com'
 
 const staticRoutes = [
   '/', '/symptoms/', '/otc/', '/supplements/', '/products/',

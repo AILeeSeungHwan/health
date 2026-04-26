@@ -8,7 +8,7 @@ import { SideAd } from './StickySideAds'
 import TopAdRow from './TopAdRow'
 
 const SITE_NAME = '건강모아'
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://healthmoa.ambitstock.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://health.ambitstock.com'
 const SITE_DESC = '증상·일반의약품·영양제·건강제품을 한 곳에서 — 식약처 기준에 따른 안전한 건강 정보. 계산기·비교·상황별 가이드까지.'
 const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || ''
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
@@ -158,7 +158,7 @@ export default function Layout({ children, title, description, topAd = true, sid
           </div>
         </div>
         <div style={{ borderTop:'1px solid #e5e7eb', padding:'14px 20px', textAlign:'center', fontSize:12, color:'#9ca3af' }}>
-          © {new Date().getFullYear()} 건강모아 · healthmoa.ambitstock.com
+          © {new Date().getFullYear()} 건강모아 · health.ambitstock.com
         </div>
       </footer>
 
