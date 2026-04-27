@@ -6,11 +6,17 @@
 import { supabase } from '../../../lib/supabase-rest'
 
 export default async function handler(req, res) {
+  const keyInUse = process.env.SUPABASE_SERVICE_ROLE_KEY ? 'service_role'
+                  : process.env.SUPABASE_SECRET_KEY      ? 'secret'
+                  : process.env.SUPABASE_PUBLISHABLE_KEY ? 'publishable (RLS 적용)'
+                  : null
+  const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL
   const report = {
     env: {
-      hasUrl: !!process.env.SUPABASE_URL,
-      hasKey: !!process.env.SUPABASE_PUBLISHABLE_KEY,
-      urlPrefix: process.env.SUPABASE_URL?.slice(0, 30) || null,
+      hasUrl: !!url,
+      hasKey: !!keyInUse,
+      keyType: keyInUse,
+      urlPrefix: url ? url.slice(0, 30) : null,
     },
     insert: null,
     select: null,

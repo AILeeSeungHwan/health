@@ -276,7 +276,7 @@ export default function SearchAnalytics() {
           }}>
             <div style={{ fontWeight: 700, marginBottom: 8, fontSize: 13, fontFamily: 'inherit' }}>🔧 연결 진단 결과</div>
             <div>ENV URL: <strong style={{ color: diagResult.env?.hasUrl ? '#10b981' : '#ef4444' }}>{diagResult.env?.hasUrl ? '✅ 설정됨' : '❌ 없음'}</strong> ({diagResult.env?.urlPrefix}...)</div>
-            <div>ENV KEY: <strong style={{ color: diagResult.env?.hasKey ? '#10b981' : '#ef4444' }}>{diagResult.env?.hasKey ? '✅ 설정됨' : '❌ 없음'}</strong></div>
+            <div>ENV KEY: <strong style={{ color: diagResult.env?.hasKey ? '#10b981' : '#ef4444' }}>{diagResult.env?.hasKey ? '✅ 설정됨' : '❌ 없음'}</strong> {diagResult.env?.keyType && <span style={{ color: diagResult.env.keyType.includes('publishable') ? '#f59e0b' : '#10b981', fontWeight: 700 }}>[{diagResult.env.keyType}]</span>}</div>
             <div>INSERT:  <strong style={{ color: diagResult.insert?.ok ? '#10b981' : '#ef4444' }}>{diagResult.insert?.ok ? '✅ 성공' : `❌ 실패 — ${JSON.stringify(diagResult.insert?.error)}`}</strong></div>
             <div>SELECT:  <strong style={{ color: diagResult.select?.ok ? '#10b981' : '#ef4444' }}>{diagResult.select?.ok ? `✅ 성공 (${diagResult.select?.rowCount}행)` : `❌ 실패 — ${JSON.stringify(diagResult.select?.error)}`}</strong></div>
           </div>
