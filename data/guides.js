@@ -17,6 +17,22 @@ const guides = [
     audienceLevel: 'beginner',
     relatedSlugs: ['omega-3', 'vitamin-d'],
   },
+  {
+    id: 'G0002',
+    slug: 'diet-principles',
+    title: '다이어트 원칙 — 칼로리·근손실 방지 완벽 가이드 — 건강모아',
+    description: '칼로리 적자 기본 원칙, 단백질로 근손실 방지, 요요 없는 체중 유지법, 다이어트 식단 패턴 비교까지 과학적 근거 기반으로 정리합니다.',
+    category: 'guide',
+    ymylLevel: 'B',
+    medicallyReviewed: false,
+    author: 'healthmoa',
+    publishedAt: '2026-05-03',
+    updatedAt: '2026-05-03',
+    tags: ['다이어트', '다이어트 식단', '근손실', '요요', '칼로리'],
+    topic: '다이어트 원칙',
+    audienceLevel: 'beginner',
+    relatedSlugs: ['omega-3', 'magnesium'],
+  },
 ]
 
 module.exports = guides

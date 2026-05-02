@@ -64,6 +64,27 @@ const situations = [
     relatedTools: [],
     relatedSlugs: ['sleep-issue'],
   },
+  {
+    id: 'H0004',
+    slug: 'back-pain-care',
+    title: '허리가 아플 때 — 자세·운동·치료 단계 종합 가이드 — 건강모아',
+    description: '허리 통증의 원인 파악부터 자세 교정, 집에서 할 수 있는 운동, 물리치료, 디스크 치료 시술, 수술 단계까지 단계별 관리법을 정리합니다.',
+    category: 'situation',
+    ymylLevel: 'A',
+    medicallyReviewed: false,
+    author: 'healthmoa',
+    publishedAt: '2026-05-03',
+    updatedAt: '2026-05-03',
+    tags: ['허리 통증', '허리디스크', '디스크 치료', '허리 시술', '척추관 협착증'],
+    bodyPart: 'back',
+    includedSymptoms: ['back-pain'],
+    includedOtc: ['ibuprofen', 'tylenol-acetaminophen'],
+    includedSupplements: ['omega-3', 'magnesium'],
+    includedProducts: [],
+    includedGuides: [],
+    relatedTools: [],
+    relatedSlugs: ['back-pain'],
+  },
 ]
 
 module.exports = situations
