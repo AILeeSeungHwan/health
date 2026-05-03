@@ -6,9 +6,33 @@
     <description>증상·일반의약품·영양제·건강제품 통합 가이드 — 식약처 기준의 안전한 건강 정보.</description>
     <language>ko</language>
     <copyright>© 2026 건강모아</copyright>
-    <lastBuildDate>Sat, 02 May 2026 22:07:42 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2026 22:10:50 +0000</lastBuildDate>
     <generator>healthmoa scripts/generate-rss.js</generator>
     <atom:link href="https://health.ambitstock.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>당뇨 초기 증상 — 자가 점검과 당뇨 검사 기준 — 건강모아</title>
+      <link>https://health.ambitstock.com/symptoms/diabetes-early-signs/</link>
+      <description><![CDATA[당뇨병 초기 증상(잦은 소변·갈증·피로·시야 흐림), 당화혈색소·공복혈당 기준, 생활습관 교정, 당뇨약 처방 시점, 응급 신호까지 정리합니다.]]></description>
+      <pubDate>Mon, 04 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/symptoms/diabetes-early-signs/</guid>
+      <category>증상</category>
+    </item>
+    <item>
+      <title>다이어트 종합 가이드 — 칼로리·운동·정체기·의학적 비만 관리 — 건강모아</title>
+      <link>https://health.ambitstock.com/situations/diet/</link>
+      <description><![CDATA[칼로리 적자 기본 원칙부터 유산소·근력 운동 전략, 정체기 극복법, 다이어트 약·위절제술·비만 클리닉 기준까지 과학적 근거 기반으로 정리합니다.]]></description>
+      <pubDate>Mon, 04 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/situations/diet/</guid>
+      <category>상황허브</category>
+    </item>
+    <item>
+      <title>일반의약품 안전 복용 가이드 — 중복·상호작용·부작용 — 건강모아</title>
+      <link>https://health.ambitstock.com/guides/otc-safe-use/</link>
+      <description><![CDATA[아세트아미노펜·이부프로펜·항히스타민 등 OTC 계열별 안전 용량, 진통제 부작용, 약 상호작용 표, 특별 주의 그룹(임산부·노인·소아) 체크리스트까지 정리합니다.]]></description>
+      <pubDate>Mon, 04 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/guides/otc-safe-use/</guid>
+      <category>가이드</category>
+    </item>
     <item>
       <title>허리 통증 원인·대처법·디스크 의심 신호 — 건강모아</title>
       <link>https://health.ambitstock.com/symptoms/back-pain/</link>

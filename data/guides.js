@@ -33,6 +33,22 @@ const guides = [
     audienceLevel: 'beginner',
     relatedSlugs: ['omega-3', 'magnesium'],
   },
+  {
+    id: 'G0003',
+    slug: 'otc-safe-use',
+    title: '일반의약품 안전 복용 가이드 — 중복·상호작용·부작용 — 건강모아',
+    description: '아세트아미노펜·이부프로펜·항히스타민 등 OTC 계열별 안전 용량, 진통제 부작용, 약 상호작용 표, 특별 주의 그룹(임산부·노인·소아) 체크리스트까지 정리합니다.',
+    category: 'guide',
+    ymylLevel: 'B',
+    medicallyReviewed: false,
+    author: 'healthmoa',
+    publishedAt: '2026-05-04',
+    updatedAt: '2026-05-04',
+    tags: ['일반의약품', '진통제 부작용', '약 상호작용', '타이레놀', '이부프로펜'],
+    topic: '일반의약품 안전 복용',
+    audienceLevel: 'beginner',
+    relatedSlugs: ['how-to-choose-supplement'],
+  },
 ]
 
 module.exports = guides

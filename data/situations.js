@@ -85,6 +85,27 @@ const situations = [
     relatedTools: [],
     relatedSlugs: ['back-pain'],
   },
+  {
+    id: 'H0005',
+    slug: 'diet',
+    title: '다이어트 종합 가이드 — 칼로리·운동·정체기·의학적 비만 관리 — 건강모아',
+    description: '칼로리 적자 기본 원칙부터 유산소·근력 운동 전략, 정체기 극복법, 다이어트 약·위절제술·비만 클리닉 기준까지 과학적 근거 기반으로 정리합니다.',
+    category: 'situation',
+    ymylLevel: 'B',
+    medicallyReviewed: false,
+    author: 'healthmoa',
+    publishedAt: '2026-05-04',
+    updatedAt: '2026-05-04',
+    tags: ['다이어트', '칼로리 적자', '정체기', '다이어트 약', '비만 클리닉', '위절제술'],
+    bodyPart: null,
+    includedSymptoms: [],
+    includedOtc: [],
+    includedSupplements: ['omega-3', 'magnesium'],
+    includedProducts: [],
+    includedGuides: ['diet-principles'],
+    relatedTools: [],
+    relatedSlugs: ['diet-principles'],
+  },
 ]
 
 module.exports = situations
