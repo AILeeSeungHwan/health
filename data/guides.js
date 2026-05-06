@@ -49,6 +49,23 @@ const guides = [
     audienceLevel: 'beginner',
     relatedSlugs: ['how-to-choose-supplement'],
   },
+  {
+    id: 'G0004',
+    slug: 'health-checkup-guide',
+    title: '건강검진 항목 완전 해설 — 일반·종합·정밀 차이 — 건강모아',
+    description: '국가건강검진 기본 항목, 위내시경·대장내시경·MRI·CT 추가 검사 비용, 나이별 권장 검진 시기, 종합검진 선택 기준을 정리합니다.',
+    category: 'guide',
+    ymylLevel: 'A',
+    medicallyReviewed: false,
+    author: 'healthmoa',
+    publishedAt: '2026-05-10',
+    updatedAt: '2026-05-10',
+    tags: ['건강검진', '종합검진', '위내시경', '대장내시경', 'MRI 비용', '국가검진'],
+    guideType: 'health-management',
+    targetAudience: '일반 성인',
+    relatedSymptoms: [],
+    relatedSlugs: ['medical-insurance-claim'],
+  },
 ]
 
 module.exports = guides
