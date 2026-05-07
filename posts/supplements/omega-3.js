@@ -35,6 +35,15 @@ const post = {
 
     { type: 'productSlot', productKey: 'omega-3' },
 
+    {
+      type: 'nutrioneSlot',
+      products: [
+        { nutrioneId: '1000339884', productName: '뉴트리원 초임계 알티지 오메가3 코큐텐', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000339884/480_1000339884_ITEM2024050311253.png', price: 20500 },
+        { nutrioneId: '1000326749', productName: '뉴트리원 초임계 알티지 오메가3 트리플', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000326749/480_1000326749_ITEM2024121094715.png', price: 85900 },
+        { nutrioneId: '1000530728', productName: '뉴트리원 초임계 식물성 알티지 오메가3 DHA EPA+', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000530728/480_1000530728_ITEM2025051961036.png', price: 100300 },
+      ],
+    },
+
     { type: 'sources', items: [
       { label: '식품의약품안전처 건강기능식품정보 — 오메가3', url: 'https://www.foodsafetykorea.go.kr', org: '식약처', accessedAt: '2026-04-24' },
       { label: '국가건강정보포털 — 영양소 정보', url: 'https://health.kdca.go.kr', org: '질병관리청', accessedAt: '2026-04-24' },

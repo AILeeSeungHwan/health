@@ -50,7 +50,12 @@ function TOC({ sections }) {
 
 function normalize(s) { return s ? String(s).replace(/[\s\-·・]/g, '').toLowerCase() : '' }
 
-function Section({ section, coupangLinks }) {
+function NutrionePriceTag({ price }) {
+  if (!price) return null
+  return <span style={{ fontSize: 13, color: '#6B7280' }}>{Number(price).toLocaleString()}원</span>
+}
+
+function Section({ section, coupangLinks, nutrioneLinks }) {
   const s = section
   if (s.type === 'intro')   return <div style={{ fontSize:16, lineHeight:1.9, marginBottom:22, color:'#374151' }} dangerouslySetInnerHTML={{ __html: s.html }} />
   if (s.type === 'h2')      return <h2 id={s.id} style={{ fontSize:22, fontWeight:800, margin:'38px 0 14px', lineHeight:1.35, color:'#111827', borderLeft:'4px solid #DC2626', paddingLeft:12 }}>{s.text}</h2>
@@ -89,6 +94,47 @@ function Section({ section, coupangLinks }) {
       </div>
     )
   }
+  if (s.type === 'nutrioneSlot') {
+    const products = s.products || []
+    if (products.length === 0) return null
+    return (
+      <div style={{ margin: '28px 0', padding: '20px', background: 'linear-gradient(135deg,#EFF6FF,#F0FDF4)', borderRadius: 14, border: '1px solid #BFDBFE' }}>
+        <div style={{ fontSize: 13, fontWeight: 800, color: '#1D4ED8', marginBottom: 14 }}>
+          🏥 뉴트리원 공식몰 추천 제품 — 공유 링크로 구매 시 10% 적립
+        </div>
+        {products.map((p, i) => {
+          const link = (nutrioneLinks || []).find(l => l.product_id === p.nutrioneId)
+          const sharingUrl = link?.sharing_url
+          return (
+            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '14px 16px', marginBottom: 10, display: 'flex', gap: 14, alignItems: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+              {p.imageUrl && (
+                <img src={p.imageUrl} alt={p.productName} loading="lazy"
+                  style={{ width: 80, height: 80, objectFit: 'contain', borderRadius: 8, flexShrink: 0 }} />
+              )}
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontWeight: 700, fontSize: 14, color: '#111827', marginBottom: 4, lineHeight: 1.4 }}>{p.productName}</div>
+                <NutrionePriceTag price={p.price} />
+                <div style={{ marginTop: 10 }}>
+                  {sharingUrl ? (
+                    <a href={sharingUrl} target="_blank" rel="noopener noreferrer nofollow"
+                       style={{ display: 'inline-block', padding: '8px 16px', background: '#1D4ED8', color: '#fff', borderRadius: 8, fontSize: 13, fontWeight: 700, textDecoration: 'none' }}>
+                      공유 링크로 구매 (10% 적립) →
+                    </a>
+                  ) : (
+                    <a href={`https://www.nutrione.co.kr/item/dtl/${p.nutrioneId}`} target="_blank" rel="noopener noreferrer nofollow"
+                       style={{ display: 'inline-block', padding: '8px 16px', background: '#6B7280', color: '#fff', borderRadius: 8, fontSize: 13, fontWeight: 700, textDecoration: 'none' }}>
+                      뉴트리원 공식몰 보기 →
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          )
+        })}
+        <p style={{ fontSize: 11, color: '#9CA3AF', marginTop: 8, marginBottom: 0 }}>※ 위 공유 링크로 구매 시 구매금액의 10% 적립금 혜택이 제공됩니다.</p>
+      </div>
+    )
+  }
   if (s.type === 'cta') {
     const href = (() => {
       const m = (coupangLinks || []).find(l => l.coupang_url && (normalize(s.text).includes(normalize(l.product_name)) || normalize(l.product_name).includes(normalize(s.productKey || ''))))
@@ -112,7 +158,7 @@ function Section({ section, coupangLinks }) {
  *   2nd H2  → 직전 MultiplexAd
  *   3rd H2+ → 직전 AdUnit (auto)
  */
-function renderWithAds(sections, coupangLinks) {
+function renderWithAds(sections, coupangLinks, nutrioneLinks) {
   const out = []
   let h2Index = -1
   sections.forEach((s, i) => {
@@ -124,7 +170,7 @@ function renderWithAds(sections, coupangLinks) {
         out.push(<AdUnit key={`ad-h2-${i}`} slot="4000000001" variant="auto" />)
       }
     }
-    out.push(<Section key={i} section={s} coupangLinks={coupangLinks} />)
+    out.push(<Section key={i} section={s} coupangLinks={coupangLinks} nutrioneLinks={nutrioneLinks} />)
   })
   return out
 }
@@ -135,11 +181,16 @@ export default function PostRenderer({ meta, postData, related }) {
   const canonicalUrl = SITE + PREFIX[meta.category] + '/' + slug + '/'
 
   const [coupangLinks, setCoupangLinks] = useState([])
+  const [nutrioneLinks, setNutroneLinks] = useState([])
   useEffect(() => {
     if (!slug) return
     fetch(`/api/post-links?slug=${encodeURIComponent(slug)}`)
       .then(r => r.ok ? r.json() : [])
       .then(data => { if (Array.isArray(data) && data.length > 0) setCoupangLinks(data) })
+      .catch(() => {})
+    fetch(`/api/post-links-nutrione?slug=${encodeURIComponent(slug)}`)
+      .then(r => r.ok ? r.json() : [])
+      .then(data => { if (Array.isArray(data) && data.length > 0) setNutroneLinks(data) })
       .catch(() => {})
   }, [slug])
 
@@ -218,7 +269,7 @@ export default function PostRenderer({ meta, postData, related }) {
         {sections && (
           <>
             <TOC sections={sections} />
-            {renderWithAds(sections, coupangLinks)}
+            {renderWithAds(sections, coupangLinks, nutrioneLinks)}
           </>
         )}
 

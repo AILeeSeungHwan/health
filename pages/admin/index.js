@@ -3,6 +3,7 @@ import Head from 'next/head'
 import posts from '../../data/posts'
 
 const CATEGORIES = ['전체', '증상', '일반의약품', '영양제', '건강식품', '상황허브', '계산기', '비교', '가이드']
+const NUTRIONE_CATS = ['전체', '루테인', '오메가3', '콜라겐', '유산균', '단백질', '올리브오일', '착즙액', '관절', '비타민C', '밀크씨슬', '아르기닌', '커큐민', '아스타잔틴', '종합비타민', '철분', '뇌건강', '여성건강', '종합', '기타']
 
 const ENGINE_META = {
   google:   { label: 'Google',   color: '#4285F4' },
@@ -15,6 +16,7 @@ const ENGINE_META = {
 }
 
 const EMPTY_FORM = { product_name: '', category: '영양제', coupang_url: '', post_slugs: '', notes: '' }
+const EMPTY_NT_FORM = { product_name: '', product_id: '', nutrione_url: '', sharing_url: '', image_url: '', price: '', category: '기타', variants: '[]', post_slugs: '', notes: '', is_active: true }
 
 function fmt(n) { return n == null ? '—' : Number(n).toLocaleString() }
 function fmtTime(iso) {
@@ -129,6 +131,87 @@ function CoupangModal({ item, onClose, onSave, pwd }) {
   )
 }
 
+function NutrioneMModal({ item, onClose, onSave, pwd }) {
+  const toForm = (it) => it ? {
+    product_name: it.product_name || '',
+    product_id: it.product_id || '',
+    nutrione_url: it.nutrione_url || '',
+    sharing_url: it.sharing_url || '',
+    image_url: it.image_url || '',
+    price: it.price ? String(it.price) : '',
+    category: it.category || '기타',
+    variants: JSON.stringify(it.variants || [], null, 2),
+    post_slugs: (it.post_slugs || []).join(', '),
+    notes: it.notes || '',
+    is_active: it.is_active !== false,
+  } : EMPTY_NT_FORM
+
+  const [form, setForm] = useState(toForm(item))
+  const [saving, setSaving] = useState(false)
+  const [err, setErr] = useState('')
+  const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
+
+  const handleSave = async () => {
+    if (!form.product_name.trim()) { setErr('상품명을 입력하세요'); return }
+    if (!form.product_id.trim()) { setErr('뉴트리원 상품 ID를 입력하세요'); return }
+    setSaving(true)
+    let variants = []
+    try { variants = JSON.parse(form.variants || '[]') } catch (_) { setErr('variants JSON 형식 오류'); setSaving(false); return }
+    const body = {
+      ...form,
+      price: form.price ? Number(form.price) : null,
+      variants,
+      post_slugs: form.post_slugs ? form.post_slugs.split(',').map(s => s.trim()).filter(Boolean) : [],
+    }
+    const method = item ? 'PUT' : 'POST'
+    const url = item ? `/api/nutrione?id=${item.id}&pwd=${encodeURIComponent(pwd)}` : `/api/nutrione?pwd=${encodeURIComponent(pwd)}`
+    const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+    if (!res.ok) { setErr('저장 실패'); setSaving(false); return }
+    onSave(); onClose()
+  }
+
+  const inp = { width: '100%', padding: '9px 12px', fontSize: 13, border: '1.5px solid #e5e7eb', borderRadius: 8, outline: 'none', boxSizing: 'border-box' }
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20, overflowY: 'auto' }}>
+      <div style={{ background: '#fff', borderRadius: 14, padding: 26, width: '100%', maxWidth: 520, maxHeight: '90vh', overflowY: 'auto' }}>
+        <div style={{ fontSize: 17, fontWeight: 800, marginBottom: 18 }}>{item ? '뉴트리원 링크 수정' : '+ 뉴트리원 상품 추가'}</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div><label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>상품명 *</label><input style={inp} value={form.product_name} onChange={e => set('product_name', e.target.value)} placeholder="예: 뉴트리원 루테인지아잔틴 에이엑스 GR" /></div>
+          <div><label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>뉴트리원 상품 ID * (URL의 숫자)</label><input style={inp} value={form.product_id} onChange={e => { set('product_id', e.target.value); if (!form.nutrione_url) set('nutrione_url', `https://www.nutrione.co.kr/item/dtl/${e.target.value}`) }} placeholder="예: 1000000683" /></div>
+          <div><label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>🔗 공유하기 링크 (10% 적립)</label><input style={{ ...inp, borderColor: '#1D4ED8' }} value={form.sharing_url} onChange={e => set('sharing_url', e.target.value)} placeholder="상품 상세페이지의 공유하기 → 복사한 URL" /></div>
+          <div><label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>이미지 URL</label><input style={inp} value={form.image_url} onChange={e => set('image_url', e.target.value)} placeholder="https://nutrionemall.edge.naverncp.com/..." /></div>
+          {form.image_url && <img src={form.image_url} alt="" style={{ width: 80, height: 80, objectFit: 'contain', borderRadius: 8, border: '1px solid #e5e7eb' }} />}
+          <div style={{ display: 'flex', gap: 10 }}>
+            <div style={{ flex: 1 }}><label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>가격 (원)</label><input style={inp} type="number" value={form.price} onChange={e => set('price', e.target.value)} placeholder="130000" /></div>
+            <div style={{ flex: 1 }}><label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>카테고리</label>
+              <select style={{ ...inp, background: '#fff' }} value={form.category} onChange={e => set('category', e.target.value)}>
+                {NUTRIONE_CATS.filter(c => c !== '전체').map(c => <option key={c} value={c}>{c}</option>)}
+              </select>
+            </div>
+          </div>
+          <div><label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>용량 변형 variants (JSON)</label>
+            <textarea style={{ ...inp, height: 80, fontFamily: 'monospace', fontSize: 11 }} value={form.variants} onChange={e => set('variants', e.target.value)} placeholder={'[\n  {"label":"소형", "sharingUrl":"https://..."}\n]'} />
+          </div>
+          <div><label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>연결 포스트 slug (쉼표 구분)</label><input style={inp} value={form.post_slugs} onChange={e => set('post_slugs', e.target.value)} placeholder="lutein, omega-3, collagen" /></div>
+          <div><label style={{ fontSize: 12, fontWeight: 600, display: 'block', marginBottom: 4 }}>메모</label><textarea style={{ ...inp, height: 56 }} value={form.notes} onChange={e => set('notes', e.target.value)} /></div>
+          <label style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, cursor: 'pointer' }}>
+            <input type="checkbox" checked={form.is_active} onChange={e => set('is_active', e.target.checked)} />
+            활성화 (포스트에 노출)
+          </label>
+        </div>
+        {err && <div style={{ fontSize: 12, color: '#DC2626', marginTop: 10 }}>{err}</div>}
+        <div style={{ display: 'flex', gap: 10, marginTop: 18, justifyContent: 'flex-end' }}>
+          <button onClick={onClose} style={{ padding: '9px 18px', borderRadius: 8, border: '1px solid #e5e7eb', background: '#fff', cursor: 'pointer' }}>취소</button>
+          <button onClick={handleSave} disabled={saving} style={{ padding: '9px 22px', borderRadius: 8, border: 'none', background: '#1D4ED8', color: '#fff', fontWeight: 700, cursor: saving ? 'not-allowed' : 'pointer' }}>
+            {saving ? '저장 중…' : '저장'}
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false)
   const [pwd, setPwd] = useState(''); const [pwIn, setPwIn] = useState(''); const [pwErr, setPwErr] = useState(false)
@@ -147,6 +230,14 @@ export default function AdminPage() {
   const [editItem, setEditItem] = useState(null)
   const [del, setDel] = useState(null)
   const [seedMsg, setSeedMsg] = useState('')
+
+  const [ntList, setNtList] = useState([])
+  const [ntSearch, setNtSearch] = useState('')
+  const [ntCat, setNtCat] = useState('전체')
+  const [showNtModal, setShowNtModal] = useState(false)
+  const [ntEditItem, setNtEditItem] = useState(null)
+  const [ntDel, setNtDel] = useState(null)
+  const [ntSeedMsg, setNtSeedMsg] = useState('')
 
   const postList = posts.map(p => ({ slug: p.slug, title: p.title, category: p.category, url: p.url }))
 
@@ -185,8 +276,18 @@ export default function AdminPage() {
     if (r.ok) setCpList(await r.json())
   }, [authed, pwd, cpSearch, cpCat])
 
+  const loadNutrione = useCallback(async () => {
+    if (!authed) return
+    const p = encodeURIComponent(pwd)
+    const catQ = ntCat !== '전체' ? `&category=${encodeURIComponent(ntCat)}` : ''
+    const sQ = ntSearch ? `&search=${encodeURIComponent(ntSearch)}` : ''
+    const r = await fetch(`/api/nutrione?pwd=${p}${catQ}${sQ}`)
+    if (r.ok) setNtList(await r.json())
+  }, [authed, pwd, ntSearch, ntCat])
+
   useEffect(() => { if (authed && tab==='stats') loadStats() }, [authed, tab, days, loadStats])
   useEffect(() => { if (authed && tab==='coupang') loadCoupang() }, [authed, tab, cpCat, cpSearch, loadCoupang])
+  useEffect(() => { if (authed && tab==='nutrione') loadNutrione() }, [authed, tab, ntCat, ntSearch, loadNutrione])
 
   const seed = async () => {
     const p = encodeURIComponent(pwd)
@@ -201,6 +302,21 @@ export default function AdminPage() {
     const p = encodeURIComponent(pwd)
     await fetch(`/api/coupang?id=${id}&pwd=${p}`, { method: 'DELETE' })
     setDel(null); loadCoupang()
+  }
+
+  const ntSeed = async () => {
+    const p = encodeURIComponent(pwd)
+    setNtSeedMsg('시딩 중…')
+    const r = await fetch(`/api/admin/seed-nutrione?pwd=${p}`, { method: 'POST' })
+    const d = await r.json()
+    setNtSeedMsg(d.message || d.error || '완료')
+    loadNutrione()
+  }
+
+  const ntHandleDelete = async (id) => {
+    const p = encodeURIComponent(pwd)
+    await fetch(`/api/nutrione?id=${id}&pwd=${p}`, { method: 'DELETE' })
+    setNtDel(null); loadNutrione()
   }
 
   if (!authed) return (
@@ -230,8 +346,8 @@ export default function AdminPage() {
         </div>
 
         <div style={{ maxWidth:1200, margin:'0 auto', padding:'22px 20px' }}>
-          <div style={{ display:'flex', gap:4, marginBottom:20, background:'#e5e7eb', borderRadius:12, padding:4, width:'fit-content' }}>
-            {[{k:'stats',l:'📊 트래픽 통계'},{k:'coupang',l:'🔗 쿠팡 링크'},{k:'searchAnalytics',l:'🔍 검색유입 상세'}].map(t => (
+          <div style={{ display:'flex', gap:4, marginBottom:20, background:'#e5e7eb', borderRadius:12, padding:4, width:'fit-content', flexWrap:'wrap' }}>
+            {[{k:'stats',l:'📊 트래픽 통계'},{k:'coupang',l:'🔗 쿠팡 링크'},{k:'nutrione',l:'🏥 뉴트리원 링크'},{k:'searchAnalytics',l:'🔍 검색유입 상세'}].map(t => (
               <button key={t.k} onClick={() => setTab(t.k)} style={{ padding:'8px 18px', borderRadius:9, border:'none', cursor:'pointer', fontSize:13, fontWeight: tab===t.k ? 700 : 500, background: tab===t.k ? '#fff' : 'transparent', color: tab===t.k ? '#111827' : '#6b7280' }}>{t.l}</button>
             ))}
           </div>
@@ -322,6 +438,63 @@ export default function AdminPage() {
             </div>
           )}
 
+          {tab === 'nutrione' && (
+            <div>
+              <div style={{ display:'flex', gap:10, marginBottom:14, flexWrap:'wrap', alignItems:'center' }}>
+                <input value={ntSearch} onChange={e => setNtSearch(e.target.value)} placeholder="상품명 검색..."
+                  style={{ padding:'8px 14px', fontSize:13, border:'1.5px solid #e5e7eb', borderRadius:10, outline:'none', width:220 }} />
+                <select value={ntCat} onChange={e => setNtCat(e.target.value)} style={{ padding:'8px 12px', fontSize:13, border:'1.5px solid #e5e7eb', borderRadius:10, outline:'none', background:'#fff' }}>
+                  {NUTRIONE_CATS.map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
+                <span style={{ fontSize:12, color:'#9ca3af' }}>{ntList.length}개</span>
+                <button onClick={ntSeed} style={{ padding:'8px 14px', background:'#EFF6FF', border:'1px solid #BFDBFE', borderRadius:10, fontSize:12, cursor:'pointer', color:'#1D4ED8', fontWeight:600 }}>📦 베스트50 시딩</button>
+                {ntSeedMsg && <span style={{ fontSize:11, color:'#6b7280' }}>{ntSeedMsg}</span>}
+                <button onClick={() => { setNtEditItem(null); setShowNtModal(true) }} style={{ marginLeft:'auto', padding:'8px 16px', background:'#1D4ED8', color:'#fff', border:'none', borderRadius:10, fontWeight:700, fontSize:13, cursor:'pointer' }}>+ 상품 추가</button>
+              </div>
+
+              <div style={{ background:'#fff', borderRadius:12, overflowX:'auto' }}>
+                <table style={{ width:'100%', borderCollapse:'collapse', fontSize:13 }}>
+                  <thead>
+                    <tr style={{ background:'#f9fafb', borderBottom:'1px solid #e5e7eb' }}>
+                      {['이미지','상품명','카테고리','공유 링크','연결 포스트','가격','수정/삭제'].map(h => <th key={h} style={{ padding:'10px 12px', textAlign:'left', fontSize:12, fontWeight:700, color:'#6b7280' }}>{h}</th>)}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {ntList.length === 0 && <tr><td colSpan={7} style={{ padding:20, textAlign:'center', color:'#9ca3af' }}>등록된 상품이 없습니다. "베스트50 시딩" 버튼을 눌러주세요.</td></tr>}
+                    {ntList.map(item => (
+                      <tr key={item.id} style={{ borderBottom:'1px solid #f3f4f6', opacity: item.is_active ? 1 : 0.45 }}>
+                        <td style={{ padding:'8px 12px' }}>
+                          {item.image_url && <img src={item.image_url} alt="" style={{ width:52, height:52, objectFit:'contain', borderRadius:6, border:'1px solid #e5e7eb' }} />}
+                        </td>
+                        <td style={{ padding:'8px 12px', fontWeight:600, maxWidth:200 }}>
+                          <a href={item.nutrione_url} target="_blank" rel="noreferrer" style={{ color:'#111827', textDecoration:'none' }}>{item.product_name}</a>
+                          {item.price && <div style={{ fontSize:11, color:'#9ca3af', marginTop:2 }}>{Number(item.price).toLocaleString()}원</div>}
+                        </td>
+                        <td style={{ padding:'8px 12px' }}>{item.category && <span style={{ fontSize:11, fontWeight:700, padding:'2px 8px', borderRadius:4, background:'#EFF6FF', color:'#1D4ED8' }}>{item.category}</span>}</td>
+                        <td style={{ padding:'8px 12px' }}>
+                          {item.sharing_url
+                            ? <a href={item.sharing_url} target="_blank" rel="noreferrer nofollow" style={{ fontSize:12, color:'#1D4ED8', background:'#EFF6FF', padding:'3px 8px', borderRadius:4, textDecoration:'none' }}>링크 ↗</a>
+                            : <span style={{ fontSize:11, color:'#EF4444', fontWeight:600 }}>미등록</span>}
+                        </td>
+                        <td style={{ padding:'8px 12px', fontSize:12, color:'#6b7280' }}>{(item.post_slugs||[]).length > 0 ? `${item.post_slugs.join(', ')}` : '없음'}</td>
+                        <td style={{ padding:'8px 12px', fontSize:12 }}>{item.price ? `${Number(item.price).toLocaleString()}원` : '—'}</td>
+                        <td style={{ padding:'8px 12px' }}>
+                          <button onClick={() => { setNtEditItem(item); setShowNtModal(true) }} style={{ fontSize:12, color:'#2563EB', border:'none', background:'none', cursor:'pointer', marginRight:6 }}>수정</button>
+                          <button onClick={() => setNtDel(item.id)} style={{ fontSize:12, color:'#DC2626', border:'none', background:'none', cursor:'pointer' }}>삭제</button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div style={{ marginTop:16, padding:'14px 18px', background:'#FFFBEB', borderRadius:10, border:'1px solid #FDE68A', fontSize:13 }}>
+                <strong>📌 사용법:</strong> 뉴트리원 상품 상세 페이지 → 공유하기 버튼 클릭 → 링크 복사 → 위 표에서 "수정" → 공유하기 링크 입력 → 저장.<br />
+                공유 링크로 구매 시 구매자에게 <strong>10% 적립금</strong>이 자동 제공됩니다.
+              </div>
+            </div>
+          )}
+
           {tab === 'searchAnalytics' && (
             <div style={{ background:'#fff', borderRadius:12, padding:'22px' }}>
               <p>상세 검색 분석 대시보드는 <a href="/searchAnalytics/" target="_blank" style={{ color:'#2563EB' }}>/searchAnalytics</a> 에서 확인하세요.</p>
@@ -332,6 +505,18 @@ export default function AdminPage() {
       </div>
 
       {showModal && <CoupangModal item={editItem} pwd={pwd} onClose={() => { setShowModal(false); setEditItem(null) }} onSave={loadCoupang} />}
+      {showNtModal && <NutrioneMModal item={ntEditItem} pwd={pwd} onClose={() => { setShowNtModal(false); setNtEditItem(null) }} onSave={loadNutrione} />}
+      {ntDel && (
+        <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.5)', zIndex:1000, display:'flex', alignItems:'center', justifyContent:'center' }}>
+          <div style={{ background:'#fff', borderRadius:12, padding:24, maxWidth:320, textAlign:'center' }}>
+            <div style={{ fontSize:15, fontWeight:700, marginBottom:8 }}>뉴트리원 상품을 삭제하시겠습니까?</div>
+            <div style={{ display:'flex', gap:10, justifyContent:'center', marginTop:16 }}>
+              <button onClick={() => setNtDel(null)} style={{ padding:'8px 18px', borderRadius:8, border:'1px solid #e5e7eb', background:'#fff', cursor:'pointer' }}>취소</button>
+              <button onClick={() => ntHandleDelete(ntDel)} style={{ padding:'8px 18px', borderRadius:8, border:'none', background:'#DC2626', color:'#fff', fontWeight:700, cursor:'pointer' }}>삭제</button>
+            </div>
+          </div>
+        </div>
+      )}
       {del && (
         <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.5)', zIndex:1000, display:'flex', alignItems:'center', justifyContent:'center' }}>
           <div style={{ background:'#fff', borderRadius:12, padding:24, maxWidth:320, textAlign:'center' }}>

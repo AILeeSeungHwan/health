@@ -40,6 +40,16 @@ const post = {
 
     { type: 'productSlot', productKey: 'lutein' },
 
+    {
+      type: 'nutrioneSlot',
+      products: [
+        { nutrioneId: '1000000683', productName: '뉴트리원 루테인지아잔틴 에이엑스 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000683/480_1000000683_ITEM2024121013355.png', price: 130000 },
+        { nutrioneId: '1000000685', productName: '뉴트리원 루테인 지아잔틴 알티지 오메가3 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000685/480_1000000685_ITEM2024103166415.png', price: 137000 },
+        { nutrioneId: '1000000420', productName: '뉴트리원 루테인 지아잔틴 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000420/480_1000000420_ITEM2024121036773.png', price: 111100 },
+        { nutrioneId: '1000001227', productName: '뉴트리원 루테인지아잔틴 메모리케어 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000001227/480_1000001227_ITEM2024103173967.png', price: 133200 },
+      ],
+    },
+
     { type: 'h2', id: 'faq', text: '자주 묻는 질문' },
     {
       type: 'faq',
