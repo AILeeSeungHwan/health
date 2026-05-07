@@ -66,6 +66,23 @@ const guides = [
     relatedSymptoms: [],
     relatedSlugs: ['medical-insurance-claim'],
   },
+  {
+    id: 'G0005',
+    slug: 'medical-insurance-claim',
+    title: '실손보험 청구 완전 가이드 — 항목별 보장 여부 확인 — 건강모아',
+    description: '실손의료보험 입원·외래·약제비 청구 방법, 청구 제외 항목(미용·예방접종 등), 청구 기한, 간편 청구 앱 활용법, 자주 거절되는 사례를 정리합니다.',
+    category: 'guide',
+    ymylLevel: 'A',
+    medicallyReviewed: false,
+    author: 'healthmoa',
+    publishedAt: '2026-05-11',
+    updatedAt: '2026-05-11',
+    tags: ['실손보험', '의료비 청구', '보험금 청구', '실비보험', '건강보험 청구'],
+    guideType: 'financial-health',
+    targetAudience: '실손보험 가입자',
+    relatedSymptoms: [],
+    relatedSlugs: ['health-checkup-guide'],
+  },
 ]
 
 module.exports = guides

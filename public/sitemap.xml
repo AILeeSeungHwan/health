@@ -301,6 +301,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://health.ambitstock.com/supplements/red-ginseng/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://health.ambitstock.com/products/chicken-breast-sausage/</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -379,6 +385,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://health.ambitstock.com/compare/omega3-brands/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://health.ambitstock.com/guides/how-to-choose-supplement/</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -399,6 +411,12 @@
   <url>
     <loc>https://health.ambitstock.com/guides/health-checkup-guide/</loc>
     <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://health.ambitstock.com/guides/medical-insurance-claim/</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

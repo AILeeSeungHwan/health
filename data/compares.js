@@ -18,6 +18,23 @@ const compares = [
     comparisonAxes: ['주성분', '적응증', '부작용', '복용 시점', '금기'],
     relatedSlugs: ['headache'],
   },
+  {
+    id: 'C0002',
+    slug: 'omega3-brands',
+    title: '오메가3 브랜드 비교 — rTG·TG·EE 형태별 차이와 선택 — 건강모아',
+    description: '오메가3 TG형·EE형·rTG형의 흡수율 차이, 정관장·뉴트리원·캘리포니아골드·노르딕내추럴 비교, EPA+DHA 함량 계산법, 산패 여부 확인 방법을 정리합니다.',
+    category: 'compare',
+    ymylLevel: 'B',
+    medicallyReviewed: false,
+    author: 'healthmoa',
+    publishedAt: '2026-05-12',
+    updatedAt: '2026-05-12',
+    tags: ['오메가3', 'rTG 오메가3', 'EPA DHA', '오메가3 비교', '생선기름'],
+    compareType: 'supplement-brands',
+    targetProducts: ['정관장 홍삼오메가3', '뉴트리원 rTG오메가3', '캘리포니아골드 오메가800', '노르딕내추럴 얼티밋 오메가'],
+    relatedSymptoms: ['back-pain', 'knee-pain'],
+    relatedSlugs: ['red-ginseng', 'glucosamine'],
+  },
 ]
 
 module.exports = compares

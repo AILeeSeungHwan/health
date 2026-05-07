@@ -135,6 +135,27 @@ const supplements = [
     relatedProducts: [],
     relatedSlugs: ['omega-3'],
   },
+  {
+    id: 'U0005',
+    slug: 'red-ginseng',
+    title: '홍삼 효능·식약처 인정 기능성·선택법 — 건강모아',
+    description: '홍삼의 식약처 고시형 기능성(면역력 증진·피로 개선 등 6가지), 진세노사이드 함량 비교, 정관장·뉴트리원 등 브랜드 선택 기준, 복용 금기를 정리합니다.',
+    category: 'supplement',
+    ymylLevel: 'B',
+    medicallyReviewed: false,
+    author: 'healthmoa',
+    publishedAt: '2026-05-07',
+    updatedAt: '2026-05-07',
+    tags: ['홍삼', '진세노사이드', '6년근 홍삼', '정관장', '홍삼 효능'],
+    supplementName: '홍삼',
+    nameEn: 'Red Ginseng (Panax ginseng)',
+    mainIngredient: '진세노사이드 (Ginsenoside)',
+    foodSafetyApproved: true,
+    approvedFunctions: ['면역력 증진', '피로 개선', '혈소판 응집 억제로 혈액 흐름에 도움', '기억력 개선', '항산화', '갱년기 여성의 건강에 도움'],
+    relatedSymptoms: ['menopause-symptoms'],
+    relatedProducts: [],
+    relatedSlugs: ['omega-3', 'vitamin-b-complex'],
+  },
 ]
 
 module.exports = supplements
