@@ -19,6 +19,15 @@ const post = {
     { type: 'h2', id: 'interactions', text: '부작용 · 의약품 상호작용' },
     { type: 'warning', html: '<p>흔한 경미한 이상: 비린내 트림, 소화불량, 설사. 드물게 출혈 경향 증가. 항응고제·항혈소판제 복용자는 반드시 담당의와 상의하세요.</p>' },
 
+    {
+      type: 'nutrioneSlot',
+      products: [
+        { nutrioneId: '1000339884', productName: '뉴트리원 초임계 알티지 오메가3 코큐텐', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000339884/480_1000339884_ITEM2024050311253.png', price: 20500 },
+        { nutrioneId: '1000326749', productName: '뉴트리원 초임계 알티지 오메가3 트리플', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000326749/480_1000326749_ITEM2024121094715.png', price: 85900 },
+        { nutrioneId: '1000530728', productName: '뉴트리원 초임계 식물성 알티지 오메가3 DHA EPA+', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000530728/480_1000530728_ITEM2025051961036.png', price: 100300 },
+      ],
+    },
+
     { type: 'h2', id: 'compare', text: '비슷한 영양제 비교' },
     { type: 'body', html: '<p>같은 목적(혈행 개선)의 다른 옵션: <a href="/supplements/coq10/">코엔자임Q10</a>. 다만 기능성은 서로 다릅니다.</p>' },
 
@@ -34,15 +43,6 @@ const post = {
     ]},
 
     { type: 'productSlot', productKey: 'omega-3' },
-
-    {
-      type: 'nutrioneSlot',
-      products: [
-        { nutrioneId: '1000339884', productName: '뉴트리원 초임계 알티지 오메가3 코큐텐', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000339884/480_1000339884_ITEM2024050311253.png', price: 20500 },
-        { nutrioneId: '1000326749', productName: '뉴트리원 초임계 알티지 오메가3 트리플', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000326749/480_1000326749_ITEM2024121094715.png', price: 85900 },
-        { nutrioneId: '1000530728', productName: '뉴트리원 초임계 식물성 알티지 오메가3 DHA EPA+', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000530728/480_1000530728_ITEM2025051961036.png', price: 100300 },
-      ],
-    },
 
     { type: 'sources', items: [
       { label: '식품의약품안전처 건강기능식품정보 — 오메가3', url: 'https://www.foodsafetykorea.go.kr', org: '식약처', accessedAt: '2026-04-24' },

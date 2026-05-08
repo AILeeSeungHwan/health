@@ -4,7 +4,7 @@ const supplements = [
   {
     id: 'U0001',
     slug: 'omega-3',
-    title: '오메가3 효능·권장량·추천 대상 완벽 가이드 — 건강모아',
+    title: '오메가3 효능·권장량·추천 대상 완벽 가이드',
     description: '오메가3(EPA+DHA)의 식약처 인정 기능성(혈중 중성지질·혈행 개선·건조한 눈·기억력), 하루 권장량, 항응고제 상호작용, 식품 대체 방안까지 정리합니다.',
     category: 'supplement',
     ymylLevel: 'B',
@@ -27,7 +27,7 @@ const supplements = [
   {
     id: 'U0002',
     slug: 'magnesium',
-    title: '마그네슘 효능·섭취법·추천 대상 — 건강모아',
+    title: '마그네슘 효능·섭취법·추천 대상',
     description: '마그네슘의 식약처 인정 기능성(에너지 이용·신경·근육 기능), 하루 권장량, 변비성 설사 부작용, 칼슘·철과의 흡수 경쟁까지 정리합니다.',
     category: 'supplement',
     ymylLevel: 'B',
@@ -50,7 +50,7 @@ const supplements = [
   {
     id: 'U0003',
     slug: 'vitamin-d',
-    title: '비타민 D 효능·권장량·결핍 증상 — 건강모아',
+    title: '비타민 D 효능·권장량·결핍 증상',
     description: '비타민 D의 식약처 인정 기능성(칼슘·인 흡수, 뼈·치아 형성), 결핍 위험 집단, 햇빛 노출과 영양제 병행 전략, 과량 섭취 시 주의까지 정리합니다.',
     category: 'supplement',
     ymylLevel: 'B',
@@ -73,7 +73,7 @@ const supplements = [
   {
     id: 'U0004',
     slug: 'coq10',
-    title: '코엔자임Q10(CoQ10) 효능·섭취법·추천 대상 — 건강모아',
+    title: '코엔자임Q10(CoQ10) 효능·섭취법·추천 대상',
     description: '코엔자임Q10의 식약처 인정 기능성(항산화·혈압 개선), 하루 권장량, 스타틴 복용자 주의, 흡수율 높이는 복용법까지 정리합니다.',
     category: 'supplement',
     ymylLevel: 'B',
@@ -96,7 +96,7 @@ const supplements = [
   {
     id: 'U0006',
     slug: 'probiotics',
-    title: '프로바이오틱스 균주·CFU·복용 시점 완전 정리 — 건강모아',
+    title: '프로바이오틱스 균주·CFU·복용 시점 완전 정리',
     description: '프로바이오틱스의 식약처 인정 기능성, 락토바실러스·비피도박테리움 균주 차이, CFU 수 해석, 복용 최적 시간, 프리바이오틱스 병용법을 정리합니다.',
     category: 'supplement',
     ymylLevel: 'B',
@@ -117,7 +117,7 @@ const supplements = [
   {
     id: 'U0007',
     slug: 'lutein',
-    title: '루테인 — 황반 건강·눈 영양제 선택 완전 가이드 — 건강모아',
+    title: '루테인 — 황반 건강·눈 영양제 선택 완전 가이드',
     description: '루테인·지아잔틴의 식약처 인정 기능성, 황반색소 밀도 개선 근거, 권장 섭취량(20mg), 아스타잔틴과 차이, 눈 영양제 고를 때 주의사항을 정리합니다.',
     category: 'supplement',
     ymylLevel: 'B',
@@ -138,7 +138,7 @@ const supplements = [
   {
     id: 'U0005',
     slug: 'red-ginseng',
-    title: '홍삼 효능·식약처 인정 기능성·선택법 — 건강모아',
+    title: '홍삼 효능·식약처 인정 기능성·선택법',
     description: '홍삼의 식약처 고시형 기능성(면역력 증진·피로 개선 등 6가지), 진세노사이드 함량 비교, 정관장·뉴트리원 등 브랜드 선택 기준, 복용 금기를 정리합니다.',
     category: 'supplement',
     ymylLevel: 'B',
@@ -159,7 +159,7 @@ const supplements = [
   {
     id: 'U0008',
     slug: 'collagen',
-    title: '콜라겐 효능·종류·올바른 선택법 완벽 가이드 — 건강모아',
+    title: '콜라겐 효능·종류·올바른 선택법 완벽 가이드',
     description: '콜라겐 타입(1·2·3형), 저분자 vs 일반, 피부·관절·뼈별 추천, 비타민C 병용 효과, 식약처 인정 기능성, 뉴트리원 인기 콜라겐 제품 비교 안내.',
     category: 'supplement', ymylLevel: 'C', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -174,7 +174,7 @@ const supplements = [
   {
     id: 'U0009',
     slug: 'milk-thistle',
-    title: '밀크씨슬 효능·복용법·간 건강 완벽 가이드 — 건강모아',
+    title: '밀크씨슬 효능·복용법·간 건강 완벽 가이드',
     description: '밀크씨슬 실리마린의 간 보호 기전, 식약처 인정 기능성, 표준화 추출물 기준(70~80%), 복용법, 알코올·약물 복용자 주의사항을 정리합니다.',
     category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -189,7 +189,7 @@ const supplements = [
   {
     id: 'U0010',
     slug: 'vitamin-c-liposomal',
-    title: '리포좀 비타민C vs 일반 비타민C — 흡수율 비교와 선택 기준 — 건강모아',
+    title: '리포좀 비타민C vs 일반 비타민C — 흡수율 비교와 선택 기준',
     description: '리포좀 기술로 흡수율을 높인 비타민C의 원리, 일반 비타민C와의 차이, 항산화·면역·콜라겐 생성 기능성, 복용 용량 가이드.',
     category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -204,7 +204,7 @@ const supplements = [
   {
     id: 'U0011',
     slug: 'albumin',
-    title: '알부민 효능·결핍 원인·보충 방법 완벽 가이드 — 건강모아',
+    title: '알부민 효능·결핍 원인·보충 방법 완벽 가이드',
     description: '혈중 알부민의 역할, 저알부민혈증 원인과 증상, 식품·영양제 보충 방법, 뉴트리원 프리미엄 알부민 골드 성분 분석.',
     category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -219,7 +219,7 @@ const supplements = [
   {
     id: 'U0012',
     slug: 'olive-shot',
-    title: '올레샷(올리브오일+레몬즙) 효능·복용법·주의사항 — 건강모아',
+    title: '올레샷(올리브오일+레몬즙) 효능·복용법·주의사항',
     description: '올리브오일과 레몬즙을 결합한 올레샷의 폴리페놀·올레산 효능, 공복 음용 방법, 혈행 개선·항산화 효과, 뉴트리원 올레샷 라인업 비교.',
     category: 'supplement', ymylLevel: 'C', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -234,7 +234,7 @@ const supplements = [
   {
     id: 'U0013',
     slug: 'blueberry-juice',
-    title: '블루베리 착즙액 효능 — 안토시아닌·NFC 착즙의 모든 것 — 건강모아',
+    title: '블루베리 착즙액 효능 — 안토시아닌·NFC 착즙의 모든 것',
     description: 'NFC(Non-From-Concentrate) 블루베리·하스카프베리 착즙액의 안토시아닌 함량, 눈 건강·항산화 효과, 농축환원 주스와의 차이, 적정 섭취량 가이드.',
     category: 'supplement', ymylLevel: 'C', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -249,7 +249,7 @@ const supplements = [
   {
     id: 'U0014',
     slug: 'chondroitin',
-    title: '콘드로이친·뮤코다당단백 효능 — 관절 영양제 완벽 가이드 — 건강모아',
+    title: '콘드로이친·뮤코다당단백 효능 — 관절 영양제 완벽 가이드',
     description: '콘드로이친·뮤코다당단백의 관절 연골 보호 기전, 글루코사민과 비교, 식약처 인정 기능성, 콘드로이친 1200mg 의미, 뉴트리원 관절 제품 안내.',
     category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -264,7 +264,7 @@ const supplements = [
   {
     id: 'U0015',
     slug: 'arginine',
-    title: '아르기닌 효능·복용법·주의사항 완벽 가이드 — 건강모아',
+    title: '아르기닌 효능·복용법·주의사항 완벽 가이드',
     description: '아르기닌의 산화질소(NO) 생성 기전, 혈행 개선·면역·운동 능력 효과, 하루 권장 용량, 헤르페스·저혈압 주의사항, 뉴트리원 아르기닌 맥스 5000 분석.',
     category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -279,7 +279,7 @@ const supplements = [
   {
     id: 'U0016',
     slug: 'curcumin',
-    title: '커큐민 효능·수용성 커큐민이란 — 흡수율을 높이는 방법 — 건강모아',
+    title: '커큐민 효능·수용성 커큐민이란 — 흡수율을 높이는 방법',
     description: '강황 속 커큐민의 항염·항산화 기전, 일반 커큐민 vs 수용성 커큐민 흡수율 비교, 식약처 인정 기능성, 적정 용량, 뉴트리원 수용성 커큐민 액티브 분석.',
     category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -294,7 +294,7 @@ const supplements = [
   {
     id: 'U0017',
     slug: 'astaxanthin',
-    title: '아스타잔틴 효능 — 최강 항산화제 완벽 가이드 — 건강모아',
+    title: '아스타잔틴 효능 — 최강 항산화제 완벽 가이드',
     description: '해양 카로티노이드 아스타잔틴의 항산화력(비타민C의 6,000배?), 눈 피로·피부·운동 후 회복 효과, 식약처 개별인정형 기능성, 적정 용량 가이드.',
     category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -309,7 +309,7 @@ const supplements = [
   {
     id: 'U0018',
     slug: 'multivitamin',
-    title: '종합비타민 선택 가이드 — 장용성·흡수율·필요한 사람 — 건강모아',
+    title: '종합비타민 선택 가이드 — 장용성·흡수율·필요한 사람',
     description: '종합비타민이 필요한 대상, 장용성 캡슐의 장점, 주요 영양소별 기능(비타민D·B군·아연), 과잉 섭취 주의, 뉴트리원 이뮨+ vs 이뮨샷 비교 안내.',
     category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -324,7 +324,7 @@ const supplements = [
   {
     id: 'U0019',
     slug: 'iron-supplement',
-    title: '철분제 효능·부작용·복용법 — 여성 철분 결핍 완벽 가이드 — 건강모아',
+    title: '철분제 효능·부작용·복용법 — 여성 철분 결핍 완벽 가이드',
     description: '철분 결핍성 빈혈 원인, 헴철 vs 비헴철 흡수율 차이, 비타민C 병용 효과, 변비·위장 부작용 대처법, 뉴트리원 데일리 철분 츄어블 분석.',
     category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',
@@ -339,7 +339,7 @@ const supplements = [
   {
     id: 'U0020',
     slug: 'phosphatidylserine',
-    title: '포스파티딜세린 효능 — 기억력·뇌 건강 영양제 가이드 — 건강모아',
+    title: '포스파티딜세린 효능 — 기억력·뇌 건강 영양제 가이드',
     description: '뇌 세포막 성분 포스파티딜세린(PS)의 기억력·인지기능 개선 근거, 식약처 개별인정형 기능성, 적정 용량(300mg/일), 뉴트리원 브레인 알파 피에스 분석.',
     category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
     publishedAt: '2026-05-08', updatedAt: '2026-05-08',

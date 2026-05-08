@@ -100,29 +100,29 @@ function Section({ section, coupangLinks, nutrioneLinks }) {
     return (
       <div style={{ margin: '28px 0', padding: '20px', background: 'linear-gradient(135deg,#EFF6FF,#F0FDF4)', borderRadius: 14, border: '1px solid #BFDBFE' }}>
         <div style={{ fontSize: 13, fontWeight: 800, color: '#1D4ED8', marginBottom: 14 }}>
-          🏥 뉴트리원 공식몰 추천 제품 — 공유 링크로 구매 시 10% 적립
+          🏥 뉴트리원 공식몰 추천 제품
         </div>
         {products.map((p, i) => {
           const link = (nutrioneLinks || []).find(l => l.product_id === p.nutrioneId)
           const sharingUrl = link?.sharing_url
           return (
-            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '14px 16px', marginBottom: 10, display: 'flex', gap: 14, alignItems: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '14px 16px', marginBottom: 10, display: 'flex', gap: 16, alignItems: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
               {p.imageUrl && (
                 <img src={p.imageUrl} alt={p.productName} loading="lazy"
-                  style={{ width: 80, height: 80, objectFit: 'contain', borderRadius: 8, flexShrink: 0 }} />
+                  style={{ width: 110, height: 110, objectFit: 'contain', borderRadius: 10, flexShrink: 0, border: '1px solid #E5E7EB' }} />
               )}
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, color: '#111827', marginBottom: 4, lineHeight: 1.4 }}>{p.productName}</div>
+                <div style={{ fontWeight: 700, fontSize: 15, color: '#111827', marginBottom: 6, lineHeight: 1.4 }}>{p.productName}</div>
                 <NutrionePriceTag price={p.price} />
-                <div style={{ marginTop: 10 }}>
+                <div style={{ marginTop: 12 }}>
                   {sharingUrl ? (
                     <a href={sharingUrl} target="_blank" rel="noopener noreferrer nofollow"
-                       style={{ display: 'inline-block', padding: '8px 16px', background: '#1D4ED8', color: '#fff', borderRadius: 8, fontSize: 13, fontWeight: 700, textDecoration: 'none' }}>
-                      공유 링크로 구매 (10% 적립) →
+                       style={{ display: 'inline-block', padding: '9px 18px', background: '#1D4ED8', color: '#fff', borderRadius: 8, fontSize: 13, fontWeight: 700, textDecoration: 'none' }}>
+                      뉴트리원 공식몰 구매하기 →
                     </a>
                   ) : (
                     <a href={`https://www.nutrione.co.kr/item/dtl/${p.nutrioneId}`} target="_blank" rel="noopener noreferrer nofollow"
-                       style={{ display: 'inline-block', padding: '8px 16px', background: '#6B7280', color: '#fff', borderRadius: 8, fontSize: 13, fontWeight: 700, textDecoration: 'none' }}>
+                       style={{ display: 'inline-block', padding: '9px 18px', background: '#6B7280', color: '#fff', borderRadius: 8, fontSize: 13, fontWeight: 700, textDecoration: 'none' }}>
                       뉴트리원 공식몰 보기 →
                     </a>
                   )}
@@ -131,7 +131,6 @@ function Section({ section, coupangLinks, nutrioneLinks }) {
             </div>
           )
         })}
-        <p style={{ fontSize: 11, color: '#9CA3AF', marginTop: 8, marginBottom: 0 }}>※ 위 공유 링크로 구매 시 구매금액의 10% 적립금 혜택이 제공됩니다.</p>
       </div>
     )
   }

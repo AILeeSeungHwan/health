@@ -26,6 +26,16 @@ const post = {
       html: '<p><strong>식약처 기준</strong>: 1일 루테인 10~20mg. 일반적인 눈 건강 목적으로는 <strong>20mg/일</strong>이 많이 사용됩니다.</p><p><strong>지아잔틴 병용</strong>: 루테인:지아잔틴 = 5:1 비율(예: 루테인 10mg + 지아잔틴 2mg)이 연구에서 많이 사용된 비율입니다.</p><p><strong>에스테르형 vs 유리형</strong>: 유리형(free-form)이 흡수에 더 유리하다고 알려져 있지만, 에스테르형도 지방과 함께 섭취하면 유사한 흡수율을 보입니다. 지방과 함께(식사 후) 복용하는 것을 권장합니다.</p>',
     },
 
+    {
+      type: 'nutrioneSlot',
+      products: [
+        { nutrioneId: '1000000683', productName: '뉴트리원 루테인지아잔틴 에이엑스 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000683/480_1000000683_ITEM2024121013355.png', price: 130000 },
+        { nutrioneId: '1000000685', productName: '뉴트리원 루테인 지아잔틴 알티지 오메가3 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000685/480_1000000685_ITEM2024103166415.png', price: 137000 },
+        { nutrioneId: '1000000420', productName: '뉴트리원 루테인 지아잔틴 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000420/480_1000000420_ITEM2024121036773.png', price: 111100 },
+        { nutrioneId: '1000001227', productName: '뉴트리원 루테인지아잔틴 메모리케어 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000001227/480_1000001227_ITEM2024103173967.png', price: 133200 },
+      ],
+    },
+
     { type: 'h2', id: 'vs-astaxanthin', text: '아스타잔틴과 차이점' },
     {
       type: 'body',
@@ -39,16 +49,6 @@ const post = {
     },
 
     { type: 'productSlot', productKey: 'lutein' },
-
-    {
-      type: 'nutrioneSlot',
-      products: [
-        { nutrioneId: '1000000683', productName: '뉴트리원 루테인지아잔틴 에이엑스 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000683/480_1000000683_ITEM2024121013355.png', price: 130000 },
-        { nutrioneId: '1000000685', productName: '뉴트리원 루테인 지아잔틴 알티지 오메가3 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000685/480_1000000685_ITEM2024103166415.png', price: 137000 },
-        { nutrioneId: '1000000420', productName: '뉴트리원 루테인 지아잔틴 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000420/480_1000000420_ITEM2024121036773.png', price: 111100 },
-        { nutrioneId: '1000001227', productName: '뉴트리원 루테인지아잔틴 메모리케어 GR', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000001227/480_1000001227_ITEM2024103173967.png', price: 133200 },
-      ],
-    },
 
     { type: 'h2', id: 'faq', text: '자주 묻는 질문' },
     {

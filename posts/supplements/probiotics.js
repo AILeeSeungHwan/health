@@ -26,6 +26,15 @@ const post = {
       html: '<p>CFU(Colony Forming Unit)는 살아있는 균의 수입니다. 일반적인 건강 목적으로는 <strong>1일 10억(10<sup>9</sup>) CFU 이상</strong>이 권장됩니다.</p><ul><li>식약처 기준: 1일 섭취량 기준 1억(10<sup>8</sup>) CFU 이상.</li><li>과민성 대장·항생제 관련 설사: 연구에서는 10억~100억 CFU 사용.</li><li>CFU 수 자체보다 <strong>장에 도달하는 시점의 생존 CFU</strong>가 중요합니다. 제품 유통기한 말에도 기재 CFU 이상이 생존하는지 확인.</li></ul><p><strong>장용 코팅(enteric coating)</strong>: 위산·담즙에 의한 균 사멸을 줄이기 위해 코팅 기술 적용 여부도 제품 선택 지표입니다.</p>',
     },
 
+    {
+      type: 'nutrioneSlot',
+      products: [
+        { nutrioneId: '1000000818', productName: '뉴트리원 프로&프리 바이오틱스', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000818/480_1000000818_ITEM2024121091360.png', price: 89900 },
+        { nutrioneId: '1000000945', productName: '뉴트리원 프로바이오틱스 100억 맥스', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000945/480_1000000945_ITEM2024110868186.png', price: 186100 },
+        { nutrioneId: '1000296320', productName: '뉴트리원 지노프리 질유산균', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000296320/480_1000296320_ITEM2024042618420.png', price: 49800 },
+      ],
+    },
+
     { type: 'h2', id: 'timing', text: '언제 먹는 것이 좋은가' },
     {
       type: 'body',
@@ -45,15 +54,6 @@ const post = {
     },
 
     { type: 'productSlot', productKey: 'probiotics' },
-
-    {
-      type: 'nutrioneSlot',
-      products: [
-        { nutrioneId: '1000000818', productName: '뉴트리원 프로&프리 바이오틱스', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000818/480_1000000818_ITEM2024121091360.png', price: 89900 },
-        { nutrioneId: '1000000945', productName: '뉴트리원 프로바이오틱스 100억 맥스', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000945/480_1000000945_ITEM2024110868186.png', price: 186100 },
-        { nutrioneId: '1000296320', productName: '뉴트리원 지노프리 질유산균', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000296320/480_1000296320_ITEM2024042618420.png', price: 49800 },
-      ],
-    },
 
     { type: 'h2', id: 'faq', text: '자주 묻는 질문' },
     {
