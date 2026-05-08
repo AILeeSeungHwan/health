@@ -15,7 +15,9 @@ const guides = [
     tags: ['영양제', '건강기능식품', '선택법'],
     topic: '영양제 고르는 법',
     audienceLevel: 'beginner',
-    relatedSlugs: ['omega-3', 'vitamin-d'],
+    relatedOtc: [],
+    relatedSupplements: ['omega-3', 'vitamin-d', 'multivitamin', 'probiotics'],
+    relatedSlugs: [],
   },
   {
     id: 'G0002',
@@ -31,7 +33,9 @@ const guides = [
     tags: ['다이어트', '다이어트 식단', '근손실', '요요', '칼로리'],
     topic: '다이어트 원칙',
     audienceLevel: 'beginner',
-    relatedSlugs: ['omega-3', 'magnesium'],
+    relatedOtc: [],
+    relatedSupplements: ['multivitamin', 'blood-sugar-care', 'omega-3'],
+    relatedSlugs: [],
   },
   {
     id: 'G0003',
@@ -47,7 +51,9 @@ const guides = [
     tags: ['일반의약품', '진통제 부작용', '약 상호작용', '타이레놀', '이부프로펜'],
     topic: '일반의약품 안전 복용',
     audienceLevel: 'beginner',
-    relatedSlugs: ['how-to-choose-supplement'],
+    relatedOtc: ['tylenol-acetaminophen', 'ibuprofen', 'naproxen', 'cold-medicine'],
+    relatedSupplements: [],
+    relatedSlugs: [],
   },
   {
     id: 'G0004',
@@ -63,7 +69,8 @@ const guides = [
     tags: ['건강검진', '종합검진', '위내시경', '대장내시경', 'MRI 비용', '국가검진'],
     guideType: 'health-management',
     targetAudience: '일반 성인',
-    relatedSymptoms: [],
+    relatedOtc: [],
+    relatedSupplements: ['omega-3', 'vitamin-d', 'magnesium'],
     relatedSlugs: ['medical-insurance-claim'],
   },
   {
@@ -80,7 +87,8 @@ const guides = [
     tags: ['실손보험', '의료비 청구', '보험금 청구', '실비보험', '건강보험 청구'],
     guideType: 'financial-health',
     targetAudience: '실손보험 가입자',
-    relatedSymptoms: [],
+    relatedOtc: [],
+    relatedSupplements: [],
     relatedSlugs: ['health-checkup-guide'],
   },
 ]

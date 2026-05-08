@@ -6,7 +6,7 @@
     <description>증상·일반의약품·영양제·건강제품 통합 가이드 — 식약처 기준의 안전한 건강 정보.</description>
     <language>ko</language>
     <copyright>© 2026 건강모아</copyright>
-    <lastBuildDate>Fri, 08 May 2026 07:04:38 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 09:10:30 +0000</lastBuildDate>
     <generator>healthmoa scripts/generate-rss.js</generator>
     <atom:link href="https://health.ambitstock.com/rss.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -604,7 +604,7 @@
     <item>
       <title>잠 안 올 때 — 불면 해결 종합 가이드</title>
       <link>https://health.ambitstock.com/situations/sleep-issue/</link>
-      <description><![CDATA[불면의 원인부터 수면 위생 원칙, 마그네슘·멜라토닌 등 도움될 수 있는 영양제, 만성 불면 시 의료 상담이 필요한 신호까지 정리합니다.]]></description>
+      <description><![CDATA[불면의 원인부터 수면 위생 원칙, 마그네슘·멜라토닉 등 도움될 수 있는 영양제, 만성 불면 시 의료 상담이 필요한 신호까지 정리합니다.]]></description>
       <pubDate>Fri, 24 Apr 2026 03:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://health.ambitstock.com/situations/sleep-issue/</guid>
       <category>상황허브</category>

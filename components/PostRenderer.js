@@ -50,17 +50,34 @@ function TOC({ sections }) {
 
 function normalize(s) { return s ? String(s).replace(/[\s\-·・]/g, '').toLowerCase() : '' }
 
+const CAT_BADGE = {
+  symptom:   { label: '증상',      bg: '#FEE2E2', color: '#B91C1C' },
+  otc:       { label: '일반의약품', bg: '#DBEAFE', color: '#1D4ED8' },
+  supplement:{ label: '영양제',     bg: '#DCFCE7', color: '#15803D' },
+  product:   { label: '건강제품',   bg: '#FEF3C7', color: '#B45309' },
+  situation: { label: '종합가이드', bg: '#EDE9FE', color: '#6D28D9' },
+  guide:     { label: '가이드',     bg: '#E0F2FE', color: '#0369A1' },
+  compare:   { label: '비교',       bg: '#FCE7F3', color: '#BE185D' },
+  tool:      { label: '계산기',     bg: '#F1F5F9', color: '#475569' },
+}
+
 function RelatedPostsCard({ related }) {
   if (!related || related.length === 0) return null
   return (
-    <div style={{ margin: '0 0 14px', padding: '14px 16px', background: '#F0F9FF', borderRadius: 10, border: '1px solid #BAE6FD' }}>
-      <div style={{ fontSize: 11, fontWeight: 700, color: '#0369A1', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.06em' }}>📌 관련 포스팅</div>
-      {related.slice(0, 4).map(r => (
-        <Link key={r.slug} href={r.url}
-          style={{ display: 'block', padding: '7px 0', borderBottom: '1px solid #E0F2FE', textDecoration: 'none', color: '#1D4ED8', fontSize: 14, fontWeight: 600, lineHeight: 1.4 }}>
-          {r.title} →
-        </Link>
-      ))}
+    <div style={{ margin: '0 0 20px', background: '#F8FAFC', borderRadius: 12, padding: '14px 16px', border: '1px solid #E2E8F0' }}>
+      <div style={{ fontSize: 11, fontWeight: 700, color: '#64748B', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.08em' }}>📌 함께 보면 좋은 글</div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
+        {related.slice(0, 4).map(r => {
+          const badge = CAT_BADGE[r.category] || { label: r.category, bg: '#F1F5F9', color: '#475569' }
+          return (
+            <Link key={r.slug} href={r.url} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: '#fff', borderRadius: 8, border: '1px solid #E5E7EB', textDecoration: 'none' }}>
+              <span style={{ fontSize: 10, fontWeight: 700, color: badge.color, background: badge.bg, padding: '2px 7px', borderRadius: 4, flexShrink: 0, whiteSpace: 'nowrap' }}>{badge.label}</span>
+              <span style={{ fontSize: 14, fontWeight: 600, color: '#1E293B', lineHeight: 1.4, flex: 1 }}>{r.title}</span>
+              <span style={{ color: '#94A3B8', fontSize: 13, flexShrink: 0 }}>→</span>
+            </Link>
+          )
+        })}
+      </div>
     </div>
   )
 }
@@ -297,17 +314,20 @@ export default function PostRenderer({ meta, postData, related }) {
         )}
 
         {related && related.length > 0 && (
-          <section style={{ marginTop:28, paddingTop:22, borderTop:'1px solid #E5E7EB' }}>
-            <h2 style={{ fontSize:17, fontWeight:800, marginBottom:10 }}>관련 콘텐츠</h2>
-            <ul style={{ listStyle:'none', padding:0, margin:0 }}>
-              {related.map(r => (
-                <li key={r.slug} style={{ padding:'10px 0', borderBottom:'1px solid #F3F4F6' }}>
-                  <Link href={r.url} style={{ color:'#2563EB', textDecoration:'none', fontSize:14, fontWeight:600 }}>
-                    {r.title}
+          <section style={{ marginTop:32, paddingTop:24, borderTop:'2px solid #F1F5F9' }}>
+            <h2 style={{ fontSize:16, fontWeight:800, marginBottom:14, color:'#1E293B' }}>함께 보면 좋은 글</h2>
+            <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
+              {related.map(r => {
+                const badge = CAT_BADGE[r.category] || { label: r.category, bg: '#F1F5F9', color: '#475569' }
+                return (
+                  <Link key={r.slug} href={r.url} style={{ display:'flex', alignItems:'center', gap:12, padding:'12px 14px', background:'#fff', borderRadius:10, border:'1px solid #E5E7EB', textDecoration:'none', boxShadow:'0 1px 3px rgba(0,0,0,0.04)' }}>
+                    <span style={{ fontSize:10, fontWeight:700, color:badge.color, background:badge.bg, padding:'3px 8px', borderRadius:5, flexShrink:0, whiteSpace:'nowrap' }}>{badge.label}</span>
+                    <span style={{ fontSize:14, fontWeight:600, color:'#1E293B', lineHeight:1.45, flex:1 }}>{r.title}</span>
+                    <span style={{ color:'#CBD5E1', fontSize:16, flexShrink:0 }}>›</span>
                   </Link>
-                </li>
-              ))}
-            </ul>
+                )
+              })}
+            </div>
           </section>
         )}
       </article>

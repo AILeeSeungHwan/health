@@ -14,9 +14,12 @@ const compares = [
     updatedAt: '2026-04-24',
     tags: ['진통제', '타이레놀', '이부프로펜', '나프록센'],
     entityType: 'otc',
-    itemSlugs: ['tylenol-acetaminophen', 'ibuprofen'],
+    itemSlugs: ['tylenol-acetaminophen', 'ibuprofen', 'naproxen'],
     comparisonAxes: ['주성분', '적응증', '부작용', '복용 시점', '금기'],
-    relatedSlugs: ['headache'],
+    relatedOtc: ['tylenol-acetaminophen', 'ibuprofen', 'naproxen'],
+    relatedSupplements: ['magnesium'],
+    relatedSymptoms: ['headache', 'migraine'],
+    relatedSlugs: [],
   },
   {
     id: 'C0002',
@@ -32,8 +35,10 @@ const compares = [
     tags: ['오메가3', 'rTG 오메가3', 'EPA DHA', '오메가3 비교', '생선기름'],
     compareType: 'supplement-brands',
     targetProducts: ['정관장 홍삼오메가3', '뉴트리원 rTG오메가3', '캘리포니아골드 오메가800', '노르딕내추럴 얼티밋 오메가'],
-    relatedSymptoms: ['back-pain', 'knee-pain'],
-    relatedSlugs: ['red-ginseng', 'glucosamine'],
+    relatedOtc: [],
+    relatedSupplements: ['omega-3', 'coq10', 'nutrione-omega3-coq10'],
+    relatedSymptoms: ['dry-eye', 'back-pain'],
+    relatedSlugs: [],
   },
 ]
 
