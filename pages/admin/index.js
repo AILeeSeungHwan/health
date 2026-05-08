@@ -306,8 +306,8 @@ export default function AdminPage() {
 
   const ntSeed = async () => {
     const p = encodeURIComponent(pwd)
-    setNtSeedMsg('시딩 중…')
-    const r = await fetch(`/api/admin/seed-nutrione?pwd=${p}`, { method: 'POST' })
+    setNtSeedMsg('동기화 중…')
+    const r = await fetch(`/api/admin/sync-nutrione-from-posts?pwd=${p}`, { method: 'POST' })
     const d = await r.json()
     setNtSeedMsg(d.message || d.error || '완료')
     loadNutrione()
@@ -447,7 +447,7 @@ export default function AdminPage() {
                   {NUTRIONE_CATS.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
                 <span style={{ fontSize:12, color:'#9ca3af' }}>{ntList.length}개</span>
-                <button onClick={ntSeed} style={{ padding:'8px 14px', background:'#EFF6FF', border:'1px solid #BFDBFE', borderRadius:10, fontSize:12, cursor:'pointer', color:'#1D4ED8', fontWeight:600 }}>📦 베스트50 시딩</button>
+                <button onClick={ntSeed} style={{ padding:'8px 14px', background:'#EFF6FF', border:'1px solid #BFDBFE', borderRadius:10, fontSize:12, cursor:'pointer', color:'#1D4ED8', fontWeight:600 }}>🔄 포스트에서 동기화</button>
                 {ntSeedMsg && <span style={{ fontSize:11, color:'#6b7280' }}>{ntSeedMsg}</span>}
                 <button onClick={() => { setNtEditItem(null); setShowNtModal(true) }} style={{ marginLeft:'auto', padding:'8px 16px', background:'#1D4ED8', color:'#fff', border:'none', borderRadius:10, fontWeight:700, fontSize:13, cursor:'pointer' }}>+ 상품 추가</button>
               </div>
@@ -460,7 +460,7 @@ export default function AdminPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {ntList.length === 0 && <tr><td colSpan={7} style={{ padding:20, textAlign:'center', color:'#9ca3af' }}>등록된 상품이 없습니다. "베스트50 시딩" 버튼을 눌러주세요.</td></tr>}
+                    {ntList.length === 0 && <tr><td colSpan={7} style={{ padding:20, textAlign:'center', color:'#9ca3af' }}>등록된 상품이 없습니다. "포스트에서 동기화" 버튼을 눌러주세요.</td></tr>}
                     {ntList.map(item => (
                       <tr key={item.id} style={{ borderBottom:'1px solid #f3f4f6', opacity: item.is_active ? 1 : 0.45 }}>
                         <td style={{ padding:'8px 12px' }}>

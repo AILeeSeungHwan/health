@@ -6,7 +6,7 @@
     <description>증상·일반의약품·영양제·건강제품 통합 가이드 — 식약처 기준의 안전한 건강 정보.</description>
     <language>ko</language>
     <copyright>© 2026 건강모아</copyright>
-    <lastBuildDate>Fri, 08 May 2026 03:23:54 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 04:38:50 +0000</lastBuildDate>
     <generator>healthmoa scripts/generate-rss.js</generator>
     <atom:link href="https://health.ambitstock.com/rss.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -287,6 +287,102 @@
       <description><![CDATA[산수유·오미자·구기자·홍경천 등 한방 복합 생약 진액의 주요 성분, 어댑토겐 효능, 홍삼과의 차이, 항응고제 복용자 주의사항을 정리합니다.]]></description>
       <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://health.ambitstock.com/supplements/premium-herbal/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 프리미엄 알부민 골드 — 성분·효능·복용법 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-albumin-gold/</link>
+      <description><![CDATA[뉴트리원 프리미엄 알부민 골드의 가수분해 알부민 성분, 단백질 공급 효과, 복용 대상, 주의사항을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-albumin-gold/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 초임계 알티지 오메가3 코큐텐 — 심혈관 복합 영양제 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-omega3-coq10/</link>
+      <description><![CDATA[뉴트리원 초임계 알티지 오메가3 코큐텐의 rTG 오메가3와 코엔자임Q10 복합 효능, 식약처 기능성, 복용법을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-omega3-coq10/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 프로바이오틱스 100억 맥스 — 유산균 제품 완벽 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-probiotics-max/</link>
+      <description><![CDATA[뉴트리원 프로바이오틱스 100억 맥스의 균주 구성, 장 건강 개선 효과, 보관법, 다른 뉴트리원 유산균 제품 비교를 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-probiotics-max/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 유기농 밀크씨슬 퓨어 — 간 건강 실리마린 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-milk-thistle-pure/</link>
+      <description><![CDATA[뉴트리원 유기농 밀크씨슬 퓨어의 실리마린 함량, 간 기능 개선 효과, 복용법, 주의사항을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-milk-thistle-pure/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 브레인 알파 피에스 — 포스파티딜세린 인지기능 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-brain-alpha-ps/</link>
+      <description><![CDATA[뉴트리원 브레인 알파 피에스의 포스파티딜세린(PS) 성분, 기억력 개선 효과, 식약처 개별인정형 기능성, 복용법을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-brain-alpha-ps/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 관절연골엔 뮤코다당단백 콘드로이친 1200 — 관절 건강 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-chondroitin-1200/</link>
+      <description><![CDATA[뉴트리원 콘드로이친 1200의 뮤코다당단백·콘드로이친 성분, 관절 연골 건강 효과, 복용법, 주의사항을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-chondroitin-1200/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 리포좀 비타민C 골드 — 고흡수 비타민C 완벽 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-vitamin-c-gold/</link>
+      <description><![CDATA[뉴트리원 리포좀 비타민C 골드의 리포좀 포집 기술, 일반 비타민C 대비 흡수율 차이, 항산화·면역 효과, 복용법을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-vitamin-c-gold/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 올레샷 — 엑스트라버진 올리브오일·레몬즙 라인업 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-olleshot/</link>
+      <description><![CDATA[뉴트리원 올레샷의 엑스트라버진 올리브오일·레몬즙 성분, 공복 복용법, 올레오칸탈 항염 효과, 전 제품 라인업을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-olleshot/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 NFC 유기농 블루베리·하스카프베리 착즙액 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-blueberry-nfc/</link>
+      <description><![CDATA[뉴트리원 NFC 블루베리·하스카프베리 착즙액의 NFC 제조 방식, 안토시아닌 함량, 눈·혈관·항산화 효과, 복용법을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-blueberry-nfc/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 저분자 콜라겐 S — 전 라인업 성분·효능 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-collagen-s/</link>
+      <description><![CDATA[뉴트리원 저분자 콜라겐 S 전 제품(글루타치온·비오틴·화이트·엘라스틴) 라인업 비교, 흡수율, 비타민C 병용법을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-collagen-s/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 루테인지아잔틴 에이엑스 GR — 프리미엄 눈 영양제 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-lutein-ax/</link>
+      <description><![CDATA[뉴트리원 루테인 에이엑스 GR의 유리형 루테인·아스타잔틴·오메가3 복합 성분, 식약처 기능성, 단일 제품과의 차이를 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-lutein-ax/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>뉴트리원 아스타잔틴7 루테인지아잔틴 — 7mg 아스타잔틴 눈 영양제 가이드</title>
+      <link>https://health.ambitstock.com/supplements/nutrione-astaxanthin7/</link>
+      <description><![CDATA[뉴트리원 아스타잔틴7의 아스타잔틴 7mg+루테인 복합 구성, 디지털 눈 피로 개선 효과, 식약처 개별인정형 기능성을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/nutrione-astaxanthin7/</guid>
       <category>영양제</category>
     </item>
     <item>
