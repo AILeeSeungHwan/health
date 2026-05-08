@@ -5,8 +5,11 @@ const post = {
     {
       type: 'intro',
       html: '<p><strong>한눈에 보기:</strong> 뉴트리원 관절연골엔 뮤코다당단백 콘드로이친 1200은 콘드로이친황산나트륨·글루코사민·MSM을 복합한 관절 전문 영양제입니다. "1200"은 콘드로이친 1,200mg 기준 함량을 의미하며, 식약처 고시형 기능성 원료인 뮤코다당단백 복합물을 함유합니다.</p><div class="meta-row"><span class="tag">뉴트리원 공식 제품</span> <span class="tag tag-approved">식약처 기능성 고시</span></div>',
-    },
-    { type: 'toc' },
+    },    { type: 'toc' },
+
+    { type: 'callout', html: "<p>콘드로이친 제품을 고를 때 1일 함량이 얼마인지 확인하게 됐다. 연구에서 효과를 보인 용량이 1,200mg 근처라는 걸 알고 나서 함량을 먼저 보는 습관이 생겼다.</p>" },
+
+{ type: 'callout', html: "<p>콘드로이친 제품을 고를 때 1일 함량이 얼마인지 확인하게 됐다. 연구에서 효과를 보인 용량이 1,200mg 근처라는 걸 알고 나서 함량을 먼저 보는 습관이 생겼다.</p>" },,
 
     { type: 'h2', id: 'product-overview', text: '제품 특징' },
     {

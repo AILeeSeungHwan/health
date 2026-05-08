@@ -4,7 +4,7 @@ const products = [
   {
     id: 'P0001',
     slug: 'chicken-breast-sausage',
-    title: '닭가슴살 소시지 추천·선택 가이드 — 건강모아',
+    title: '닭가슴살 소시지 추천·선택 가이드',
     description: '닭가슴살 소시지 100g 당 단백질 18g 수준, 지방 2g 이하. 나트륨·원재료 체크포인트, 다이어트·근육 유지용 섭취 전략, 브랜드별 비교 포인트까지 정리합니다.',
     category: 'product',
     ymylLevel: 'C',
@@ -24,7 +24,7 @@ const products = [
   {
     id: 'P0002',
     slug: 'whey-protein',
-    title: '유청 단백질(웨이 프로틴) 선택 가이드 — 건강모아',
+    title: '유청 단백질(웨이 프로틴) 선택 가이드',
     description: '유청 단백질 농축(WPC)·분리(WPI)·가수분해(WPH) 차이, 하루 단백질 권장량, 운동 후 섭취 타이밍, 유당 불내증·신장 질환자 주의까지 정리합니다.',
     category: 'product',
     ymylLevel: 'C',

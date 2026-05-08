@@ -5,7 +5,7 @@ const symptoms = [
   {
     id: 'S0001',
     slug: 'headache',
-    title: '두통 원인·대처법·병원 가야 할 때 — 건강모아',
+    title: '두통 원인·대처법·병원 가야 할 때',
     description: '두통의 주요 원인(긴장성·편두통·군발·2차성)과 집에서 해볼 수 있는 대처, 도움될 수 있는 일반의약품·영양제, 응급실 즉시 방문이 필요한 신호까지 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -28,7 +28,7 @@ const symptoms = [
   {
     id: 'S0002',
     slug: 'migraine',
-    title: '편두통 원인·전조증상·대처법 — 건강모아',
+    title: '편두통 원인·전조증상·대처법',
     description: '편두통의 특징적 증상(박동성 통증·빛·소리 민감·메스꺼움), 전조증상 유형, 급성기 대처와 예방적 관리, 병원에 가야 하는 신호까지 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -51,7 +51,7 @@ const symptoms = [
   {
     id: 'S0003',
     slug: 'insomnia',
-    title: '불면증 원인·대처법·병원 가야 할 때 — 건강모아',
+    title: '불면증 원인·대처법·병원 가야 할 때',
     description: '수면 문제의 주요 원인과 수면 위생 원칙, 멜라토닌·마그네슘 등 도움될 수 있는 보조 요법, 만성 불면 시 의료 상담이 필요한 신호까지 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -74,7 +74,7 @@ const symptoms = [
   {
     id: 'S0004',
     slug: 'back-pain',
-    title: '허리 통증 원인·대처법·디스크 의심 신호 — 건강모아',
+    title: '허리 통증 원인·대처법·디스크 의심 신호',
     description: '허리 통증(요통)의 원인(근육 염좌·허리디스크·척추관 협착증), 집에서 해볼 수 있는 대처, 일반의약품·영양제, 허리MRI가 필요한 시점, 응급 신호까지 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -97,7 +97,7 @@ const symptoms = [
   {
     id: 'S0005',
     slug: 'diabetes-early-signs',
-    title: '당뇨 초기 증상 — 자가 점검과 당뇨 검사 기준 — 건강모아',
+    title: '당뇨 초기 증상 — 자가 점검과 당뇨 검사 기준',
     description: '당뇨병 초기 증상(잦은 소변·갈증·피로·시야 흐림), 당화혈색소·공복혈당 기준, 생활습관 교정, 당뇨약 처방 시점, 응급 신호까지 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -120,7 +120,7 @@ const symptoms = [
   {
     id: 'S0006',
     slug: 'hantavirus',
-    title: '한타바이러스 증상·전파 경로·예방법 — 건강모아',
+    title: '한타바이러스 증상·전파 경로·예방법',
     description: '한타바이러스(신증후출혈열)의 주요 증상, 들쥐 접촉 후 잠복기, 중증 경과 신호, 병원 진료 시점, 야외 활동 시 예방 수칙까지 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -143,7 +143,7 @@ const symptoms = [
   {
     id: 'S0007',
     slug: 'neck-pain',
-    title: '목 통증 원인·일자목·목디스크 구분 — 건강모아',
+    title: '목 통증 원인·일자목·목디스크 구분',
     description: '목 통증의 주요 원인(근육 긴장·목디스크·경추 협착증), 일자목 여부 자가 확인, 집에서 해볼 수 있는 대처, 병원 가야 할 때를 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -166,7 +166,7 @@ const symptoms = [
   {
     id: 'S0008',
     slug: 'shoulder-pain',
-    title: '어깨 통증 — 충돌증후군·오십견·회전근개 파열 구분 — 건강모아',
+    title: '어깨 통증 — 충돌증후군·오십견·회전근개 파열 구분',
     description: '어깨 통증의 주요 3대 원인(회전근개 파열·오십견·충돌증후군)과 집에서 구분하는 방법, 보존 치료 vs 수술 기준, 어깨MRI 필요 시점을 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -189,7 +189,7 @@ const symptoms = [
   {
     id: 'S0009',
     slug: 'knee-pain',
-    title: '무릎 통증 원인·관절염·연골 손상 구분 — 건강모아',
+    title: '무릎 통증 원인·관절염·연골 손상 구분',
     description: '무릎 통증의 주요 원인(퇴행성 관절염·반월상연골 손상·슬개골 연골연화증)과 집에서 해볼 수 있는 대처, 연골 재생 주사 종류, 무릎MRI 필요 시점을 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -212,7 +212,7 @@ const symptoms = [
   {
     id: 'S0010',
     slug: 'frozen-shoulder',
-    title: '오십견(유착성 관절낭염) 단계별 증상과 치료 — 건강모아',
+    title: '오십견(유착성 관절낭염) 단계별 증상과 치료',
     description: '오십견의 3단계(동결기·동결진행기·해동기) 특징, 회전근개 파열과 구분법, 주사·물리치료·도수치료 선택 기준, 자연 치유 기간을 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -235,7 +235,7 @@ const symptoms = [
   {
     id: 'S0011',
     slug: 'menopause-symptoms',
-    title: '갱년기 증상 — 호르몬 변화·폐경기 관리 — 건강모아',
+    title: '갱년기 증상 — 호르몬 변화·폐경기 관리',
     description: '갱년기(폐경 전후기)의 주요 증상(안면홍조·수면장애·우울감·질건조증), 호르몬 치료 적응증과 금기, 갱년기 영양제 선택 기준을 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -258,7 +258,7 @@ const symptoms = [
   {
     id: 'S0012',
     slug: 'hair-loss',
-    title: '탈모 유형 구분·원인·치료 시점 — 건강모아',
+    title: '탈모 유형 구분·원인·치료 시점',
     description: '남성형·여성형·원형·휴지기 탈모의 차이, 탈모약(피나스테리드·미녹시딜) 효과와 부작용, 모발이식 적합 시점, 탈모에 도움될 수 있는 생활 습관을 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',
@@ -281,7 +281,7 @@ const symptoms = [
   {
     id: 'S0013',
     slug: 'dry-eye',
-    title: '안구건조증 — 원인·인공눈물 선택·치료 옵션 — 건강모아',
+    title: '안구건조증 — 원인·인공눈물 선택·치료 옵션',
     description: '안구건조증의 주요 원인(수성 부족형·지질층 결핍형), 인공눈물 성분 차이, 온찜질·오메가3의 역할, IPL·MiBo 등 치료 옵션을 정리합니다.',
     category: 'symptom',
     ymylLevel: 'A',

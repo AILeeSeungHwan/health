@@ -4,7 +4,7 @@ const tools = [
   {
     id: 'T0001',
     slug: 'bmi',
-    title: 'BMI 계산기 — 체질량지수 자동 계산 — 건강모아',
+    title: 'BMI 계산기 — 체질량지수 자동 계산',
     description: '키와 체중을 입력하면 BMI를 자동 계산하고, 저체중·정상·과체중·비만 구간과 관리 가이드를 안내합니다. WHO 아시아 태평양 기준 적용.',
     category: 'tool',
     ymylLevel: 'C',
@@ -21,7 +21,7 @@ const tools = [
   {
     id: 'T0002',
     slug: 'bmr',
-    title: '기초대사량(BMR) 계산기 — 건강모아',
+    title: '기초대사량(BMR) 계산기',
     description: '성별·나이·키·체중을 입력하면 Mifflin-St Jeor 공식으로 기초대사량을 계산합니다. 활동 계수 보정으로 하루 권장 칼로리까지 확인하세요.',
     category: 'tool',
     ymylLevel: 'C',
@@ -38,7 +38,7 @@ const tools = [
   {
     id: 'T0003',
     slug: 'daily-protein',
-    title: '단백질 권장 섭취량 계산기 — 건강모아',
+    title: '단백질 권장 섭취량 계산기',
     description: '체중과 활동 수준을 입력하면 하루 단백질 권장 섭취량을 g 단위로 계산합니다. 일반 성인·운동인·고령자 기준별 범위를 안내합니다.',
     category: 'tool',
     ymylLevel: 'C',
@@ -55,7 +55,7 @@ const tools = [
   {
     id: 'T0004',
     slug: 'water-intake',
-    title: '물 섭취량 계산기 — 건강모아',
+    title: '물 섭취량 계산기',
     description: '체중 기반 하루 물 섭취 권장량을 계산하고, 운동·기온·건강상태에 따른 추가 보충량을 안내합니다.',
     category: 'tool',
     ymylLevel: 'C',
@@ -72,7 +72,7 @@ const tools = [
   {
     id: 'T0005',
     slug: 'sleep-debt',
-    title: '수면 부채 계산기 — 건강모아',
+    title: '수면 부채 계산기',
     description: '최근 7일의 수면 시간을 입력하면 누적 수면 부채와 회복 권장 기간을 계산합니다. 수면 위생 실천 가이드도 제공합니다.',
     category: 'tool',
     ymylLevel: 'C',

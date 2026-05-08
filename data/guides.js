@@ -4,7 +4,7 @@ const guides = [
   {
     id: 'G0001',
     slug: 'how-to-choose-supplement',
-    title: '영양제 고르는 법 — 성분·인증·상호작용까지 완벽 가이드 — 건강모아',
+    title: '영양제 고르는 법 — 성분·인증·상호작용까지 완벽 가이드',
     description: '영양제와 건강기능식품 구분, 식약처 기능성 인증 마크 읽는 법, 약물 상호작용 체크리스트, 가격 대비 품질 판단까지 실전 가이드.',
     category: 'guide',
     ymylLevel: 'B',
@@ -20,7 +20,7 @@ const guides = [
   {
     id: 'G0002',
     slug: 'diet-principles',
-    title: '다이어트 원칙 — 칼로리·근손실 방지 완벽 가이드 — 건강모아',
+    title: '다이어트 원칙 — 칼로리·근손실 방지 완벽 가이드',
     description: '칼로리 적자 기본 원칙, 단백질로 근손실 방지, 요요 없는 체중 유지법, 다이어트 식단 패턴 비교까지 과학적 근거 기반으로 정리합니다.',
     category: 'guide',
     ymylLevel: 'B',
@@ -36,7 +36,7 @@ const guides = [
   {
     id: 'G0003',
     slug: 'otc-safe-use',
-    title: '일반의약품 안전 복용 가이드 — 중복·상호작용·부작용 — 건강모아',
+    title: '일반의약품 안전 복용 가이드 — 중복·상호작용·부작용',
     description: '아세트아미노펜·이부프로펜·항히스타민 등 OTC 계열별 안전 용량, 진통제 부작용, 약 상호작용 표, 특별 주의 그룹(임산부·노인·소아) 체크리스트까지 정리합니다.',
     category: 'guide',
     ymylLevel: 'B',
@@ -52,7 +52,7 @@ const guides = [
   {
     id: 'G0004',
     slug: 'health-checkup-guide',
-    title: '건강검진 항목 완전 해설 — 일반·종합·정밀 차이 — 건강모아',
+    title: '건강검진 항목 완전 해설 — 일반·종합·정밀 차이',
     description: '국가건강검진 기본 항목, 위내시경·대장내시경·MRI·CT 추가 검사 비용, 나이별 권장 검진 시기, 종합검진 선택 기준을 정리합니다.',
     category: 'guide',
     ymylLevel: 'A',
@@ -69,7 +69,7 @@ const guides = [
   {
     id: 'G0005',
     slug: 'medical-insurance-claim',
-    title: '실손보험 청구 완전 가이드 — 항목별 보장 여부 확인 — 건강모아',
+    title: '실손보험 청구 완전 가이드 — 항목별 보장 여부 확인',
     description: '실손의료보험 입원·외래·약제비 청구 방법, 청구 제외 항목(미용·예방접종 등), 청구 기한, 간편 청구 앱 활용법, 자주 거절되는 사례를 정리합니다.',
     category: 'guide',
     ymylLevel: 'A',

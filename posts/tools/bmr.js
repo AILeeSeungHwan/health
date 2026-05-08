@@ -3,6 +3,7 @@ const post = {
   calculator: 'bmr',
   sections: [
     { type: 'intro', html: '<p>기초대사량(BMR)은 <strong>가만히 누워 하루 종일 생명만 유지하는 데 필요한 에너지</strong>입니다. 심장·호흡·체온·뇌 활동 같은 기본 기능이 여기에 포함되고, 일반적으로 우리 하루 총 에너지 소비의 60~70%를 차지합니다. 위 계산기는 Mifflin-St Jeor 공식을 기반으로 BMR과 활동 수준을 곱한 하루 총 에너지 소비량(TDEE)까지 보여줘, 감량·유지·증량 전략을 세우는 출발점이 됩니다.</p>' },
+    { type: 'callout', html: "<p>다이어트할 때 하루에 얼마나 먹어야 하는지 몰라서 무조건 굶었다. 나중에 기초대사량보다 덜 먹으면 오히려 대사가 느려진다는 걸 알았다. 숫자로 파악하고 나서 식단 계획이 달라졌다.</p>" },
 
     { type: 'h2', id: 'formula', text: 'Mifflin-St Jeor 공식 — 왜 이걸 쓸까' },
     { type: 'body', html: '<p>과거엔 Harris-Benedict 공식이 표준이었지만, 현대 일반 성인 대상 메타분석에서 <strong>Mifflin-St Jeor가 평균 5% 이상 정확</strong>하다고 보고되면서 미국영양사협회(ADA)도 기본 공식으로 권고합니다.</p><p style="background:#F8FAFC;padding:14px 18px;border-radius:10px;font-family:monospace;font-size:14px;line-height:1.7"><strong>남성</strong>: 10 × kg + 6.25 × cm − 5 × 나이 + 5<br/><strong>여성</strong>: 10 × kg + 6.25 × cm − 5 × 나이 − 161</p>' },

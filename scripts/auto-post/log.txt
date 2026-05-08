@@ -1,0 +1,434 @@
+
+================ [2026-05-03 01:22:02] auto-post run (slot=morning count=1) ================
+
+--- post 1/1 @ 01:22:02 ---
+topic: {"id":"G-checkup","type":"guide","slug":"health-checkup-guide","title_hint":"건강검진 항목 해설 — 일반·종합·정밀","high_cpc_keywords":["종합검진","위내시경","대장내시경","MRI 비용"],"priority":"high"}
+error: An unknown error occurred (Unexpected)
+[exit code: 1]
+
+================ done @ 01:22:02 ================
+
+================ [2026-05-03 07:00:02] auto-post BATCH (slot=morning count=3) ================
+topics:
+[
+  {
+    "id": "G-diet-principles",
+    "type": "guide",
+    "slug": "diet-principles",
+    "title_hint": "다이어트 원칙 — 칼로리·근손실 방지",
+    "high_cpc_keywords": [
+      "다이어트 식단",
+      "근손실",
+      "요요"
+    ],
+    "priority": "high"
+  },
+  {
+    "id": "H-back-pain-care",
+    "type": "situation",
+    "slug": "back-pain-care",
+    "title_hint": "허리가 아플 때 — 자세·운동·치료 단계",
+    "high_cpc_keywords": [
+      "디스크 치료",
+      "허리 시술"
+    ],
+    "priority": "high"
+  },
+  {
+    "id": "S-back-pain",
+    "type": "symptom",
+    "slug": "back-pain",
+    "title_hint": "허리 통증 원인·대처법·디스크 의심 신호",
+    "high_cpc_keywords": [
+      "허리디스크",
+      "디스크 수술비",
+      "허리MRI"
+    ],
+    "priority": "high"
+  }
+]
+완료. 3개 포스트 발행 및 푸시 성공.
+
+| ID | 타입 | 슬러그 | 특이사항 |
+|---|---|---|---|
+| G0002 | guide | `diet-principles` | 다이어트 식단·근손실·요요 키워드 포함, H2 12개+ |
+| H0004 | situation | `back-pain-care` | 디스크 치료·시술 단계표, emergency 섹션 포함 |
+| S0004 | symptom | `back-pain` | 허리MRI 섹션, 허리디스크 수술비 키워드, emergency 섹션 |
+
+sitemap 53 URLs → rss 24 items 재생성 완료. coupang-seed.json은 .gitignore 대상이라 로컬에만 업데이트됨 (허리 관련 제품 2개, 프로틴 1개 시드 추가).
+
+[exit code: 0]
+================ done @ 07:08:21 ================
+
+================ [2026-05-03 12:00:02] auto-post BATCH (slot=noon count=3) ================
+topics:
+[
+  {
+    "id": "C-massage-chair",
+    "type": "compare",
+    "slug": "massage-chair-brands",
+    "title_hint": "안마의자 브랜드 비교 — 바디프랜드·휴테크·코지마",
+    "high_cpc_keywords": [
+      "안마의자 비교",
+      "렌탈",
+      "리스"
+    ],
+    "priority": "high"
+  },
+  {
+    "id": "U-calcium",
+    "type": "supplement",
+    "slug": "calcium-vit-d",
+    "title_hint": "칼슘+비타민D — 골다공증 예방",
+    "high_cpc_keywords": [
+      "칼슘 영양제",
+      "골다공증 검사"
+    ],
+    "priority": "high"
+  },
+  {
+    "id": "O-allegra",
+    "type": "otc",
+    "slug": "allegra",
+    "title_hint": "알레그라 — 펙소페나딘",
+    "high_cpc_keywords": [
+      "비염 약",
+      "항히스타민제"
+    ],
+    "priority": "medium"
+  }
+]
+API Error: Unable to connect to API (ConnectionRefused)
+
+[exit code: 1]
+================ done @ 12:03:03 ================
+
+================ [2026-05-03 18:00:02] auto-post BATCH (slot=evening count=3) ================
+topics:
+[
+  {
+    "id": "C-omega3-brand",
+    "type": "compare",
+    "slug": "omega3-brands",
+    "title_hint": "오메가3 브랜드 비교 — 정관장·뉴트리원·캘리포니아골드",
+    "high_cpc_keywords": [
+      "오메가3 추천",
+      "rTG 오메가3",
+      "오메가3 브랜드"
+    ],
+    "priority": "high"
+  },
+  {
+    "id": "G-insurance",
+    "type": "guide",
+    "slug": "medical-insurance-claim",
+    "title_hint": "실손보험 청구 가이드 — 항목별 보장",
+    "high_cpc_keywords": [
+      "실손보험",
+      "의료비 청구",
+      "보험금"
+    ],
+    "priority": "high"
+  },
+  {
+    "id": "P-bp-monitor",
+    "type": "product",
+    "slug": "blood-pressure-monitor",
+    "title_hint": "혈압계 — 가정용 의료기기 선택",
+    "high_cpc_keywords": [
+      "가정용 혈압계",
+      "오므론 혈압계"
+    ],
+    "priority": "high"
+  }
+]
+API Error: Unable to connect to API (FailedToOpenSocket)
+
+[exit code: 1]
+================ done @ 18:02:58 ================
+
+================ [2026-05-04 07:00:00] auto-post BATCH (slot=morning count=3) ================
+topics:
+[
+  {
+    "id": "H-diet",
+    "type": "situation",
+    "slug": "diet",
+    "title_hint": "다이어트 종합 — 칼로리·운동·정체기",
+    "high_cpc_keywords": [
+      "다이어트 약",
+      "위절제술",
+      "비만 클리닉"
+    ],
+    "priority": "high"
+  },
+  {
+    "id": "S-diabetes-early",
+    "type": "symptom",
+    "slug": "diabetes-early-signs",
+    "title_hint": "당뇨 초기 증상과 자가 점검",
+    "high_cpc_keywords": [
+      "당뇨 검사",
+      "당화혈색소",
+      "당뇨약"
+    ],
+    "priority": "high"
+  },
+  {
+    "id": "G-otc-safe",
+    "type": "guide",
+    "slug": "otc-safe-use",
+    "title_hint": "일반의약품 안전 복용 — 중복·상호작용",
+    "high_cpc_keywords": [
+      "진통제 부작용",
+      "약 상호작용"
+    ],
+    "priority": "medium"
+  }
+]
+완료. 3개 포스트 생성 → 피드 재생성 → 단일 커밋 푸시까지 전부 완료했습니다.
+
+**생성된 포스트**
+| 파일 | ID | 타입 |
+|---|---|---|
+| `posts/situations/diet.js` | H0005 | situation — 다이어트 종합(칼로리·운동·정체기·위절제술·비만 클리닉) |
+| `posts/symptoms/diabetes-early-signs.js` | S0005 | symptom — 당뇨 초기 증상·당화혈색소·당뇨 검사 |
+| `posts/guides/otc-safe-use.js` | G0003 | guide — OTC 안전 복용·진통제 부작용·약 상호작용 표 |
+
+sitemap 56 URL / RSS 27 항목으로 갱신되어 push됐습니다.
+
+[exit code: 0]
+================ done @ 07:11:11 ================
+
+================ [2026-05-04 12:00:02] auto-post QUEUE (slot=noon count=3) ================
+
+================ [2026-05-04 18:00:02] auto-post QUEUE (slot=evening count=3) ================
+
+================ [2026-05-05 07:00:01] auto-post QUEUE (slot=morning count=3) ================
+
+================ [2026-05-05 12:00:01] auto-post QUEUE (slot=noon count=3) ================
+
+================ [2026-05-05 18:00:05] auto-post QUEUE (slot=evening count=3) ================
+
+================ [2026-05-06 07:00:01] auto-post QUEUE (slot=morning count=3) ================
+
+================ [2026-05-06 12:00:01] auto-post QUEUE (slot=noon count=3) ================
+
+================ [2026-05-06 18:00:01] auto-post QUEUE (slot=evening count=3) ================
+
+================ [2026-05-06 18:36:57] auto-post QUEUE (slot=morning count=3) ================
+큐 파일 7개 감지, 3개 처리 시도
+
+▶ 처리: 2-high-symptoms-neck-pain.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/symptoms/neck-pain.js
+APPENDED: S0007 to /Users/lee/Desktop/Project/health/health/data/symptoms.js
+ARCHIVED: 2-high-symptoms-neck-pain.js → done/
+  ✅ 완료
+
+▶ 처리: 3-high-symptoms-shoulder-pain.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/symptoms/shoulder-pain.js
+APPENDED: S0008 to /Users/lee/Desktop/Project/health/health/data/symptoms.js
+ARCHIVED: 3-high-symptoms-shoulder-pain.js → done/
+  ✅ 완료
+
+▶ 처리: 4-high-symptoms-knee-pain.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/symptoms/knee-pain.js
+APPENDED: S0009 to /Users/lee/Desktop/Project/health/health/data/symptoms.js
+ARCHIVED: 4-high-symptoms-knee-pain.js → done/
+  ✅ 완료
+
+처리 결과: 완료=3 스킵=0
+
+▶ npm run feeds
+
+> healthmoa@0.1.0 feeds
+> node scripts/regenerate-feeds.js
+
+sitemap.xml generated with 60 URLs.
+rss.xml generated with 31 items.
+✓ feeds (sitemap + rss) regenerated.
+fatal: pathspec 'public/atom.xml' did not match any files
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   data/symptoms.js
+	modified:   public/rss.xml
+	modified:   public/sitemap.xml
+	modified:   scripts/auto-post/auto-post.sh
+	deleted:    scripts/auto-post/queued-posts/2-high-symptoms-neck-pain.js
+	deleted:    scripts/auto-post/queued-posts/3-high-symptoms-shoulder-pain.js
+	deleted:    scripts/auto-post/queued-posts/4-high-symptoms-knee-pain.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	launchd/
+	posts/symptoms/knee-pain.js
+	posts/symptoms/neck-pain.js
+	posts/symptoms/shoulder-pain.js
+	scripts/auto-post/.queue-state.json
+	scripts/auto-post/log.txt
+	scripts/auto-post/pick-topic.js
+	scripts/auto-post/post-queue.json
+	scripts/auto-post/queued-posts/done/2-high-symptoms-neck-pain.js
+	scripts/auto-post/queued-posts/done/3-high-symptoms-shoulder-pain.js
+	scripts/auto-post/queued-posts/done/4-high-symptoms-knee-pain.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[WARN] git commit 실패 (코드 1) — 변경 없을 수 있음
+
+================ done @ 18:36:57 ================
+
+================ [2026-05-06 18:38:46] auto-post QUEUE (slot=manual count=4) ================
+큐 파일 4개 감지, 4개 처리 시도
+
+▶ 처리: 5-high-symptoms-frozen-shoulder.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/symptoms/frozen-shoulder.js
+APPENDED: S0010 to /Users/lee/Desktop/Project/health/health/data/symptoms.js
+ARCHIVED: 5-high-symptoms-frozen-shoulder.js → done/
+  ✅ 완료
+
+▶ 처리: 6-high-symptoms-menopause.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/symptoms/menopause-symptoms.js
+APPENDED: S0011 to /Users/lee/Desktop/Project/health/health/data/symptoms.js
+ARCHIVED: 6-high-symptoms-menopause.js → done/
+  ✅ 완료
+
+▶ 처리: 7-high-symptoms-hair-loss.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/symptoms/hair-loss.js
+APPENDED: S0012 to /Users/lee/Desktop/Project/health/health/data/symptoms.js
+ARCHIVED: 7-high-symptoms-hair-loss.js → done/
+  ✅ 완료
+
+▶ 처리: 8-high-symptoms-dry-eye.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/symptoms/dry-eye.js
+APPENDED: S0013 to /Users/lee/Desktop/Project/health/health/data/symptoms.js
+ARCHIVED: 8-high-symptoms-dry-eye.js → done/
+  ✅ 완료
+
+처리 결과: 완료=4 스킵=0
+
+▶ npm run feeds
+
+> healthmoa@0.1.0 feeds
+> node scripts/regenerate-feeds.js
+
+sitemap.xml generated with 64 URLs.
+rss.xml generated with 35 items.
+✓ feeds (sitemap + rss) regenerated.
+[main 89a3458] content: auto batch — 4개 (manual)
+ 11 files changed, 469 insertions(+), 1 deletion(-)
+ create mode 100644 posts/symptoms/dry-eye.js
+ create mode 100644 posts/symptoms/frozen-shoulder.js
+ create mode 100644 posts/symptoms/hair-loss.js
+ create mode 100644 posts/symptoms/menopause-symptoms.js
+ rename scripts/auto-post/queued-posts/{ => done}/5-high-symptoms-frozen-shoulder.js (100%)
+ rename scripts/auto-post/queued-posts/{ => done}/6-high-symptoms-menopause.js (100%)
+ rename scripts/auto-post/queued-posts/{ => done}/7-high-symptoms-hair-loss.js (100%)
+ rename scripts/auto-post/queued-posts/{ => done}/8-high-symptoms-dry-eye.js (100%)
+To https://github.com/AILeeSeungHwan/health.git
+   0a78319..89a3458  main -> main
+✅ git push 완료
+
+================ done @ 18:38:49 ================
+
+================ [2026-05-07 07:00:01] auto-post QUEUE (slot=morning count=3) ================
+큐 파일 6개 감지, 3개 처리 시도
+
+▶ 처리: 10-high-supplements-probiotics.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/supplements/probiotics.js
+APPENDED: U0006 to /Users/lee/Desktop/Project/health/health/data/supplements.js
+ARCHIVED: 10-high-supplements-probiotics.js → done/
+  ✅ 완료
+
+▶ 처리: 11-high-supplements-lutein.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/supplements/lutein.js
+APPENDED: U0007 to /Users/lee/Desktop/Project/health/health/data/supplements.js
+ARCHIVED: 11-high-supplements-lutein.js → done/
+  ✅ 완료
+
+▶ 처리: 12-high-guides-health-checkup.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/guides/health-checkup-guide.js
+APPENDED: G0004 to /Users/lee/Desktop/Project/health/health/data/guides.js
+ARCHIVED: 12-high-guides-health-checkup.js → done/
+  ✅ 완료
+
+처리 결과: 완료=3 스킵=0
+
+▶ npm run feeds
+
+> healthmoa@0.1.0 feeds
+> node scripts/regenerate-feeds.js
+
+sitemap.xml generated with 67 URLs.
+rss.xml generated with 38 items.
+✓ feeds (sitemap + rss) regenerated.
+[main 11e8c21] content: auto batch — 3개 (morning)
+ 10 files changed, 334 insertions(+), 1 deletion(-)
+ create mode 100644 posts/guides/health-checkup-guide.js
+ create mode 100644 posts/supplements/lutein.js
+ create mode 100644 posts/supplements/probiotics.js
+ rename scripts/auto-post/queued-posts/{ => done}/10-high-supplements-probiotics.js (100%)
+ rename scripts/auto-post/queued-posts/{ => done}/11-high-supplements-lutein.js (100%)
+ rename scripts/auto-post/queued-posts/{ => done}/12-high-guides-health-checkup.js (100%)
+To https://github.com/AILeeSeungHwan/health.git
+   baf7821..11e8c21  main -> main
+✅ git push 완료
+
+================ done @ 07:00:13 ================
+
+================ [2026-05-07 12:00:01] auto-post QUEUE (slot=noon count=3) ================
+큐 파일 3개 감지, 3개 처리 시도
+
+▶ 처리: 13-high-guides-insurance-claim.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/guides/medical-insurance-claim.js
+APPENDED: G0005 to /Users/lee/Desktop/Project/health/health/data/guides.js
+ARCHIVED: 13-high-guides-insurance-claim.js → done/
+  ✅ 완료
+
+▶ 처리: 14-high-compares-omega3-brands.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/compares/omega3-brands.js
+APPENDED: C0002 to /Users/lee/Desktop/Project/health/health/data/compares.js
+ARCHIVED: 14-high-compares-omega3-brands.js → done/
+  ✅ 완료
+
+▶ 처리: 9-high-supplements-red-ginseng.js
+WROTE: /Users/lee/Desktop/Project/health/health/posts/supplements/red-ginseng.js
+APPENDED: U0005 to /Users/lee/Desktop/Project/health/health/data/supplements.js
+ARCHIVED: 9-high-supplements-red-ginseng.js → done/
+  ✅ 완료
+
+처리 결과: 완료=3 스킵=0
+
+▶ npm run feeds
+
+> healthmoa@0.1.0 feeds
+> node scripts/regenerate-feeds.js
+
+sitemap.xml generated with 70 URLs.
+rss.xml generated with 41 items.
+✓ feeds (sitemap + rss) regenerated.
+[main b473500] content: auto batch — 3개 (noon)
+ 11 files changed, 323 insertions(+), 1 deletion(-)
+ create mode 100644 posts/compares/omega3-brands.js
+ create mode 100644 posts/guides/medical-insurance-claim.js
+ create mode 100644 posts/supplements/red-ginseng.js
+ rename scripts/auto-post/queued-posts/{ => done}/13-high-guides-insurance-claim.js (100%)
+ rename scripts/auto-post/queued-posts/{ => done}/14-high-compares-omega3-brands.js (100%)
+ rename scripts/auto-post/queued-posts/{ => done}/9-high-supplements-red-ginseng.js (100%)
+To https://github.com/AILeeSeungHwan/health.git
+   11e8c21..b473500  main -> main
+✅ git push 완료
+
+================ done @ 12:00:07 ================
+
+================ [2026-05-07 18:00:01] auto-post QUEUE (slot=evening count=3) ================
+[QUEUE EMPTY] 처리할 파일 없음. 새 포스트를 큐에 추가하세요.
+
+================ [2026-05-08 07:00:02] auto-post QUEUE (slot=morning count=3) ================
+[QUEUE EMPTY] 처리할 파일 없음. 새 포스트를 큐에 추가하세요.
+
+================ [2026-05-08 12:00:05] auto-post QUEUE (slot=noon count=3) ================
+[QUEUE EMPTY] 처리할 파일 없음. 새 포스트를 큐에 추가하세요.

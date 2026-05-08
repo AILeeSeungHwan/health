@@ -5,8 +5,11 @@ const post = {
     {
       type: 'intro',
       html: '<p><strong>한눈에 보기:</strong> 오메가3 영양제는 형태(TG·EE·rTG)에 따라 흡수율이 다르고, 라벨의 "총 어유 함량"과 "EPA+DHA 순 함량"이 크게 다를 수 있습니다. 이 페이지에서 형태별 차이, 실제 EPA+DHA 계산법, 주요 브랜드 비교를 정리합니다.</p><div class="meta-row"><span class="tag">분류: 영양제 브랜드 비교</span></div><p style="font-size:13px;color:#888;margin-top:12px">※ 브랜드별 제품 스펙은 변경될 수 있습니다. 구매 전 현재 제품 라벨을 확인하세요.</p>',
-    },
-    { type: 'toc' },
+    },    { type: 'toc' },
+
+    { type: 'callout', html: "<p>오메가3를 처음 살 때 함량 숫자만 봤다. EPA와 DHA를 따로 확인해야 한다는 것도, rTG와 EE 형태 차이가 있다는 것도 한참 나중에 알았다. 비싸다고 좋은 게 아니라 기준을 알아야 제대로 고를 수 있다.</p>" },
+
+{ type: 'callout', html: "<p>오메가3를 처음 살 때 함량 숫자만 봤다. EPA와 DHA를 따로 확인해야 한다는 것도, rTG와 EE 형태 차이가 있다는 것도 한참 나중에 알았다. 비싸다고 좋은 게 아니라 기준을 알아야 제대로 고를 수 있다.</p>" },,
 
     { type: 'h2', id: 'forms', text: '오메가3 형태 3가지 — 무엇이 다른가' },
     {

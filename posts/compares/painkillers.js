@@ -1,8 +1,11 @@
 const post = {
   id: 'C0001',
   sections: [
-    { type: 'intro', html: '<p><strong>한 줄 결론:</strong> 위장·간이 민감하면 아세트아미노펜, 염증성 통증이면 이부프로펜, 장시간 지속되는 통증이면 나프록센 계열이 옵션. 단 성분 중복 복용·공복 복용에 주의.</p>' },
-    { type: 'toc' },
+    { type: 'intro', html: '<p><strong>한 줄 결론:</strong> 위장·간이 민감하면 아세트아미노펜, 염증성 통증이면 이부프로펜, 장시간 지속되는 통증이면 나프록센 계열이 옵션. 단 성분 중복 복용·공복 복용에 주의.</p>' },    { type: 'toc' },
+
+    { type: 'callout', html: "<p>타이레놀이 나을지 이부프로펜이 나을지 친구한테 물어본 적이 있다. 대답은 \"상황마다 달라\"였다. 처음엔 그 말이 무슨 뜻인지 몰랐는데 — 진통제는 성분마다 작용 방식이 달라서 통증 유형에 따라 더 맞는 게 있다.</p>" },
+
+{ type: 'callout', html: "<p>타이레놀이 나을지 이부프로펜이 나을지 친구한테 물어본 적이 있다. 대답은 \"상황마다 달라\"였다. 처음엔 그 말이 무슨 뜻인지 몰랐는데 — 진통제는 성분마다 작용 방식이 달라서 통증 유형에 따라 더 맞는 게 있다.</p>" },,
 
     { type: 'h2', id: 'table', text: '성분별 핵심 비교표' },
     { type: 'body', html: '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:14px"><thead><tr style="border-bottom:2px solid #e5e7eb;text-align:left"><th style="padding:10px 8px">성분</th><th style="padding:10px 8px">주 적응증</th><th style="padding:10px 8px">위장 부담</th><th style="padding:10px 8px">복용 시점</th><th style="padding:10px 8px">주의</th></tr></thead><tbody><tr style="border-bottom:1px solid #eee"><td style="padding:10px 8px"><strong>아세트아미노펜</strong><br/>(타이레놀)</td><td style="padding:10px 8px">두통·발열·근육통</td><td style="padding:10px 8px">낮음</td><td style="padding:10px 8px">공복 가능</td><td style="padding:10px 8px">간독성·음주 주의</td></tr><tr style="border-bottom:1px solid #eee"><td style="padding:10px 8px"><strong>이부프로펜</strong><br/>(부루펜·이지엔6)</td><td style="padding:10px 8px">염증성 통증·생리통</td><td style="padding:10px 8px">중간</td><td style="padding:10px 8px">식사 중·식후</td><td style="padding:10px 8px">궤양·신장·심부전</td></tr><tr><td style="padding:10px 8px"><strong>나프록센</strong><br/>(낙센 등)</td><td style="padding:10px 8px">관절통·장시간 통증</td><td style="padding:10px 8px">중간~높음</td><td style="padding:10px 8px">식사 중·식후</td><td style="padding:10px 8px">고령자·위장 출혈 주의</td></tr></tbody></table></div>' },

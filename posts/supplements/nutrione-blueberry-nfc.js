@@ -5,8 +5,11 @@ const post = {
     {
       type: 'intro',
       html: '<p><strong>한눈에 보기:</strong> 뉴트리원 NFC 유기농 블루베리 착즙액과 NFC 하스카프베리 착즙액은 과일을 직접 압착해 열처리 없이 제조한 Non-From-Concentrate(NFC) 제품입니다. 농축 환원 주스와 달리 과일 본래의 안토시아닌·폴리페놀·비타민이 온전히 보존됩니다.</p><div class="meta-row"><span class="tag">뉴트리원 공식 제품</span> <span class="tag">식품 (건강기능식품 아님)</span></div>',
-    },
-    { type: 'toc' },
+    },    { type: 'toc' },
+
+    { type: 'callout', html: "<p>블루베리 농축액과 NFC 착즙의 차이를 모르고 샀다가 성분 비교를 하게 됐다. 착즙 제품이 원물에 더 가깝다는 걸 알고 나서 선택 기준이 바뀌었다.</p>" },
+
+{ type: 'callout', html: "<p>블루베리 농축액과 NFC 착즙의 차이를 모르고 샀다가 성분 비교를 하게 됐다. 착즙 제품이 원물에 더 가깝다는 걸 알고 나서 선택 기준이 바뀌었다.</p>" },,
 
     { type: 'h2', id: 'nfc-vs-concentrate', text: 'NFC vs 농축환원 — 품질 차이' },
     {

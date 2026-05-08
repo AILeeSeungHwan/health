@@ -4,7 +4,7 @@ const otc = [
   {
     id: 'O0001',
     slug: 'tylenol-acetaminophen',
-    title: '타이레놀 아세트아미노펜 효능·용법·부작용 — 건강모아',
+    title: '타이레놀 아세트아미노펜 효능·용법·부작용',
     description: '아세트아미노펜 500mg 정제의 적응증(두통·치통·생리통·근육통), 식약처 등록 용법·용량, 과량 복용 시 간독성 위험과 병용 금기 약물까지 정리합니다.',
     category: 'otc',
     ymylLevel: 'B',
@@ -27,7 +27,7 @@ const otc = [
   {
     id: 'O0002',
     slug: 'ibuprofen',
-    title: '이부프로펜 효능·용법·부작용 — 건강모아',
+    title: '이부프로펜 효능·용법·부작용',
     description: '이부프로펜 계열(부루펜·이지엔6) OTC 진통제의 적응증·용법·소화기 부작용·임산부 주의사항과 아세트아미노펜과의 차이점까지 정리합니다.',
     category: 'otc',
     ymylLevel: 'B',
@@ -50,7 +50,7 @@ const otc = [
   {
     id: 'O0003',
     slug: 'naproxen',
-    title: '나프록센(탁센·낙센) 효능·용법·부작용 — 건강모아',
+    title: '나프록센(탁센·낙센) 효능·용법·부작용',
     description: '나프록센 계열 OTC 진통제(탁센·낙센)의 이부프로펜 대비 장점(8~12시간 지속), 용법·용량, 위장 부작용 주의사항을 정리합니다.',
     category: 'otc',
     ymylLevel: 'B',

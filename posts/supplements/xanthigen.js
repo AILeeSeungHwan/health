@@ -5,8 +5,11 @@ const post = {
     {
       type: 'intro',
       html: '<p><strong>한눈에 보기:</strong> 잔티젠(Xanthigen®)은 갈조류에서 추출한 <strong>푸코잔틴(Fucoxanthin)</strong>과 석류씨오일(Pomegranate Seed Oil)의 복합 특허 성분입니다. 체지방 대사 촉진·갈색지방 활성화 기전으로 주목받고 있으며, 소규모 임상 연구에서 체중·체지방 감소 효과가 보고됐습니다.</p><div class="meta-row"><span class="tag">성분: 푸코잔틴·석류씨오일</span></div><p style="font-size:13px;color:#888;margin-top:12px">※ 이 제품은 식품이며 건강기능식품이 아닙니다.</p>',
-    },
-    { type: 'toc' },
+    },    { type: 'toc' },
+
+    { type: 'callout', html: "<p>뱃살이 잘 안 빠진다는 고민을 하면서 잔티젠을 찾아봤다. 갈색지방 활성화에 관여한다는 연구가 있다는 게 흥미로웠다. 기대가 컸던 만큼 혼자서 다이어트 효과를 내기는 어렵다는 걸 먹어보고 알게 됐다.</p>" },
+
+{ type: 'callout', html: "<p>뱃살이 잘 안 빠진다는 고민을 하면서 잔티젠을 찾아봤다. 갈색지방 활성화에 관여한다는 연구가 있다는 게 흥미로웠다. 기대가 컸던 만큼 혼자서 다이어트 효과를 내기는 어렵다는 걸 먹어보고 알게 됐다.</p>" },,
 
     { type: 'h2', id: 'fucoxanthin', text: '푸코잔틴이란' },
     {

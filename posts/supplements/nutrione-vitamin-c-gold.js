@@ -5,8 +5,11 @@ const post = {
     {
       type: 'intro',
       html: '<p><strong>한눈에 보기:</strong> 뉴트리원 리포좀 비타민C 골드는 인지질 이중막(리포좀)에 비타민C를 포집해 소장 흡수율을 일반 비타민C 대비 크게 높인 고급 비타민C 제품입니다. 항산화·면역·콜라겐 합성 등 식약처 인정 기능성에 더해, 고용량에서도 위장 자극이 적은 것이 특징입니다.</p><div class="meta-row"><span class="tag">뉴트리원 공식 제품</span> <span class="tag tag-approved">식약처 기능성 고시</span></div>',
-    },
-    { type: 'toc' },
+    },    { type: 'toc' },
+
+    { type: 'callout', html: "<p>비타민C를 고용량으로 먹으면 속이 쓰렸다. 리포좀 형태로 바꾸고 나서 속쓰림 없이 꾸준히 먹을 수 있게 됐다. 일반 비타민C보다 흡수율이 높다는 것도 선택 이유 중 하나였다.</p>" },
+
+{ type: 'callout', html: "<p>비타민C를 고용량으로 먹으면 속이 쓰렸다. 리포좀 형태로 바꾸고 나서 속쓰림 없이 꾸준히 먹을 수 있게 됐다. 일반 비타민C보다 흡수율이 높다는 것도 선택 이유 중 하나였다.</p>" },,
 
     { type: 'h2', id: 'product-overview', text: '제품 특징' },
     {

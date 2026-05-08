@@ -4,7 +4,7 @@ const situations = [
   {
     id: 'H0001',
     slug: 'headache',
-    title: '두통 종합 가이드 — 원인·약·영양제·생활습관 총정리 — 건강모아',
+    title: '두통 종합 가이드 — 원인·약·영양제·생활습관 총정리',
     description: '두통의 주요 원인부터 집에서 해볼 수 있는 대처, 도움될 수 있는 일반의약품과 영양제, 병원에 가야 하는 응급 신호까지 한 페이지에서 확인하세요.',
     category: 'situation',
     ymylLevel: 'A',
@@ -25,7 +25,7 @@ const situations = [
   {
     id: 'H0002',
     slug: 'sleep-issue',
-    title: '잠 안 올 때 — 불면 해결 종합 가이드 — 건강모아',
+    title: '잠 안 올 때 — 불면 해결 종합 가이드',
     description: '불면의 원인부터 수면 위생 원칙, 마그네슘·멜라토닌 등 도움될 수 있는 영양제, 만성 불면 시 의료 상담이 필요한 신호까지 정리합니다.',
     category: 'situation',
     ymylLevel: 'A',
@@ -46,7 +46,7 @@ const situations = [
   {
     id: 'H0003',
     slug: 'immune-boost',
-    title: '면역력 관리 종합 가이드 — 영양·수면·운동 — 건강모아',
+    title: '면역력 관리 종합 가이드 — 영양·수면·운동',
     description: '면역력은 비타민 D·오메가3 같은 영양 보충, 규칙적 수면, 적당한 운동이 핵심입니다. 과잉 건강기능식품 주의와 근거 기반 생활습관 중심으로 정리합니다.',
     category: 'situation',
     ymylLevel: 'B',
@@ -67,7 +67,7 @@ const situations = [
   {
     id: 'H0004',
     slug: 'back-pain-care',
-    title: '허리가 아플 때 — 자세·운동·치료 단계 종합 가이드 — 건강모아',
+    title: '허리가 아플 때 — 자세·운동·치료 단계 종합 가이드',
     description: '허리 통증의 원인 파악부터 자세 교정, 집에서 할 수 있는 운동, 물리치료, 디스크 치료 시술, 수술 단계까지 단계별 관리법을 정리합니다.',
     category: 'situation',
     ymylLevel: 'A',
@@ -88,7 +88,7 @@ const situations = [
   {
     id: 'H0005',
     slug: 'diet',
-    title: '다이어트 종합 가이드 — 칼로리·운동·정체기·의학적 비만 관리 — 건강모아',
+    title: '다이어트 종합 가이드 — 칼로리·운동·정체기·의학적 비만 관리',
     description: '칼로리 적자 기본 원칙부터 유산소·근력 운동 전략, 정체기 극복법, 다이어트 약·위절제술·비만 클리닉 기준까지 과학적 근거 기반으로 정리합니다.',
     category: 'situation',
     ymylLevel: 'B',

@@ -5,8 +5,11 @@ const post = {
     {
       type: 'intro',
       html: '<p><strong>한눈에 보기:</strong> 뉴트리원 브레인 알파 피에스는 기억력·인지기능 개선 식약처 개별인정형 원료인 포스파티딜세린(PS) 300mg을 담은 뇌 건강 영양제입니다. 노화로 감소하는 뇌 세포막 PS를 보충해 신경 전달 효율을 유지하고 기억력 저하를 늦추는 데 도움을 줄 수 있습니다.</p><div class="meta-row"><span class="tag">뉴트리원 공식 제품</span> <span class="tag tag-approved">식약처 개별인정형 기능성</span></div>',
-    },
-    { type: 'toc' },
+    },    { type: 'toc' },
+
+    { type: 'callout', html: "<p>집중력이 예전 같지 않다는 느낌에 포스파티딜세린을 찾아봤다. 뇌 건강 영양제가 많지만 PS가 그나마 연구 근거가 있는 편이라는 걸 알고 선택했다.</p>" },
+
+{ type: 'callout', html: "<p>집중력이 예전 같지 않다는 느낌에 포스파티딜세린을 찾아봤다. 뇌 건강 영양제가 많지만 PS가 그나마 연구 근거가 있는 편이라는 걸 알고 선택했다.</p>" },,
 
     { type: 'h2', id: 'product-overview', text: '제품 특징' },
     {

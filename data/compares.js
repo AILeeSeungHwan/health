@@ -4,7 +4,7 @@ const compares = [
   {
     id: 'C0001',
     slug: 'painkillers',
-    title: '진통제 성분 비교 — 아세트아미노펜 vs 이부프로펜 vs 나프록센 — 건강모아',
+    title: '진통제 성분 비교 — 아세트아미노펜 vs 이부프로펜 vs 나프록센',
     description: '타이레놀(아세트아미노펜), 부루펜(이부프로펜), 낙센(나프록센)의 작용 기전·적응증·부작용·복용 시점을 상황별로 비교합니다.',
     category: 'compare',
     ymylLevel: 'B',
@@ -21,7 +21,7 @@ const compares = [
   {
     id: 'C0002',
     slug: 'omega3-brands',
-    title: '오메가3 브랜드 비교 — rTG·TG·EE 형태별 차이와 선택 — 건강모아',
+    title: '오메가3 브랜드 비교 — rTG·TG·EE 형태별 차이와 선택',
     description: '오메가3 TG형·EE형·rTG형의 흡수율 차이, 정관장·뉴트리원·캘리포니아골드·노르딕내추럴 비교, EPA+DHA 함량 계산법, 산패 여부 확인 방법을 정리합니다.',
     category: 'compare',
     ymylLevel: 'B',
