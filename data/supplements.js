@@ -22,7 +22,7 @@ const supplements = [
     coupangProductKey: 'omega-3',
     relatedSymptoms: ['dry-eye', 'high-cholesterol'],
     relatedSituation: 'immune-boost',
-    relatedSlugs: ['coq10', 'vitamin-d'],
+    relatedSlugs: ['coq10', 'vitamin-d', 'nutrione-omega3-coq10'],
   },
   {
     id: 'U0002',
@@ -45,7 +45,7 @@ const supplements = [
     coupangProductKey: 'magnesium',
     relatedSymptoms: ['insomnia', 'headache', 'migraine'],
     relatedSituation: 'sleep-issue',
-    relatedSlugs: ['omega-3', 'coq10'],
+    relatedSlugs: ['omega-3', 'coq10', 'calcium-magnesium'],
   },
   {
     id: 'U0003',
@@ -68,7 +68,7 @@ const supplements = [
     coupangProductKey: 'vitamin-d',
     relatedSymptoms: [],
     relatedSituation: 'immune-boost',
-    relatedSlugs: ['omega-3'],
+    relatedSlugs: ['omega-3', 'magnesium', 'calcium-magnesium'],
   },
   {
     id: 'U0004',
@@ -91,7 +91,7 @@ const supplements = [
     coupangProductKey: 'coq10',
     relatedSymptoms: ['migraine'],
     relatedSituation: 'immune-boost',
-    relatedSlugs: ['omega-3', 'magnesium'],
+    relatedSlugs: ['omega-3', 'magnesium', 'nutrione-omega3-coq10'],
   },
   {
     id: 'U0006',
@@ -112,7 +112,7 @@ const supplements = [
     approvedFunctions: ['장내 유익균 증식·유해균 억제', '배변 활동 원활에 도움'],
     relatedSymptoms: ['ibs'],
     relatedProducts: [],
-    relatedSlugs: ['red-ginseng'],
+    relatedSlugs: ['digestive-enzyme', 'nutrione-probiotics-max', 'red-ginseng'],
   },
   {
     id: 'U0007',
@@ -133,7 +133,7 @@ const supplements = [
     approvedFunctions: ['노화로 인해 감소할 수 있는 황반색소 밀도를 유지하여 눈 건강에 도움'],
     relatedSymptoms: ['dry-eye'],
     relatedProducts: [],
-    relatedSlugs: ['omega-3'],
+    relatedSlugs: ['astaxanthin', 'omega-3', 'nutrione-lutein-ax', 'nutrione-astaxanthin7'],
   },
   {
     id: 'U0005',
@@ -154,7 +154,7 @@ const supplements = [
     approvedFunctions: ['면역력 증진', '피로 개선', '혈소판 응집 억제로 혈액 흐름에 도움', '기억력 개선', '항산화', '갱년기 여성의 건강에 도움'],
     relatedSymptoms: ['menopause-symptoms'],
     relatedProducts: [],
-    relatedSlugs: ['omega-3', 'vitamin-b-complex'],
+    relatedSlugs: ['omega-3', 'premium-herbal', 'estro-up'],
   },
   {
     id: 'U0008',
@@ -169,7 +169,7 @@ const supplements = [
     dailyIntake: '1,000~10,000mg (제품별 상이)',
     priceRange: '월 30,000~120,000원',
     certifications: ['건강기능식품 (일부 제품)'],
-    relatedSymptoms: [], relatedSlugs: ['vitamin-c-liposomal', 'astaxanthin'],
+    relatedSymptoms: [], relatedSlugs: ['vitamin-c-liposomal', 'astaxanthin', 'nutrione-collagen-s'],
   },
   {
     id: 'U0009',
@@ -184,7 +184,7 @@ const supplements = [
     dailyIntake: '실리마린 기준 130mg',
     priceRange: '월 20,000~80,000원',
     certifications: ['건강기능식품'],
-    relatedSymptoms: [], relatedSlugs: ['coq10', 'vitamin-c-liposomal'],
+    relatedSymptoms: [], relatedSlugs: ['coq10', 'vitamin-c-liposomal', 'nutrione-milk-thistle-pure'],
   },
   {
     id: 'U0010',
@@ -199,7 +199,7 @@ const supplements = [
     dailyIntake: '200~1,000mg (상한 2,000mg)',
     priceRange: '월 30,000~70,000원',
     certifications: ['건강기능식품'],
-    relatedSymptoms: [], relatedSlugs: ['collagen', 'milk-thistle'],
+    relatedSymptoms: [], relatedSlugs: ['collagen', 'milk-thistle', 'nutrione-vitamin-c-gold'],
   },
   {
     id: 'U0011',
@@ -214,7 +214,7 @@ const supplements = [
     dailyIntake: '제품별 상이',
     priceRange: '월 50,000~110,000원',
     certifications: ['건강기능식품 해당 없음 (식품)'],
-    relatedSymptoms: [], relatedSlugs: ['omega-3', 'collagen'],
+    relatedSymptoms: [], relatedSlugs: ['omega-3', 'collagen', 'nutrione-albumin-gold'],
   },
   {
     id: 'U0012',
@@ -229,7 +229,7 @@ const supplements = [
     dailyIntake: '1포(20~30ml)/일 공복 권장',
     priceRange: '월 60,000~130,000원',
     certifications: ['식품'],
-    relatedSymptoms: [], relatedSlugs: ['omega-3', 'curcumin'],
+    relatedSymptoms: [], relatedSlugs: ['omega-3', 'curcumin', 'nutrione-olleshot'],
   },
   {
     id: 'U0013',
@@ -244,7 +244,7 @@ const supplements = [
     dailyIntake: '50~100ml/일',
     priceRange: '월 60,000~100,000원',
     certifications: ['식품'],
-    relatedSymptoms: ['dry-eye'], relatedSlugs: ['lutein', 'astaxanthin'],
+    relatedSymptoms: ['dry-eye'], relatedSlugs: ['lutein', 'astaxanthin', 'nutrione-blueberry-nfc'],
   },
   {
     id: 'U0014',
@@ -259,7 +259,7 @@ const supplements = [
     dailyIntake: '뮤코다당단백 복합물 기준 800~1,200mg',
     priceRange: '월 30,000~160,000원',
     certifications: ['건강기능식품'],
-    relatedSymptoms: [], relatedSlugs: ['omega-3', 'collagen'],
+    relatedSymptoms: [], relatedSlugs: ['omega-3', 'collagen', 'nutrione-chondroitin-1200'],
   },
   {
     id: 'U0015',
@@ -304,7 +304,7 @@ const supplements = [
     dailyIntake: '4~12mg',
     priceRange: '월 30,000~100,000원',
     certifications: ['건강기능식품 (개별인정형)'],
-    relatedSymptoms: ['dry-eye'], relatedSlugs: ['lutein', 'vitamin-c-liposomal'],
+    relatedSymptoms: ['dry-eye'], relatedSlugs: ['lutein', 'vitamin-c-liposomal', 'nutrione-astaxanthin7', 'nutrione-lutein-ax'],
   },
   {
     id: 'U0018',
@@ -349,7 +349,7 @@ const supplements = [
     dailyIntake: '300mg/일',
     priceRange: '월 60,000~130,000원',
     certifications: ['건강기능식품 (개별인정형)'],
-    relatedSymptoms: [], relatedSlugs: ['omega-3', 'lutein'],
+    relatedSymptoms: [], relatedSlugs: ['omega-3', 'lutein', 'nutrione-brain-alpha-ps'],
   },
   {
     id: 'U0021',

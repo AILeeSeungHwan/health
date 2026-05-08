@@ -50,6 +50,21 @@ function TOC({ sections }) {
 
 function normalize(s) { return s ? String(s).replace(/[\s\-·・]/g, '').toLowerCase() : '' }
 
+function RelatedPostsCard({ related }) {
+  if (!related || related.length === 0) return null
+  return (
+    <div style={{ margin: '0 0 14px', padding: '14px 16px', background: '#F0F9FF', borderRadius: 10, border: '1px solid #BAE6FD' }}>
+      <div style={{ fontSize: 11, fontWeight: 700, color: '#0369A1', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.06em' }}>📌 관련 포스팅</div>
+      {related.slice(0, 4).map(r => (
+        <Link key={r.slug} href={r.url}
+          style={{ display: 'block', padding: '7px 0', borderBottom: '1px solid #E0F2FE', textDecoration: 'none', color: '#1D4ED8', fontSize: 14, fontWeight: 600, lineHeight: 1.4 }}>
+          {r.title} →
+        </Link>
+      ))}
+    </div>
+  )
+}
+
 function NutrionePriceTag({ price }) {
   if (!price) return null
   return <span style={{ fontSize: 13, color: '#6B7280' }}>{Number(price).toLocaleString()}원</span>
@@ -154,16 +169,17 @@ function Section({ section, coupangLinks, nutrioneLinks }) {
 /**
  * H2 인덱스 기반 광고 자동 삽입
  *   1st H2  → 직전 광고 없음
- *   2nd H2  → 직전 MultiplexAd
+ *   2nd H2  → 직전 관련 포스팅 카드 + MultiplexAd
  *   3rd H2+ → 직전 AdUnit (auto)
  */
-function renderWithAds(sections, coupangLinks, nutrioneLinks) {
+function renderWithAds(sections, coupangLinks, nutrioneLinks, related) {
   const out = []
   let h2Index = -1
   sections.forEach((s, i) => {
     if (s.type === 'h2') {
       h2Index++
       if (h2Index === 1) {
+        out.push(<RelatedPostsCard key={`related-${i}`} related={related} />)
         out.push(<MultiplexAd key={`ad-mx-${i}`} />)
       } else if (h2Index >= 2) {
         out.push(<AdUnit key={`ad-h2-${i}`} slot="4000000001" variant="auto" />)
@@ -268,7 +284,7 @@ export default function PostRenderer({ meta, postData, related }) {
         {sections && (
           <>
             <TOC sections={sections} />
-            {renderWithAds(sections, coupangLinks, nutrioneLinks)}
+            {renderWithAds(sections, coupangLinks, nutrioneLinks, related)}
           </>
         )}
 

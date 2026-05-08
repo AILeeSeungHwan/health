@@ -43,6 +43,13 @@ const post = {
     { type: 'h2', id: 'food', text: '식품으로 보충하기' },
     { type: 'body', html: '<p>비타민 D가 풍부한 식품은 제한적입니다. 등 푸른 생선(연어 100g 약 600IU·고등어 360IU), 계란 노른자(1개 40IU), 비타민 D 강화 우유·시리얼 정도. 식품만으로 권장량을 채우기 어려운 영양소라 햇빛·보충제 병행이 현실적입니다.</p>' },
 
+    {
+      type: 'nutrioneSlot',
+      products: [
+        { nutrioneId: '1000000804', productName: '뉴트리원 어골칼슘 마그네슘 비타민D', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000804/480_1000000804_ITEM2025112555432.png', price: 62500 },
+      ],
+    },
+
     { type: 'h2', id: 'related', text: '관련 영양제·상황' },
     { type: 'body', html: '<ul><li><a href="/supplements/omega-3/">오메가3</a> · <a href="/supplements/magnesium/">마그네슘</a></li><li><a href="/situations/immune-boost/">면역력 관리 가이드</a></li></ul>' },
 

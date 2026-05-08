@@ -40,6 +40,13 @@ const post = {
     { type: 'h2', id: 'food-alt', text: '식품으로 대체하기' },
     { type: 'body', html: '<p>녹색 잎채소(시금치·근대), 견과류(아몬드 100g당 270mg, 캐슈넛 270mg), 통곡물(현미·귀리), 콩류(검은콩·렌틸), 다크초콜릿(70%+), 바나나가 풍부한 공급원입니다. 매일 견과 한 줌 + 녹색채소 1접시면 일일 권장량의 절반을 채울 수 있습니다.</p>' },
 
+    {
+      type: 'nutrioneSlot',
+      products: [
+        { nutrioneId: '1000000804', productName: '뉴트리원 어골칼슘 마그네슘 비타민D', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000000804/480_1000000804_ITEM2025112555432.png', price: 62500 },
+      ],
+    },
+
     { type: 'h2', id: 'related', text: '관련 증상·상황' },
     { type: 'body', html: '<ul><li><a href="/symptoms/insomnia/">불면증</a></li><li><a href="/symptoms/headache/">두통</a> · <a href="/symptoms/migraine/">편두통</a></li><li><a href="/situations/sleep-issue/">잠 안 올 때 종합 가이드</a></li></ul>' },
 

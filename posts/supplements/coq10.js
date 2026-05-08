@@ -34,6 +34,13 @@ const post = {
     { type: 'h2', id: 'compare', text: '비슷한 영양제 비교' },
     { type: 'body', html: '<p>같은 항산화·미토콘드리아 보조 목적으로 검토되는 영양제: PQQ, 알파리포산. 편두통 예방 보조로는 <a href="/supplements/magnesium/">마그네슘</a>이 함께 자주 검토됩니다.</p>' },
 
+    {
+      type: 'nutrioneSlot',
+      products: [
+        { nutrioneId: '1000339884', productName: '뉴트리원 초임계 알티지 오메가3 코큐텐', imageUrl: 'https://nutrionemall.edge.naverncp.com/upload/item/1000339884/480_1000339884_ITEM2024050311253.png', price: 20500 },
+      ],
+    },
+
     { type: 'h2', id: 'food-alt', text: '식품으로 보충하기' },
     { type: 'body', html: '<p>육류(소고기·닭고기), 등 푸른 생선(정어리·고등어), 견과류(땅콩·아몬드), 콩류, 시금치에 소량 함유되어 있습니다. 다만 식품으로 100mg 이상 보충하기는 어려워, 보조 목적이라면 보충제가 현실적입니다.</p>' },
 
