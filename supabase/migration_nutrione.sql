@@ -28,4 +28,11 @@ CREATE INDEX IF NOT EXISTS idx_nutrione_active ON nutrione_links(is_active);
 ALTER TABLE nutrione_links ENABLE ROW LEVEL SECURITY;
 
 -- 공개 읽기 (post-links-nutrione API용)
-CREATE POLICY IF NOT EXISTS "public_read_nutrione" ON nutrione_links FOR SELECT USING (true);
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'nutrione_links' AND policyname = 'public_read_nutrione'
+  ) THEN
+    CREATE POLICY "public_read_nutrione" ON nutrione_links FOR SELECT USING (true);
+  END IF;
+END $$;
