@@ -121,7 +121,7 @@ function Section({ section, coupangLinks, nutrioneLinks }) {
                       뉴트리원 공식몰 구매하기 →
                     </a>
                   ) : (
-                    <a href={`https://www.nutrione.co.kr/item/dtl/${p.nutrioneId}`} target="_blank" rel="noopener noreferrer nofollow"
+                    <a href={`https://www.nutrione.co.kr/item/dtl/${p.nutrioneId}?nct=E2A6DD`} target="_blank" rel="noopener noreferrer nofollow"
                        style={{ display: 'inline-block', padding: '9px 18px', background: '#6B7280', color: '#fff', borderRadius: 8, fontSize: 13, fontWeight: 700, textDecoration: 'none' }}>
                       뉴트리원 공식몰 보기 →
                     </a>
