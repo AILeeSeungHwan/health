@@ -265,6 +265,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://health.ambitstock.com/otc/naproxen/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://health.ambitstock.com/otc/cold-medicine/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://health.ambitstock.com/otc/antacid/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://health.ambitstock.com/otc/digestive-enzyme-otc/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://health.ambitstock.com/otc/oral-ulcer/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://health.ambitstock.com/supplements/omega-3/</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>

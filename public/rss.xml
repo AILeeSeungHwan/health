@@ -6,7 +6,7 @@
     <description>증상·일반의약품·영양제·건강제품 통합 가이드 — 식약처 기준의 안전한 건강 정보.</description>
     <language>ko</language>
     <copyright>© 2026 건강모아</copyright>
-    <lastBuildDate>Fri, 08 May 2026 06:26:48 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 06:46:09 +0000</lastBuildDate>
     <generator>healthmoa scripts/generate-rss.js</generator>
     <atom:link href="https://health.ambitstock.com/rss.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -80,6 +80,46 @@
       <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://health.ambitstock.com/symptoms/knee-pain/</guid>
       <category>증상</category>
+    </item>
+    <item>
+      <title>나프록센(탁센·낙센) 효능·용법·부작용 — 건강모아</title>
+      <link>https://health.ambitstock.com/otc/naproxen/</link>
+      <description><![CDATA[나프록센 계열 OTC 진통제(탁센·낙센)의 이부프로펜 대비 장점(8~12시간 지속), 용법·용량, 위장 부작용 주의사항을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/otc/naproxen/</guid>
+      <category>일반의약품</category>
+    </item>
+    <item>
+      <title>종합감기약 성분 비교 — 판피린·판콜·화이투벤 어떻게 고르나</title>
+      <link>https://health.ambitstock.com/otc/cold-medicine/</link>
+      <description><![CDATA[판피린Q·판콜A·씨콜드·화이투벤 등 종합감기약의 성분(아세트아미노펜·항히스타민·충혈제거제)별 역할, 증상별 선택법, 중복 복용 주의사항을 정리합니다.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/otc/cold-medicine/</guid>
+      <category>일반의약품</category>
+    </item>
+    <item>
+      <title>제산제 종류별 비교 — 겔포스·개비스콘·알마겔·노루모 어떻게 고르나</title>
+      <link>https://health.ambitstock.com/otc/antacid/</link>
+      <description><![CDATA[수산화알루미늄·알긴산·H2 차단제 등 제산제 성분별 특징, 겔포스·개비스콘·알마겔·노루모 제품 비교, 역류성 식도염 vs 단순 속쓰림 증상별 선택 가이드.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/otc/antacid/</guid>
+      <category>일반의약품</category>
+    </item>
+    <item>
+      <title>소화제 종류 비교 — 훼스탈·베아제·닥터베아제 뭐가 다른가</title>
+      <link>https://health.ambitstock.com/otc/digestive-enzyme-otc/</link>
+      <description><![CDATA[훼스탈·베아제·닥터베아제 소화 효소제의 성분 차이, 기름진 식사 후 vs 탄수화물 과식 후 선택법, 소화제로 해결 안 되는 경우 정리.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/otc/digestive-enzyme-otc/</guid>
+      <category>일반의약품</category>
+    </item>
+    <item>
+      <title>구내염약 종류 비교 — 알보칠·오라메디·아프니벤 올바른 사용법</title>
+      <link>https://health.ambitstock.com/otc/oral-ulcer/</link>
+      <description><![CDATA[알보칠(폴리크레줄렌)·오라메디(트리암시놀론)·아프니벤(클로르헥시딘+벤조카인) 구내염 치료제의 성분별 차이, 올바른 사용법, 병원을 가야 하는 경우 정리.]]></description>
+      <pubDate>Fri, 08 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/otc/oral-ulcer/</guid>
+      <category>일반의약품</category>
     </item>
     <item>
       <title>프로바이오틱스 균주·CFU·복용 시점 완전 정리</title>
