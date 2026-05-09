@@ -1,4 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
+import fs   from 'fs'
+import path from 'path'
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -12,6 +14,28 @@ const SITE_HOST = {
   finance:   'financemoa.ambitstock.com',
   travel:    'tripspot.ambitstock.com',
   dinner:    'dinner.ambitstock.com',
+}
+
+// bare slug (last path segment) → full URL, built from health's local sitemap
+let _healthSlugMap = null
+function getHealthSlugMap() {
+  if (_healthSlugMap) return _healthSlugMap
+  _healthSlugMap = new Map()
+  try {
+    const xml = fs.readFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), 'utf8')
+    const locs = [...xml.matchAll(/<loc>([\s\S]*?)<\/loc>/g)].map(m => m[1].trim())
+    const prefix = 'https://health.ambitstock.com/'
+    for (const loc of locs) {
+      if (!loc.startsWith(prefix)) continue
+      const slug = loc.slice(prefix.length).replace(/\/+$/, '')
+      const parts = slug.split('/')
+      // only entity sub-pages (entity/slug), not top-level or 3-deep
+      if (parts.length === 2 && parts[1]) {
+        _healthSlugMap.set(parts[1], loc.endsWith('/') ? loc : loc + '/')
+      }
+    }
+  } catch { /* fallback: map stays empty */ }
+  return _healthSlugMap
 }
 
 export default async function handler(req, res) {
@@ -50,18 +74,29 @@ export default async function handler(req, res) {
     regMap[`${r.site}::${r.slug}`] = r
   }
 
+  const healthSlugMap = getHealthSlugMap()
+
   // 합치기
   const rows = Object.entries(countMap).map(([key, views]) => {
     const [sitePart, ...slugParts] = key.split('::')
     const slug = slugParts.join('::')
     const host = SITE_HOST[sitePart] || 'health.ambitstock.com'
     const reg  = regMap[key]
+
+    let url
+    if (sitePart === 'health') {
+      const bare = slug.replace(/^\/+/, '').replace(/\/+$/, '')
+      url = healthSlugMap.get(bare) || `https://${host}/${bare}/`
+    } else {
+      url = `https://${host}/${slug.replace(/^\/+/, '').replace(/\/+$/, '')}${slug === '/' ? '' : '/'}`
+    }
+
     return {
       slug,
       site: sitePart,
       title: titleMap[key] || null,
       views,
-      url: `https://${host}/${slug.replace(/^\/+/, '').replace(/\/+$/, '')}${slug === '/' ? '' : '/'}`,
+      url,
       registered:    reg?.registered    ?? false,
       registered_at: reg?.registered_at ?? null,
     }
