@@ -136,6 +136,24 @@ function DailyChart({ byDate }) {
   )
 }
 
+function copyText(text) {
+  if (!text) return
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(text).catch(() => fallbackCopy(text))
+  } else {
+    fallbackCopy(text)
+  }
+}
+function fallbackCopy(text) {
+  const el = document.createElement('textarea')
+  el.value = text
+  el.style.cssText = 'position:fixed;opacity:0;top:0;left:0'
+  document.body.appendChild(el)
+  el.select()
+  document.execCommand('copy')
+  document.body.removeChild(el)
+}
+
 export default function SearchAnalytics() {
   const [activeTab, setActiveTab] = useState('overview')
   const [preset, setPreset]       = useState(30)
@@ -758,7 +776,7 @@ export default function SearchAnalytics() {
                     <span style={{ fontSize: 11, fontWeight: 400, color: '#9ca3af', marginLeft: 8 }}>{filteredPages.length}개 · 엔터 구분</span>
                   </h2>
                   <button
-                    onClick={() => navigator.clipboard.writeText(filteredPages.map(p => `https://${SITE_HOST[p.site] || currentHost}/${p.slug}/`).join('\n'))}
+                    onClick={() => copyText(filteredPages.map(p => `https://${SITE_HOST[p.site] || currentHost}/${p.slug}/`).join('\n'))}
                     style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#374151' }}
                   >📋 복사</button>
                 </div>
@@ -1035,15 +1053,15 @@ export default function SearchAnalytics() {
                 </h2>
                 <div style={{ display: 'flex', gap: 6 }}>
                   <button
-                    onClick={() => navigator.clipboard.writeText(registeredUrls.filter(r => r.registered).map(r => r.url).join('\n'))}
+                    onClick={() => copyText(registeredUrls.filter(r => r.registered).map(r => r.url).join('\n'))}
                     style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #10b981', background: '#f0fdf4', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#16a34a' }}
                   >📋 등록됨 복사</button>
                   <button
-                    onClick={() => navigator.clipboard.writeText(registeredUrls.filter(r => !r.registered).map(r => r.url).join('\n'))}
+                    onClick={() => copyText(registeredUrls.filter(r => !r.registered).map(r => r.url).join('\n'))}
                     style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#374151' }}
                   >📋 미등록 복사</button>
                   <button
-                    onClick={() => navigator.clipboard.writeText(registeredUrls.map(r => r.url).join('\n'))}
+                    onClick={() => copyText(registeredUrls.map(r => r.url).join('\n'))}
                     style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#374151' }}
                   >📋 전체 복사</button>
                 </div>
@@ -1089,7 +1107,7 @@ export default function SearchAnalytics() {
                             </span>
                           </td>
                           <td style={td}>
-                            <button onClick={() => navigator.clipboard.writeText(r.url)} title={r.url} style={{
+                            <button onClick={() => copyText(r.url)} title={r.url} style={{
                               padding: '3px 8px', borderRadius: 5, border: '1px solid #e5e7eb',
                               background: '#f9fafb', fontSize: 11, cursor: 'pointer', color: '#374151',
                             }}>📋</button>
@@ -1154,7 +1172,7 @@ export default function SearchAnalytics() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 8 }}>
                       <h2 style={{ fontSize: 15, fontWeight: 700, margin: 0 }}>URL 목록 ({filtered.length}개)</h2>
                       <button
-                        onClick={() => navigator.clipboard.writeText(filtered.filter(u => !u.registered).map(u => u.url).join('\n'))}
+                        onClick={() => copyText(filtered.filter(u => !u.registered).map(u => u.url).join('\n'))}
                         style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600 }}
                       >📋 미등록 URL 복사</button>
                     </div>
@@ -1191,7 +1209,7 @@ export default function SearchAnalytics() {
                                   </span>
                                 </td>
                                 <td style={td}>
-                                  <button onClick={() => navigator.clipboard.writeText(u.url)} title={u.url} style={{
+                                  <button onClick={() => copyText(u.url)} title={u.url} style={{
                                     padding: '3px 8px', borderRadius: 5, border: '1px solid #e5e7eb',
                                     background: '#f9fafb', fontSize: 11, cursor: 'pointer', color: '#374151',
                                   }}>📋</button>

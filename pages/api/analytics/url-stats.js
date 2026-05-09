@@ -7,8 +7,8 @@ const supabase = createClient(
 
 const SITE_HOST = {
   health:    'health.ambitstock.com',
-  insurance: 'insurancemoa.ambitstock.com',
-  movie:     'movie.ambitstock.com',
+  insurance: 'insurance.ambitstock.com',
+  movie:     'ambitstock.com',
   finance:   'financemoa.ambitstock.com',
   travel:    'tripspot.ambitstock.com',
   dinner:    'dinner.ambitstock.com',

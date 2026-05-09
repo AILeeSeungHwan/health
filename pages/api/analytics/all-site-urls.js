@@ -7,8 +7,8 @@ const supabase = createClient(
 
 const SITES = [
   { id: 'health',    domain: 'health.ambitstock.com' },
-  { id: 'insurance', domain: 'insurancemoa.ambitstock.com' },
-  { id: 'movie',     domain: 'movie.ambitstock.com' },
+  { id: 'insurance', domain: 'insurance.ambitstock.com' },
+  { id: 'movie',     domain: 'ambitstock.com' },
   { id: 'finance',   domain: 'financemoa.ambitstock.com' },
   { id: 'travel',    domain: 'tripspot.ambitstock.com' },
   { id: 'dinner',    domain: 'dinner.ambitstock.com' },
