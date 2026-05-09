@@ -1,4 +1,16 @@
 import { createClient } from '@supabase/supabase-js'
+import fs   from 'fs'
+import path from 'path'
+
+let _cache = null
+function getSitemapCache() {
+  if (_cache) return _cache
+  try {
+    const raw = fs.readFileSync(path.join(process.cwd(), 'public', 'sitemap-cache.json'), 'utf8')
+    _cache = JSON.parse(raw)
+  } catch { _cache = {} }
+  return _cache
+}
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -38,18 +50,16 @@ async function parseSitemap(url, depth = 0) {
   return [...xml.matchAll(/<loc>([\s\S]*?)<\/loc>/g)].map(m => m[1].trim())
 }
 
-async function fetchSiteUrls(domain) {
-  // 1차: 표준 sitemap.xml
+async function fetchSiteUrls(siteId, domain) {
+  // 1차: 라이브 sitemap.xml fetch
   let urls = await parseSitemap(`https://${domain}/sitemap.xml`)
-  if (urls.length > 0) return urls
+  if (urls.length > 0) return { urls, fromCache: false }
 
-  // 2차 폴백: 분할 sitemap 번호 패턴 (sitemap-0.xml ~ sitemap-4.xml)
+  // 2차: 분할 sitemap 패턴 폴백
   const fallbacks = [
     `https://${domain}/sitemap-0.xml`,
     `https://${domain}/sitemap-1.xml`,
     `https://${domain}/sitemap_index.xml`,
-    `https://${domain}/post-sitemap.xml`,
-    `https://${domain}/page-sitemap.xml`,
   ]
   const results = await Promise.allSettled(fallbacks.map(u => parseSitemap(u)))
   const seen = new Set()
@@ -58,7 +68,13 @@ async function fetchSiteUrls(domain) {
       for (const u of r.value) { if (!seen.has(u)) { seen.add(u); urls.push(u) } }
     }
   }
-  return urls
+  if (urls.length > 0) return { urls, fromCache: false }
+
+  // 3차: 로컬 sitemap 캐시 파일 폴백
+  const cache = getSitemapCache()
+  if (cache[siteId]?.length) return { urls: cache[siteId], fromCache: true }
+
+  return { urls: [], fromCache: false }
 }
 
 export default async function handler(req, res) {
@@ -66,8 +82,8 @@ export default async function handler(req, res) {
 
   const [sitemapResults, regResult] = await Promise.all([
     Promise.all(SITES.map(async s => {
-      const urls = await fetchSiteUrls(s.domain)
-      return { site: s.id, domain: s.domain, urls }
+      const { urls, fromCache } = await fetchSiteUrls(s.id, s.domain)
+      return { site: s.id, domain: s.domain, urls, fromCache }
     })),
     supabase.from('url_registry').select('slug, site, registered, registered_at'),
   ])
@@ -80,8 +96,8 @@ export default async function handler(req, res) {
   const allUrls = []
   const bySite  = {}
 
-  for (const { site, domain, urls } of sitemapResults) {
-    bySite[site] = { domain, total: urls.length }
+  for (const { site, domain, urls, fromCache } of sitemapResults) {
+    bySite[site] = { domain, total: urls.length, fromCache: fromCache || false }
     for (const url of urls) {
       const slug = url.replace(`https://${domain}`, '').replace(/\/+$/, '') || '/'
       const reg  = regMap[`${site}::${slug}`]

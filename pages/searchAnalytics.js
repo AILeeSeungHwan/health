@@ -286,6 +286,23 @@ export default function SearchAnalytics() {
     ))
   }
 
+  const bulkRegisterAllUrlsUpTo = (upToIndex, filtered) => {
+    const now     = new Date().toISOString()
+    const targets = filtered.slice(0, upToIndex + 1).filter(u => !u.registered)
+    if (!targets.length) return
+    const keys = new Set(targets.map(t => `${t.site}::${t.slug}`))
+    setAllUrls(prev => prev.map(u =>
+      keys.has(`${u.site}::${u.slug}`) ? { ...u, registered: true, registered_at: now } : u
+    ))
+    Promise.all(targets.map(u =>
+      fetch('/api/analytics/register-url', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug: u.slug, site: u.site, registered: true }),
+      })
+    ))
+  }
+
   const saveDirectUrl = async () => {
     if (!directSlug.trim()) return
     setDirectSaving(true)
@@ -1264,11 +1281,21 @@ export default function SearchAnalytics() {
                                   }}>📋</button>
                                 </td>
                                 <td style={td}>
-                                  <button onClick={() => toggleRegister(u.slug, u.site, u.registered)} style={{
-                                    padding: '3px 9px', borderRadius: 5, border: '1px solid #e5e7eb',
-                                    background: u.registered ? '#fef2f2' : '#f0fdf4', fontSize: 11,
-                                    color: u.registered ? '#ef4444' : '#16a34a', cursor: 'pointer', fontWeight: 600,
-                                  }}>{u.registered ? '취소' : '등록'}</button>
+                                  <div style={{ display: 'flex', gap: 4, flexWrap: 'nowrap' }}>
+                                    <button onClick={() => toggleRegister(u.slug, u.site, u.registered)} style={{
+                                      padding: '3px 9px', borderRadius: 5, border: '1px solid #e5e7eb',
+                                      background: u.registered ? '#fef2f2' : '#f0fdf4', fontSize: 11,
+                                      color: u.registered ? '#ef4444' : '#16a34a', cursor: 'pointer', fontWeight: 600,
+                                      whiteSpace: 'nowrap',
+                                    }}>{u.registered ? '취소' : '등록'}</button>
+                                    {!u.registered && (
+                                      <button onClick={() => bulkRegisterAllUrlsUpTo(i, filtered)} style={{
+                                        padding: '3px 8px', borderRadius: 5, border: '1px solid #2c5fff',
+                                        background: '#eff6ff', fontSize: 10, color: '#2c5fff',
+                                        cursor: 'pointer', fontWeight: 600, whiteSpace: 'nowrap',
+                                      }}>여기까지 등록</button>
+                                    )}
+                                  </div>
                                 </td>
                               </tr>
                             ))}
