@@ -85,7 +85,7 @@ export default async function handler(req, res) {
       const { urls, fromCache } = await fetchSiteUrls(s.id, s.domain)
       return { site: s.id, domain: s.domain, urls, fromCache }
     })),
-    supabase.from('url_registry').select('slug, site, registered, registered_at'),
+    supabase.from('url_registry').select('slug, site, registered, registered_at, naver, daum, google, bing'),
   ])
 
   const regMap = {}
@@ -105,6 +105,10 @@ export default async function handler(req, res) {
         url, slug, site, domain,
         registered:    reg?.registered    ?? false,
         registered_at: reg?.registered_at ?? null,
+        naver:  reg?.naver  ?? false,
+        daum:   reg?.daum   ?? false,
+        google: reg?.google ?? false,
+        bing:   reg?.bing   ?? false,
       })
     }
   }

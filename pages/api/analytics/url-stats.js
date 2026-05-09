@@ -54,7 +54,7 @@ export default async function handler(req, res) {
 
   const [pvResult, regResult] = await Promise.all([
     pvQuery,
-    supabase.from('url_registry').select('slug, site, registered, registered_at'),
+    supabase.from('url_registry').select('slug, site, registered, registered_at, naver, daum, google, bing'),
   ])
 
   if (pvResult.error) return res.status(500).json({ error: pvResult.error.message })
@@ -99,6 +99,10 @@ export default async function handler(req, res) {
       url,
       registered:    reg?.registered    ?? false,
       registered_at: reg?.registered_at ?? null,
+      naver:  reg?.naver  ?? false,
+      daum:   reg?.daum   ?? false,
+      google: reg?.google ?? false,
+      bing:   reg?.bing   ?? false,
     }
   }).sort((a, b) => b.views - a.views)
 

@@ -136,6 +136,14 @@ function DailyChart({ byDate }) {
   )
 }
 
+const ENGINES = ['naver', 'daum', 'google', 'bing']
+const ENGINE_META = {
+  naver:  { label: '네이버', color: '#03C75A' },
+  daum:   { label: '다음',   color: '#F9AE00' },
+  google: { label: '구글',   color: '#4285F4' },
+  bing:   { label: '빙',     color: '#008373' },
+}
+
 function doCopy(text, onCount) {
   if (!text) return
   const count = text.split('\n').filter(Boolean).length
@@ -254,51 +262,48 @@ export default function SearchAnalytics() {
     })
   }
 
-  const toggleRegister = (slug, site, current) => {
+  const toggleRegister = (slug, site, engine, current) => {
     const next = !current
-    const now  = new Date().toISOString()
     setRegisteredUrls(prev => prev.map(r =>
-      r.slug === slug && r.site === site ? { ...r, registered: next, registered_at: next ? now : null } : r
+      r.slug === slug && r.site === site ? { ...r, [engine]: next } : r
     ))
     setAllUrls(prev => prev.map(u =>
-      u.slug === slug && u.site === site ? { ...u, registered: next, registered_at: next ? now : null } : u
+      u.slug === slug && u.site === site ? { ...u, [engine]: next } : u
     ))
     fetch('/api/analytics/register-url', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slug, site, registered: next }),
+      body: JSON.stringify({ slug, site, engine, registered: next }),
     })
   }
 
-  const bulkRegisterUpTo = (upToIndex) => {
-    const now = new Date().toISOString()
-    const targets = registeredUrls.slice(0, upToIndex + 1).filter(r => !r.registered)
+  const bulkRegisterUpTo = (upToIndex, engine) => {
+    const targets = registeredUrls.slice(0, upToIndex + 1).filter(r => !r[engine])
     if (!targets.length) return
     setRegisteredUrls(prev => prev.map((r, i) =>
-      i <= upToIndex ? { ...r, registered: true, registered_at: now } : r
+      i <= upToIndex ? { ...r, [engine]: true } : r
     ))
     Promise.all(targets.map(r =>
       fetch('/api/analytics/register-url', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug: r.slug, site: r.site, registered: true }),
+        body: JSON.stringify({ slug: r.slug, site: r.site, engine, registered: true }),
       })
     ))
   }
 
-  const bulkRegisterAllUrlsUpTo = (upToIndex, filtered) => {
-    const now     = new Date().toISOString()
-    const targets = filtered.slice(0, upToIndex + 1).filter(u => !u.registered)
+  const bulkRegisterAllUrlsUpTo = (upToIndex, filtered, engine) => {
+    const targets = filtered.slice(0, upToIndex + 1).filter(u => !u[engine])
     if (!targets.length) return
     const keys = new Set(targets.map(t => `${t.site}::${t.slug}`))
     setAllUrls(prev => prev.map(u =>
-      keys.has(`${u.site}::${u.slug}`) ? { ...u, registered: true, registered_at: now } : u
+      keys.has(`${u.site}::${u.slug}`) ? { ...u, [engine]: true } : u
     ))
     Promise.all(targets.map(u =>
       fetch('/api/analytics/register-url', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug: u.slug, site: u.site, registered: true }),
+        body: JSON.stringify({ slug: u.slug, site: u.site, engine, registered: true }),
       })
     ))
   }
@@ -314,13 +319,13 @@ export default function SearchAnalytics() {
     const now = new Date().toISOString()
     setRegisteredUrls(prev => {
       const exists = prev.find(r => r.slug === slug && r.site === directSite)
-      if (exists) return prev.map(r => r.slug === slug && r.site === directSite ? { ...r, registered: true, registered_at: now } : r)
-      return [{ slug, site: directSite, title: null, views: 0, url: slug, registered: true, registered_at: now }, ...prev]
+      if (exists) return prev.map(r => r.slug === slug && r.site === directSite ? { ...r, naver: true } : r)
+      return [{ slug, site: directSite, title: null, views: 0, url: slug, naver: true, daum: false, google: false, bing: false }, ...prev]
     })
     fetch('/api/analytics/register-url', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slug, site: directSite, registered: true }),
+      body: JSON.stringify({ slug, site: directSite, engine: 'naver', registered: true }),
     })
     setDirectSlug('')
     setDirectSaving(false)
@@ -1109,13 +1114,9 @@ export default function SearchAnalytics() {
                 <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
                   {copyMsg && <span style={{ fontSize: 12, color: '#16a34a', fontWeight: 700 }}>{copyMsg}</span>}
                   <button
-                    onClick={() => handleCopy(registeredUrls.filter(r => r.registered).map(r => r.url).join('\n'))}
-                    style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #10b981', background: '#f0fdf4', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#16a34a' }}
-                  >📋 등록됨 복사</button>
-                  <button
-                    onClick={() => handleCopy(registeredUrls.filter(r => !r.registered).map(r => r.url).join('\n'))}
-                    style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#374151' }}
-                  >📋 미등록 복사</button>
+                    onClick={() => handleCopy(registeredUrls.filter(r => !r.naver).map(r => r.url).join('\n'))}
+                    style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #03C75A', background: '#f0fdf4', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#03C75A' }}
+                  >📋 네이버 미등록 복사</button>
                   <button
                     onClick={() => handleCopy(registeredUrls.map(r => r.url).join('\n'))}
                     style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#374151' }}
@@ -1134,59 +1135,67 @@ export default function SearchAnalytics() {
                         <th style={th}>사이트</th>
                         <th style={th}>URL (전체)</th>
                         <th style={{ ...th, textAlign: 'right' }}>조회수</th>
-                        <th style={th}>등록 상태</th>
-                        <th style={th}>복사</th>
-                        <th style={th}>액션</th>
+                        <th style={th}>📋</th>
+                        {ENGINES.map(eng => (
+                          <th key={eng} style={{ ...th, textAlign: 'center', color: ENGINE_META[eng].color }}>
+                            {ENGINE_META[eng].label}
+                          </th>
+                        ))}
                       </tr>
                     </thead>
                     <tbody>
-                      {registeredUrls.map((r, i) => (
-                        <tr key={`${r.site}::${r.slug}`} style={{ borderBottom: '1px solid #f9fafb', background: r.registered ? '#f0fdf420' : 'transparent' }}>
-                          <td style={{ ...td, color: '#9ca3af', width: 28 }}>{i + 1}</td>
-                          <td style={td}><SiteBadge site={r.site} /></td>
-                          <td style={td}>
-                            <a href={r.url} target="_blank" rel="noopener"
-                              style={{ color: '#2c5fff', textDecoration: 'none', fontSize: 11, fontFamily: 'monospace', wordBreak: 'break-all' }}>
-                              {r.url}
-                            </a>
-                            {r.title && <div style={{ fontSize: 10, color: '#9ca3af', marginTop: 1 }}>{r.title}</div>}
-                          </td>
-                          <td style={{ ...tdR, fontWeight: 700, color: '#2c5fff' }}>{r.views.toLocaleString()}</td>
-                          <td style={td}>
-                            <span style={{
-                              display: 'inline-flex', alignItems: 'center', gap: 3,
-                              fontSize: 11, padding: '2px 7px', borderRadius: 4, fontWeight: 700,
-                              background: r.registered ? '#dcfce7' : '#f3f4f6',
-                              color: r.registered ? '#16a34a' : '#6b7280',
-                            }}>
-                              {r.registered ? '✅ 등록' : '⬜ 미등록'}
-                            </span>
-                          </td>
-                          <td style={td}>
-                            <button onClick={() => handleCopy(r.url)} title={r.url} style={{
-                              padding: '3px 8px', borderRadius: 5, border: '1px solid #e5e7eb',
-                              background: '#f9fafb', fontSize: 11, cursor: 'pointer', color: '#374151',
-                            }}>📋</button>
-                          </td>
-                          <td style={td}>
-                            <div style={{ display: 'flex', gap: 4, flexWrap: 'nowrap' }}>
-                              <button onClick={() => toggleRegister(r.slug, r.site, r.registered)} style={{
-                                padding: '3px 9px', borderRadius: 5, border: '1px solid #e5e7eb',
-                                background: r.registered ? '#fef2f2' : '#f0fdf4', fontSize: 11,
-                                color: r.registered ? '#ef4444' : '#16a34a', cursor: 'pointer', fontWeight: 600,
-                                whiteSpace: 'nowrap',
-                              }}>{r.registered ? '취소' : '등록'}</button>
-                              {!r.registered && (
-                                <button onClick={() => bulkRegisterUpTo(i)} style={{
-                                  padding: '3px 8px', borderRadius: 5, border: '1px solid #2c5fff',
-                                  background: '#eff6ff', fontSize: 10, color: '#2c5fff',
-                                  cursor: 'pointer', fontWeight: 600, whiteSpace: 'nowrap',
-                                }}>여기까지 등록</button>
-                              )}
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
+                      {registeredUrls.map((r, i) => {
+                        const anyReg = ENGINES.some(e => r[e])
+                        return (
+                          <tr key={`${r.site}::${r.slug}`} style={{ borderBottom: '1px solid #f9fafb', background: anyReg ? '#f0fdf420' : 'transparent' }}>
+                            <td style={{ ...td, color: '#9ca3af', width: 28 }}>{i + 1}</td>
+                            <td style={td}><SiteBadge site={r.site} /></td>
+                            <td style={td}>
+                              <a href={r.url} target="_blank" rel="noopener"
+                                style={{ color: '#2c5fff', textDecoration: 'none', fontSize: 11, fontFamily: 'monospace', wordBreak: 'break-all' }}>
+                                {r.url}
+                              </a>
+                              {r.title && <div style={{ fontSize: 10, color: '#9ca3af', marginTop: 1 }}>{r.title}</div>}
+                            </td>
+                            <td style={{ ...tdR, fontWeight: 700, color: '#2c5fff' }}>{r.views.toLocaleString()}</td>
+                            <td style={td}>
+                              <button onClick={() => handleCopy(r.url)} title={r.url} style={{
+                                padding: '3px 8px', borderRadius: 5, border: '1px solid #e5e7eb',
+                                background: '#f9fafb', fontSize: 11, cursor: 'pointer', color: '#374151',
+                              }}>📋</button>
+                            </td>
+                            {ENGINES.map(eng => {
+                              const isReg = r[eng] ?? false
+                              const em = ENGINE_META[eng]
+                              return (
+                                <td key={eng} style={{ ...td, textAlign: 'center', verticalAlign: 'middle' }}>
+                                  <div style={{ display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'center' }}>
+                                    <span style={{
+                                      fontSize: 10, padding: '1px 5px', borderRadius: 3, fontWeight: 700,
+                                      background: isReg ? em.color + '22' : '#f3f4f6',
+                                      color: isReg ? em.color : '#9ca3af',
+                                    }}>{isReg ? '✅' : '⬜'}</span>
+                                    <button onClick={() => toggleRegister(r.slug, r.site, eng, isReg)} style={{
+                                      padding: '2px 7px', borderRadius: 4, border: '1px solid #e5e7eb',
+                                      background: isReg ? '#fef2f2' : em.color + '18',
+                                      fontSize: 10, color: isReg ? '#ef4444' : em.color,
+                                      cursor: 'pointer', fontWeight: 600, whiteSpace: 'nowrap',
+                                    }}>{isReg ? '취소' : '등록'}</button>
+                                    {!isReg && (
+                                      <button onClick={() => bulkRegisterUpTo(i, eng)} style={{
+                                        padding: '2px 6px', borderRadius: 4,
+                                        border: `1px solid ${em.color}55`,
+                                        background: '#fff', fontSize: 9, color: em.color,
+                                        cursor: 'pointer', fontWeight: 600, whiteSpace: 'nowrap',
+                                      }}>여기까지</button>
+                                    )}
+                                  </div>
+                                </td>
+                              )
+                            })}
+                          </tr>
+                        )
+                      })}
                     </tbody>
                   </table>
                 </div>
@@ -1226,21 +1235,21 @@ export default function SearchAnalytics() {
               <div style={{ ...card, textAlign: 'center', color: '#9ca3af', padding: 40 }}>⏳ 사이트맵 파싱 중... (최대 30초)</div>
             ) : (() => {
               const filtered = allUrls.filter(u => urlSiteFilter === 'all' || u.site === urlSiteFilter)
-              const regCount  = filtered.filter(u => u.registered).length
               return (
                 <>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10, marginBottom: 16, marginTop: 16 }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: 10, marginBottom: 16, marginTop: 16 }}>
                     <KpiCard label="전체 URL" value={filtered.length.toLocaleString()} color="#2c5fff" />
-                    <KpiCard label="등록됨" value={regCount.toLocaleString()} color="#10b981" />
-                    <KpiCard label="미등록" value={(filtered.length - regCount).toLocaleString()} color="#9ca3af" />
+                    {ENGINES.map(eng => (
+                      <KpiCard key={eng} label={ENGINE_META[eng].label} value={filtered.filter(u => u[eng]).length.toLocaleString()} color={ENGINE_META[eng].color} />
+                    ))}
                   </div>
                   <div style={card}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 8 }}>
                       <h2 style={{ fontSize: 15, fontWeight: 700, margin: 0 }}>URL 목록 ({filtered.length}개)</h2>
                       <button
-                        onClick={() => handleCopy(filtered.filter(u => !u.registered).map(u => u.url).join('\n'))}
-                        style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600 }}
-                      >📋 미등록 URL 복사</button>
+                        onClick={() => handleCopy(filtered.filter(u => !u.naver).map(u => u.url).join('\n'))}
+                        style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #03C75A', background: '#f0fdf4', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#03C75A' }}
+                      >📋 네이버 미등록 복사</button>
                     </div>
                     {filtered.length ? (
                       <div style={{ overflowX: 'auto' }}>
@@ -1249,58 +1258,66 @@ export default function SearchAnalytics() {
                             <tr>
                               <th style={th}>사이트</th>
                               <th style={th}>URL (전체)</th>
-                              <th style={th}>등록 상태</th>
-                              <th style={th}>복사</th>
-                              <th style={th}>액션</th>
+                              <th style={th}>📋</th>
+                              {ENGINES.map(eng => (
+                                <th key={eng} style={{ ...th, textAlign: 'center', color: ENGINE_META[eng].color }}>
+                                  {ENGINE_META[eng].label}
+                                </th>
+                              ))}
                             </tr>
                           </thead>
                           <tbody>
-                            {filtered.slice(0, 500).map((u, i) => (
-                              <tr key={i} style={{ borderBottom: '1px solid #f9fafb', background: u.registered ? '#f0fdf420' : 'transparent' }}>
-                                <td style={td}><SiteBadge site={u.site} /></td>
-                                <td style={td}>
-                                  <a href={u.url} target="_blank" rel="noopener"
-                                    style={{ color: '#2c5fff', textDecoration: 'none', fontSize: 11, fontFamily: 'monospace', wordBreak: 'break-all' }}>
-                                    {u.url}
-                                  </a>
-                                </td>
-                                <td style={td}>
-                                  <span style={{
-                                    display: 'inline-flex', alignItems: 'center', gap: 4,
-                                    fontSize: 11, padding: '2px 8px', borderRadius: 4, fontWeight: 700,
-                                    background: u.registered ? '#dcfce7' : '#f3f4f6',
-                                    color: u.registered ? '#16a34a' : '#6b7280',
-                                  }}>
-                                    {u.registered ? '✅ 등록됨' : '⬜ 미등록'}
-                                  </span>
-                                </td>
-                                <td style={td}>
-                                  <button onClick={() => handleCopy(u.url)} title={u.url} style={{
-                                    padding: '3px 8px', borderRadius: 5, border: '1px solid #e5e7eb',
-                                    background: '#f9fafb', fontSize: 11, cursor: 'pointer', color: '#374151',
-                                  }}>📋</button>
-                                </td>
-                                <td style={td}>
-                                  <div style={{ display: 'flex', gap: 4, flexWrap: 'nowrap' }}>
-                                    <button onClick={() => toggleRegister(u.slug, u.site, u.registered)} style={{
-                                      padding: '3px 9px', borderRadius: 5, border: '1px solid #e5e7eb',
-                                      background: u.registered ? '#fef2f2' : '#f0fdf4', fontSize: 11,
-                                      color: u.registered ? '#ef4444' : '#16a34a', cursor: 'pointer', fontWeight: 600,
-                                      whiteSpace: 'nowrap',
-                                    }}>{u.registered ? '취소' : '등록'}</button>
-                                    {!u.registered && (
-                                      <button onClick={() => bulkRegisterAllUrlsUpTo(i, filtered)} style={{
-                                        padding: '3px 8px', borderRadius: 5, border: '1px solid #2c5fff',
-                                        background: '#eff6ff', fontSize: 10, color: '#2c5fff',
-                                        cursor: 'pointer', fontWeight: 600, whiteSpace: 'nowrap',
-                                      }}>여기까지 등록</button>
-                                    )}
-                                  </div>
-                                </td>
-                              </tr>
-                            ))}
+                            {filtered.slice(0, 500).map((u, i) => {
+                              const anyReg = ENGINES.some(e => u[e])
+                              return (
+                                <tr key={i} style={{ borderBottom: '1px solid #f9fafb', background: anyReg ? '#f0fdf420' : 'transparent' }}>
+                                  <td style={td}><SiteBadge site={u.site} /></td>
+                                  <td style={td}>
+                                    <a href={u.url} target="_blank" rel="noopener"
+                                      style={{ color: '#2c5fff', textDecoration: 'none', fontSize: 11, fontFamily: 'monospace', wordBreak: 'break-all' }}>
+                                      {u.url}
+                                    </a>
+                                  </td>
+                                  <td style={td}>
+                                    <button onClick={() => handleCopy(u.url)} title={u.url} style={{
+                                      padding: '3px 8px', borderRadius: 5, border: '1px solid #e5e7eb',
+                                      background: '#f9fafb', fontSize: 11, cursor: 'pointer', color: '#374151',
+                                    }}>📋</button>
+                                  </td>
+                                  {ENGINES.map(eng => {
+                                    const isReg = u[eng] ?? false
+                                    const em = ENGINE_META[eng]
+                                    return (
+                                      <td key={eng} style={{ ...td, textAlign: 'center', verticalAlign: 'middle' }}>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'center' }}>
+                                          <span style={{
+                                            fontSize: 10, padding: '1px 5px', borderRadius: 3, fontWeight: 700,
+                                            background: isReg ? em.color + '22' : '#f3f4f6',
+                                            color: isReg ? em.color : '#9ca3af',
+                                          }}>{isReg ? '✅' : '⬜'}</span>
+                                          <button onClick={() => toggleRegister(u.slug, u.site, eng, isReg)} style={{
+                                            padding: '2px 7px', borderRadius: 4, border: '1px solid #e5e7eb',
+                                            background: isReg ? '#fef2f2' : em.color + '18',
+                                            fontSize: 10, color: isReg ? '#ef4444' : em.color,
+                                            cursor: 'pointer', fontWeight: 600, whiteSpace: 'nowrap',
+                                          }}>{isReg ? '취소' : '등록'}</button>
+                                          {!isReg && (
+                                            <button onClick={() => bulkRegisterAllUrlsUpTo(i, filtered, eng)} style={{
+                                              padding: '2px 6px', borderRadius: 4,
+                                              border: `1px solid ${em.color}55`,
+                                              background: '#fff', fontSize: 9, color: em.color,
+                                              cursor: 'pointer', fontWeight: 600, whiteSpace: 'nowrap',
+                                            }}>여기까지</button>
+                                          )}
+                                        </div>
+                                      </td>
+                                    )
+                                  })}
+                                </tr>
+                              )
+                            })}
                             {filtered.length > 500 && (
-                              <tr><td colSpan={5} style={{ ...td, textAlign: 'center', color: '#9ca3af', padding: 16 }}>
+                              <tr><td colSpan={3 + ENGINES.length} style={{ ...td, textAlign: 'center', color: '#9ca3af', padding: 16 }}>
                                 ... 총 {filtered.length}개 중 500개만 표시
                               </td></tr>
                             )}
