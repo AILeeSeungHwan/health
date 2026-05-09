@@ -11,7 +11,7 @@ const SITES = [
   { id: 'insurance', dir: '/Users/lee/Desktop/Project/insurance/insurance/public',   domain: 'insurance.ambitstock.com' },
   { id: 'movie',     dir: '/Users/lee/Desktop/Project/movie/ambitstock/public',       domain: 'www.ambitstock.com' },
   { id: 'finance',   dir: '/Users/lee/Desktop/Project/finance/financemoa/public',     domain: 'financemoa.ambitstock.com' },
-  { id: 'travel',    dir: '/Users/lee/Desktop/Project/travel/travel/public',          domain: 'tripspot.ambitstock.com' },
+  { id: 'travel',    dir: '/Users/lee/Desktop/Project/travel/travel/public',          domain: 'travel.ambitstock.com' },
 ]
 
 function extractUrls(xmlContent) {

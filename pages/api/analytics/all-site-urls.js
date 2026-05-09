@@ -22,7 +22,7 @@ const SITES = [
   { id: 'insurance', domain: 'insurance.ambitstock.com' },
   { id: 'movie',     domain: 'www.ambitstock.com' },
   { id: 'finance',   domain: 'financemoa.ambitstock.com' },
-  { id: 'travel',    domain: 'tripspot.ambitstock.com' },
+  { id: 'travel',    domain: 'travel.ambitstock.com' },
   { id: 'dinner',    domain: 'dinner.ambitstock.com' },
 ]
 

@@ -12,7 +12,7 @@ const SITE_HOST = {
   insurance: 'insurance.ambitstock.com',
   movie:     'www.ambitstock.com',
   finance:   'financemoa.ambitstock.com',
-  travel:    'tripspot.ambitstock.com',
+  travel:    'travel.ambitstock.com',
   dinner:    'dinner.ambitstock.com',
 }
 
