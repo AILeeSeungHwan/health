@@ -8,7 +8,7 @@ const supabase = createClient(
 const SITE_HOST = {
   health:    'health.ambitstock.com',
   insurance: 'insurance.ambitstock.com',
-  movie:     'ambitstock.com',
+  movie:     'www.ambitstock.com',
   finance:   'financemoa.ambitstock.com',
   travel:    'tripspot.ambitstock.com',
   dinner:    'dinner.ambitstock.com',
@@ -61,7 +61,7 @@ export default async function handler(req, res) {
       site: sitePart,
       title: titleMap[key] || null,
       views,
-      url: `https://${host}${slug}/`,
+      url: `https://${host}/${slug.replace(/^\/+/, '').replace(/\/+$/, '')}${slug === '/' ? '' : '/'}`,
       registered:    reg?.registered    ?? false,
       registered_at: reg?.registered_at ?? null,
     }

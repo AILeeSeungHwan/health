@@ -136,22 +136,26 @@ function DailyChart({ byDate }) {
   )
 }
 
-function copyText(text) {
+function doCopy(text, onCount) {
   if (!text) return
-  if (navigator.clipboard?.writeText) {
-    navigator.clipboard.writeText(text).catch(() => fallbackCopy(text))
-  } else {
-    fallbackCopy(text)
+  const count = text.split('\n').filter(Boolean).length
+  const fallback = () => {
+    const el = document.createElement('textarea')
+    el.value = text
+    el.style.cssText = 'position:fixed;left:-9999px;top:-9999px;width:1px;height:1px'
+    document.body.appendChild(el)
+    el.focus()
+    el.select()
+    el.setSelectionRange(0, 999999)
+    document.execCommand('copy')
+    document.body.removeChild(el)
+    onCount?.(count)
   }
-}
-function fallbackCopy(text) {
-  const el = document.createElement('textarea')
-  el.value = text
-  el.style.cssText = 'position:fixed;opacity:0;top:0;left:0'
-  document.body.appendChild(el)
-  el.select()
-  document.execCommand('copy')
-  document.body.removeChild(el)
+  if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(text).then(() => onCount?.(count), fallback)
+  } else {
+    fallback()
+  }
 }
 
 export default function SearchAnalytics() {
@@ -179,6 +183,7 @@ export default function SearchAnalytics() {
   const [directSlug,      setDirectSlug]      = useState('')
   const [directSite,      setDirectSite]      = useState('health')
   const [directSaving,    setDirectSaving]    = useState(false)
+  const [copyMsg,         setCopyMsg]         = useState('')
 
   const runDiag = async () => {
     setDiagLoading(true); setDiagResult(null)
@@ -242,32 +247,65 @@ export default function SearchAnalytics() {
     setAllUrlsLoading(false)
   }, [])
 
-  const toggleRegister = async (slug, site, current) => {
-    await fetch('/api/analytics/register-url', {
+  const handleCopy = (text) => {
+    doCopy(text, (count) => {
+      setCopyMsg(`✅ ${count}개 복사됨`)
+      setTimeout(() => setCopyMsg(''), 2500)
+    })
+  }
+
+  const toggleRegister = (slug, site, current) => {
+    const next = !current
+    const now  = new Date().toISOString()
+    setRegisteredUrls(prev => prev.map(r =>
+      r.slug === slug && r.site === site ? { ...r, registered: next, registered_at: next ? now : null } : r
+    ))
+    setAllUrls(prev => prev.map(u =>
+      u.slug === slug && u.site === site ? { ...u, registered: next, registered_at: next ? now : null } : u
+    ))
+    fetch('/api/analytics/register-url', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slug, site, registered: !current }),
+      body: JSON.stringify({ slug, site, registered: next }),
     })
-    await loadRegisteredUrls()
-    if (allUrls.length > 0) await loadAllUrls()
+  }
+
+  const bulkRegisterUpTo = (upToIndex) => {
+    const now = new Date().toISOString()
+    const targets = registeredUrls.slice(0, upToIndex + 1).filter(r => !r.registered)
+    if (!targets.length) return
+    setRegisteredUrls(prev => prev.map((r, i) =>
+      i <= upToIndex ? { ...r, registered: true, registered_at: now } : r
+    ))
+    Promise.all(targets.map(r =>
+      fetch('/api/analytics/register-url', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug: r.slug, site: r.site, registered: true }),
+      })
+    ))
   }
 
   const saveDirectUrl = async () => {
     if (!directSlug.trim()) return
     setDirectSaving(true)
     let slug = directSlug.trim()
-    // URL 전체 입력 시 도메인 제거
     try {
       const u = new URL(slug)
       slug = u.pathname.replace(/\/+$/, '') || '/'
     } catch {}
-    await fetch('/api/analytics/register-url', {
+    const now = new Date().toISOString()
+    setRegisteredUrls(prev => {
+      const exists = prev.find(r => r.slug === slug && r.site === directSite)
+      if (exists) return prev.map(r => r.slug === slug && r.site === directSite ? { ...r, registered: true, registered_at: now } : r)
+      return [{ slug, site: directSite, title: null, views: 0, url: slug, registered: true, registered_at: now }, ...prev]
+    })
+    fetch('/api/analytics/register-url', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ slug, site: directSite, registered: true }),
     })
     setDirectSlug('')
-    await loadRegisteredUrls()
     setDirectSaving(false)
   }
 
@@ -776,7 +814,7 @@ export default function SearchAnalytics() {
                     <span style={{ fontSize: 11, fontWeight: 400, color: '#9ca3af', marginLeft: 8 }}>{filteredPages.length}개 · 엔터 구분</span>
                   </h2>
                   <button
-                    onClick={() => copyText(filteredPages.map(p => `https://${SITE_HOST[p.site] || currentHost}/${p.slug}/`).join('\n'))}
+                    onClick={() => handleCopy(filteredPages.map(p => `https://${SITE_HOST[p.site] || currentHost}/${p.slug}/`).join('\n'))}
                     style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#374151' }}
                   >📋 복사</button>
                 </div>
@@ -1051,17 +1089,18 @@ export default function SearchAnalytics() {
                   조회수별 URL 목록
                   {!urlLoading && <span style={{ fontSize: 12, fontWeight: 400, color: '#9ca3af', marginLeft: 8 }}>{registeredUrls.length}개</span>}
                 </h2>
-                <div style={{ display: 'flex', gap: 6 }}>
+                <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
+                  {copyMsg && <span style={{ fontSize: 12, color: '#16a34a', fontWeight: 700 }}>{copyMsg}</span>}
                   <button
-                    onClick={() => copyText(registeredUrls.filter(r => r.registered).map(r => r.url).join('\n'))}
+                    onClick={() => handleCopy(registeredUrls.filter(r => r.registered).map(r => r.url).join('\n'))}
                     style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #10b981', background: '#f0fdf4', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#16a34a' }}
                   >📋 등록됨 복사</button>
                   <button
-                    onClick={() => copyText(registeredUrls.filter(r => !r.registered).map(r => r.url).join('\n'))}
+                    onClick={() => handleCopy(registeredUrls.filter(r => !r.registered).map(r => r.url).join('\n'))}
                     style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#374151' }}
                   >📋 미등록 복사</button>
                   <button
-                    onClick={() => copyText(registeredUrls.map(r => r.url).join('\n'))}
+                    onClick={() => handleCopy(registeredUrls.map(r => r.url).join('\n'))}
                     style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#374151' }}
                   >📋 전체 복사</button>
                 </div>
@@ -1107,17 +1146,27 @@ export default function SearchAnalytics() {
                             </span>
                           </td>
                           <td style={td}>
-                            <button onClick={() => copyText(r.url)} title={r.url} style={{
+                            <button onClick={() => handleCopy(r.url)} title={r.url} style={{
                               padding: '3px 8px', borderRadius: 5, border: '1px solid #e5e7eb',
                               background: '#f9fafb', fontSize: 11, cursor: 'pointer', color: '#374151',
                             }}>📋</button>
                           </td>
                           <td style={td}>
-                            <button onClick={() => toggleRegister(r.slug, r.site, r.registered)} style={{
-                              padding: '3px 9px', borderRadius: 5, border: '1px solid #e5e7eb',
-                              background: r.registered ? '#fef2f2' : '#f0fdf4', fontSize: 11,
-                              color: r.registered ? '#ef4444' : '#16a34a', cursor: 'pointer', fontWeight: 600,
-                            }}>{r.registered ? '취소' : '등록'}</button>
+                            <div style={{ display: 'flex', gap: 4, flexWrap: 'nowrap' }}>
+                              <button onClick={() => toggleRegister(r.slug, r.site, r.registered)} style={{
+                                padding: '3px 9px', borderRadius: 5, border: '1px solid #e5e7eb',
+                                background: r.registered ? '#fef2f2' : '#f0fdf4', fontSize: 11,
+                                color: r.registered ? '#ef4444' : '#16a34a', cursor: 'pointer', fontWeight: 600,
+                                whiteSpace: 'nowrap',
+                              }}>{r.registered ? '취소' : '등록'}</button>
+                              {!r.registered && (
+                                <button onClick={() => bulkRegisterUpTo(i)} style={{
+                                  padding: '3px 8px', borderRadius: 5, border: '1px solid #2c5fff',
+                                  background: '#eff6ff', fontSize: 10, color: '#2c5fff',
+                                  cursor: 'pointer', fontWeight: 600, whiteSpace: 'nowrap',
+                                }}>여기까지 등록</button>
+                              )}
+                            </div>
                           </td>
                         </tr>
                       ))}
@@ -1172,7 +1221,7 @@ export default function SearchAnalytics() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 8 }}>
                       <h2 style={{ fontSize: 15, fontWeight: 700, margin: 0 }}>URL 목록 ({filtered.length}개)</h2>
                       <button
-                        onClick={() => copyText(filtered.filter(u => !u.registered).map(u => u.url).join('\n'))}
+                        onClick={() => handleCopy(filtered.filter(u => !u.registered).map(u => u.url).join('\n'))}
                         style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600 }}
                       >📋 미등록 URL 복사</button>
                     </div>
@@ -1209,7 +1258,7 @@ export default function SearchAnalytics() {
                                   </span>
                                 </td>
                                 <td style={td}>
-                                  <button onClick={() => copyText(u.url)} title={u.url} style={{
+                                  <button onClick={() => handleCopy(u.url)} title={u.url} style={{
                                     padding: '3px 8px', borderRadius: 5, border: '1px solid #e5e7eb',
                                     background: '#f9fafb', fontSize: 11, cursor: 'pointer', color: '#374151',
                                   }}>📋</button>
