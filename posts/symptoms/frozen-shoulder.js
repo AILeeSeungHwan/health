@@ -9,6 +9,8 @@ const post = {
 
     { type: 'callout', html: "<p>잠자다가 팔을 잘못 눌리면 비명이 나올 만큼 아팠던 시기가 있었다. 그게 오십견 3단계였다는 걸 나중에 알았다. 1단계에서 빨리 치료를 시작했으면 그 정도까지 안 갔을 텐데 — 아프다고만 생각하고 방치한 게 화근이었다.</p>" },
 
+    { type: 'image', src: '/thumbnails/symptoms/frozen-shoulder.svg', alt: '오십견 — 3단계별 치료 전략 총정리', caption: '오십견 완전 가이드' },
+
 
     { type: 'h2', id: 'what-is-it', text: '오십견이란' },
     {

@@ -9,6 +9,8 @@ const post = {
 
     { type: 'callout', html: "<p>갑자기 얼굴이 화끈거리고 땀이 쏟아지는 경험을 처음 했을 때 갱년기라는 생각을 못 했다. 그게 안면홍조라는 걸 나중에야 알았다. 증상 목록을 알고 나면 적어도 왜 이런지는 이해할 수 있다.</p>" },
 
+    { type: 'image', src: '/thumbnails/symptoms/menopause-symptoms.svg', alt: '갱년기 증상 — 안면홍조부터 수면장애까지', caption: '갱년기 증상 완전 가이드' },
+
 
     { type: 'h2', id: 'timeline', text: '갱년기·폐경 타임라인' },
     {

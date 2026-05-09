@@ -1,0 +1,26 @@
+<svg width="400" height="220" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220">
+  <defs>
+    <linearGradient id="bg_hantavirus" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B71C1C"/>
+      <stop offset="100%" stop-color="#C62828"/>
+    </linearGradient>
+  </defs>
+  <!-- 배경 -->
+  <rect width="400" height="220" fill="url(#bg_hantavirus)" rx="14"/>
+  <!-- 상단 장식줄 -->
+  <rect width="400" height="4" fill="#EF9A9A" opacity="0.6"/>
+  <!-- 상단 라벨 -->
+  <text x="200" y="30" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="11" font-weight="700" fill="#EF9A9A" opacity="0.9">⭐ 건강모아 증상 가이드 ⭐</text>
+  <!-- 이모지 -->
+  <text x="200" y="90" text-anchor="middle" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif" font-size="52">⚠️</text>
+  <!-- 증상명 -->
+  <text x="200" y="128" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="30" font-weight="900" fill="#FFFFFF" letter-spacing="-0.5">한타바이러스</text>
+  <!-- 후킹 문구 -->
+  <text x="200" y="155" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="13" fill="#EF9A9A" opacity="0.95">야외활동 후 고열이면 즉시 확인</text>
+  <!-- 태그 -->
+  <text x="200" y="178" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="10" fill="#FFFFFF" opacity="0.45">#신증후출혈열  #들쥐  #감염</text>
+  <!-- 하단 구분선 -->
+  <line x1="40" y1="192" x2="360" y2="192" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2"/>
+  <!-- 사이트명 -->
+  <text x="200" y="210" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="10" fill="#FFFFFF" opacity="0.35">health.ambitstock.com</text>
+</svg>

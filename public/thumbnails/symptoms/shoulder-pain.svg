@@ -1,0 +1,26 @@
+<svg width="400" height="220" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220">
+  <defs>
+    <linearGradient id="bg_shoulder_pain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A148C"/>
+      <stop offset="100%" stop-color="#6A1B9A"/>
+    </linearGradient>
+  </defs>
+  <!-- 배경 -->
+  <rect width="400" height="220" fill="url(#bg_shoulder_pain)" rx="14"/>
+  <!-- 상단 장식줄 -->
+  <rect width="400" height="4" fill="#CE93D8" opacity="0.6"/>
+  <!-- 상단 라벨 -->
+  <text x="200" y="30" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="11" font-weight="700" fill="#CE93D8" opacity="0.9">⭐ 건강모아 증상 가이드 ⭐</text>
+  <!-- 이모지 -->
+  <text x="200" y="90" text-anchor="middle" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif" font-size="52">💪</text>
+  <!-- 증상명 -->
+  <text x="200" y="128" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="30" font-weight="900" fill="#FFFFFF" letter-spacing="-0.5">어깨 통증</text>
+  <!-- 후킹 문구 -->
+  <text x="200" y="155" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="13" fill="#CE93D8" opacity="0.95">충돌증후군·오십견·회전근개 구분</text>
+  <!-- 태그 -->
+  <text x="200" y="178" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="10" fill="#FFFFFF" opacity="0.45">#회전근개  #오십견  #어깨MRI</text>
+  <!-- 하단 구분선 -->
+  <line x1="40" y1="192" x2="360" y2="192" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2"/>
+  <!-- 사이트명 -->
+  <text x="200" y="210" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="10" fill="#FFFFFF" opacity="0.35">health.ambitstock.com</text>
+</svg>

@@ -9,6 +9,8 @@ const post = {
 
     { type: 'callout', html: "<p>계단을 내려갈 때마다 왼쪽 무릎에서 뚝 소리가 났다. 연골 문제인지 힘줄 문제인지 구분도 못 하면서 그냥 버텼다. 통증 위치와 소리 패턴으로 어느 정도 원인을 좁힐 수 있다는 걸 알고 나서야 제대로 된 방향으로 치료를 시작했다.</p>" },
 
+    { type: 'image', src: '/thumbnails/symptoms/knee-pain.svg', alt: '무릎 통증 — 연골 손상인지 관절염인지 확인', caption: '무릎 통증 완전 가이드' },
+
 
     { type: 'h2', id: 'causes', text: '무릎 통증 주요 원인' },
     {

@@ -9,6 +9,8 @@ const post = {
 
     { type: 'callout', html: "<p>재택근무 6개월 만에 아침마다 목을 돌리기가 힘들어졌다. 모니터 높이를 바꾸고 나서야 조금 나아졌다. 일자목은 엑스레이를 찍어보기 전까지 내가 그런 줄 몰랐다. 생각보다 많은 사람에게 있는 문제다.</p>" },
 
+    { type: 'image', src: '/thumbnails/symptoms/neck-pain.svg', alt: '목 통증 — 일자목인지 목디스크인지 구분', caption: '목 통증 완전 가이드' },
+
 
     { type: 'h2', id: 'causes', text: '목 통증 주요 원인' },
     {

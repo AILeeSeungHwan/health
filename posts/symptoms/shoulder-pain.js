@@ -9,6 +9,8 @@ const post = {
 
     { type: 'callout', html: "<p>오른쪽 팔을 뒤로 돌리면 어깨 깊은 곳이 아팠다. 충돌증후군인지 오십견인지 회전근개 파열인지 이름도 몰랐다. 세 가지가 증상이 비슷해서 자가 테스트로 어느 정도 구분이 된다는 걸 알고 나서 진료 방향을 잡을 수 있었다.</p>" },
 
+    { type: 'image', src: '/thumbnails/symptoms/shoulder-pain.svg', alt: '어깨 통증 — 충돌증후군·오십견·회전근개 구분', caption: '어깨 통증 완전 가이드' },
+
 
     { type: 'h2', id: 'anatomy', text: '어깨 구조 — 왜 자주 아픈가' },
     {

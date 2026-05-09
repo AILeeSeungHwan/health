@@ -9,6 +9,8 @@ const post = {
 
     { type: 'callout', html: "<p>이사하다가 소파를 잘못 들었는데 그 자리에서 꼼짝을 못 했다. 병원 가서 들은 건 \"안정 취하세요\" 한마디였다. 나중에 알았지만 누워만 있는 건 회복을 오히려 늦춘다. 적절히 움직이는 게 허리 회복의 핵심이라는 걸 그때 몰랐다.</p>" },
 
+    { type: 'image', src: '/thumbnails/symptoms/back-pain.svg', alt: '허리 통증 — 근육통인지 디스크인지 구분법', caption: '허리 통증 완전 가이드' },
+
 
     { type: 'h2', id: 'what-is-it', text: '허리 통증이란 어떤 증상인가' },
     {

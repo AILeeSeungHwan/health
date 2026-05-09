@@ -9,6 +9,8 @@ const post = {
 
     { type: 'callout', html: "<p>샴푸할 때마다 손에 빠지는 머리카락 수가 늘었다. 번아웃이 심했던 시기와 정확히 겹쳤다. 스트레스성 탈모는 원인이 사라지면 돌아온다는 말을 믿고 기다렸는데 — 유형을 정확히 알아야 기다릴지 치료할지 판단이 된다.</p>" },
 
+    { type: 'image', src: '/thumbnails/symptoms/hair-loss.svg', alt: '탈모 — 유형 구분이 치료의 시작', caption: '탈모 완전 가이드' },
+
 
     { type: 'h2', id: 'types', text: '탈모 유형 비교' },
     {
