@@ -206,12 +206,13 @@ export default function SearchAnalytics() {
   const loadRegisteredUrls = useCallback(async () => {
     setUrlLoading(true)
     try {
-      const res  = await fetch('/api/analytics/register-url')
+      const q   = urlSiteFilter !== 'all' ? `?site=${urlSiteFilter}` : ''
+      const res  = await fetch(`/api/analytics/url-stats${q}`)
       const json = await res.json()
-      setRegisteredUrls(Array.isArray(json) ? json : [])
+      setRegisteredUrls(json.rows || [])
     } catch { setRegisteredUrls([]) }
     setUrlLoading(false)
-  }, [])
+  }, [urlSiteFilter])
 
   const loadAllUrls = useCallback(async () => {
     setAllUrlsLoading(true)
@@ -229,16 +230,23 @@ export default function SearchAnalytics() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ slug, site, registered: !current }),
     })
-    await Promise.all([loadRegisteredUrls(), loadAllUrls()])
+    await loadRegisteredUrls()
+    if (allUrls.length > 0) await loadAllUrls()
   }
 
   const saveDirectUrl = async () => {
     if (!directSlug.trim()) return
     setDirectSaving(true)
+    let slug = directSlug.trim()
+    // URL 전체 입력 시 도메인 제거
+    try {
+      const u = new URL(slug)
+      slug = u.pathname.replace(/\/+$/, '') || '/'
+    } catch {}
     await fetch('/api/analytics/register-url', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slug: directSlug.trim(), site: directSite, registered: true }),
+      body: JSON.stringify({ slug, site: directSite, registered: true }),
     })
     setDirectSlug('')
     await loadRegisteredUrls()
@@ -249,6 +257,10 @@ export default function SearchAnalytics() {
     if (activeTab === 'urlmgmt') loadRegisteredUrls()
     if (activeTab === 'allurls') loadAllUrls()
   }, [activeTab, loadRegisteredUrls, loadAllUrls])
+
+  useEffect(() => {
+    if (activeTab === 'urlmgmt') loadRegisteredUrls()
+  }, [urlSiteFilter])
 
   function applyPreset(days) {
     setPreset(days)
@@ -964,56 +976,130 @@ export default function SearchAnalytics() {
         {/* ══ URL 관리 ══ */}
         {activeTab === 'urlmgmt' && (
           <div>
-            <div style={card}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, flexWrap: 'wrap', gap: 8 }}>
-                <h2 style={{ fontSize: 15, fontWeight: 700, margin: 0 }}>
-                  URL 등록 관리
-                  {!urlLoading && <span style={{ fontSize: 12, fontWeight: 400, color: '#9ca3af', marginLeft: 8 }}>{registeredUrls.length}개</span>}
-                </h2>
+            {/* 사이트 필터 + 직접 등록 */}
+            <div style={{ ...card, padding: '14px 20px', marginBottom: 0 }}>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', marginBottom: 14 }}>
+                <span style={{ fontSize: 12, fontWeight: 600, color: '#6b7280' }}>사이트:</span>
+                {['all', ...Object.keys(SITE_META).filter(k => k !== 'unknown')].map(k => {
+                  const m = k === 'all' ? { label: '전체', icon: '🌐', color: '#2c5fff' } : SITE_META[k]
+                  const active = urlSiteFilter === k
+                  return (
+                    <button key={k} onClick={() => setUrlSiteFilter(k)} style={{
+                      padding: '4px 10px', borderRadius: 6, fontSize: 12, cursor: 'pointer',
+                      border: active ? `2px solid ${m.color}` : '1px solid #e5e7eb',
+                      background: active ? m.color : '#fff',
+                      color: active ? '#fff' : '#374151', fontWeight: active ? 700 : 400,
+                    }}>{`${m.icon} ${k === 'all' ? '전체' : m.label}`}</button>
+                  )
+                })}
                 <button onClick={loadRegisteredUrls} disabled={urlLoading} style={{
-                  padding: '6px 14px', borderRadius: 8, border: 'none',
+                  marginLeft: 'auto', padding: '4px 12px', borderRadius: 6, border: 'none',
                   background: '#2c5fff', color: '#fff', fontSize: 12, fontWeight: 600, cursor: 'pointer',
                 }}>{urlLoading ? '⏳' : '🔄 새로고침'}</button>
+              </div>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'flex-end' }}>
+                <div style={{ flex: '1 1 140px' }}>
+                  <div style={{ fontSize: 11, color: '#6b7280', marginBottom: 4 }}>사이트</div>
+                  <select value={directSite} onChange={e => setDirectSite(e.target.value)} style={{
+                    width: '100%', padding: '7px 10px', borderRadius: 8, border: '1px solid #e5e7eb', fontSize: 13, background: '#fff',
+                  }}>
+                    {Object.entries(SITE_META).filter(([k]) => k !== 'unknown').map(([k, v]) => (
+                      <option key={k} value={k}>{v.icon} {v.label}</option>
+                    ))}
+                  </select>
+                </div>
+                <div style={{ flex: '3 1 260px' }}>
+                  <div style={{ fontSize: 11, color: '#6b7280', marginBottom: 4 }}>URL 직접 입력 (슬러그 또는 전체 URL)</div>
+                  <input
+                    value={directSlug}
+                    onChange={e => setDirectSlug(e.target.value)}
+                    onKeyDown={e => e.key === 'Enter' && saveDirectUrl()}
+                    placeholder="https://... 또는 /slug/path"
+                    style={{ width: '100%', padding: '7px 10px', borderRadius: 8, border: '1px solid #e5e7eb', fontSize: 13, boxSizing: 'border-box' }}
+                  />
+                </div>
+                <button onClick={saveDirectUrl} disabled={directSaving || !directSlug.trim()} style={{
+                  padding: '7px 18px', borderRadius: 8, border: 'none',
+                  background: directSlug.trim() ? '#10b981' : '#9ca3af', color: '#fff',
+                  fontSize: 13, fontWeight: 700, cursor: directSlug.trim() ? 'pointer' : 'default', flexShrink: 0,
+                }}>{directSaving ? '⏳' : '✅ 등록'}</button>
+              </div>
+            </div>
+
+            {/* 조회수별 URL 목록 */}
+            <div style={{ ...card, marginTop: 12 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 8 }}>
+                <h2 style={{ fontSize: 15, fontWeight: 700, margin: 0 }}>
+                  조회수별 URL 목록
+                  {!urlLoading && <span style={{ fontSize: 12, fontWeight: 400, color: '#9ca3af', marginLeft: 8 }}>{registeredUrls.length}개</span>}
+                </h2>
+                <div style={{ display: 'flex', gap: 6 }}>
+                  <button
+                    onClick={() => navigator.clipboard.writeText(registeredUrls.filter(r => r.registered).map(r => r.url).join('\n'))}
+                    style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #10b981', background: '#f0fdf4', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#16a34a' }}
+                  >📋 등록됨 복사</button>
+                  <button
+                    onClick={() => navigator.clipboard.writeText(registeredUrls.filter(r => !r.registered).map(r => r.url).join('\n'))}
+                    style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#374151' }}
+                  >📋 미등록 복사</button>
+                  <button
+                    onClick={() => navigator.clipboard.writeText(registeredUrls.map(r => r.url).join('\n'))}
+                    style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid #e5e7eb', background: '#fff', fontSize: 12, cursor: 'pointer', fontWeight: 600, color: '#374151' }}
+                  >📋 전체 복사</button>
+                </div>
               </div>
 
               {urlLoading ? (
                 <div style={{ textAlign: 'center', color: '#9ca3af', padding: 40 }}>⏳ 로딩 중...</div>
               ) : registeredUrls.length ? (
                 <div style={{ overflowX: 'auto' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
                     <thead>
                       <tr>
+                        <th style={th}>#</th>
                         <th style={th}>사이트</th>
-                        <th style={th}>슬러그</th>
+                        <th style={th}>URL (전체)</th>
+                        <th style={{ ...th, textAlign: 'right' }}>조회수</th>
                         <th style={th}>등록 상태</th>
-                        <th style={th}>등록일시 (KST)</th>
+                        <th style={th}>복사</th>
                         <th style={th}>액션</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {registeredUrls.map(r => (
-                        <tr key={`${r.site}::${r.slug}`} style={{ borderBottom: '1px solid #f9fafb' }}>
+                      {registeredUrls.map((r, i) => (
+                        <tr key={`${r.site}::${r.slug}`} style={{ borderBottom: '1px solid #f9fafb', background: r.registered ? '#f0fdf420' : 'transparent' }}>
+                          <td style={{ ...td, color: '#9ca3af', width: 28 }}>{i + 1}</td>
                           <td style={td}><SiteBadge site={r.site} /></td>
-                          <td style={{ ...td, fontFamily: 'monospace', fontSize: 11 }}>{r.slug}</td>
+                          <td style={td}>
+                            <a href={r.url} target="_blank" rel="noopener"
+                              style={{ color: '#2c5fff', textDecoration: 'none', fontSize: 11, fontFamily: 'monospace', wordBreak: 'break-all' }}>
+                              {r.url}
+                            </a>
+                            {r.title && <div style={{ fontSize: 10, color: '#9ca3af', marginTop: 1 }}>{r.title}</div>}
+                          </td>
+                          <td style={{ ...tdR, fontWeight: 700, color: '#2c5fff' }}>{r.views.toLocaleString()}</td>
                           <td style={td}>
                             <span style={{
-                              display: 'inline-flex', alignItems: 'center', gap: 4,
-                              fontSize: 11, padding: '2px 8px', borderRadius: 4, fontWeight: 700,
+                              display: 'inline-flex', alignItems: 'center', gap: 3,
+                              fontSize: 11, padding: '2px 7px', borderRadius: 4, fontWeight: 700,
                               background: r.registered ? '#dcfce7' : '#f3f4f6',
                               color: r.registered ? '#16a34a' : '#6b7280',
                             }}>
-                              {r.registered ? '✅ 등록됨' : '⬜ 미등록'}
+                              {r.registered ? '✅ 등록' : '⬜ 미등록'}
                             </span>
                           </td>
-                          <td style={{ ...td, fontSize: 11, color: '#9ca3af', whiteSpace: 'nowrap' }}>
-                            {r.registered_at ? new Date(new Date(r.registered_at).getTime() + 9*3600000).toISOString().slice(0, 16).replace('T', ' ') : '—'}
+                          <td style={td}>
+                            <button onClick={() => navigator.clipboard.writeText(r.url)} title={r.url} style={{
+                              padding: '3px 8px', borderRadius: 5, border: '1px solid #e5e7eb',
+                              background: '#f9fafb', fontSize: 11, cursor: 'pointer', color: '#374151',
+                            }}>📋</button>
                           </td>
                           <td style={td}>
                             <button onClick={() => toggleRegister(r.slug, r.site, r.registered)} style={{
-                              padding: '4px 10px', borderRadius: 6, border: '1px solid #e5e7eb',
+                              padding: '3px 9px', borderRadius: 5, border: '1px solid #e5e7eb',
                               background: r.registered ? '#fef2f2' : '#f0fdf4', fontSize: 11,
                               color: r.registered ? '#ef4444' : '#16a34a', cursor: 'pointer', fontWeight: 600,
-                            }}>{r.registered ? '등록 취소' : '등록'}</button>
+                            }}>{r.registered ? '취소' : '등록'}</button>
                           </td>
                         </tr>
                       ))}
@@ -1021,42 +1107,10 @@ export default function SearchAnalytics() {
                   </table>
                 </div>
               ) : (
-                <p style={{ color: '#9ca3af', fontSize: 13, textAlign: 'center', padding: 30 }}>등록된 URL 없음</p>
+                <p style={{ color: '#9ca3af', fontSize: 13, textAlign: 'center', padding: 30 }}>
+                  pageview_events에 기록된 URL이 없습니다.
+                </p>
               )}
-            </div>
-
-            <div style={{ ...card, background: '#f8fafc' }}>
-              <h3 style={{ fontSize: 14, fontWeight: 700, marginBottom: 12 }}>직접 URL 등록</h3>
-              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'flex-end' }}>
-                <div style={{ flex: '1 1 160px' }}>
-                  <div style={{ fontSize: 11, color: '#6b7280', marginBottom: 4 }}>사이트</div>
-                  <select value={directSite} onChange={e => setDirectSite(e.target.value)} style={{
-                    width: '100%', padding: '8px 10px', borderRadius: 8, border: '1px solid #e5e7eb', fontSize: 13, background: '#fff',
-                  }}>
-                    {Object.entries(SITE_META).filter(([k]) => k !== 'unknown').map(([k, v]) => (
-                      <option key={k} value={k}>{v.icon} {v.label}</option>
-                    ))}
-                  </select>
-                </div>
-                <div style={{ flex: '3 1 280px' }}>
-                  <div style={{ fontSize: 11, color: '#6b7280', marginBottom: 4 }}>슬러그 (예: /posts/health/knee-pain)</div>
-                  <input
-                    value={directSlug}
-                    onChange={e => setDirectSlug(e.target.value)}
-                    onKeyDown={e => e.key === 'Enter' && saveDirectUrl()}
-                    placeholder="/slug 또는 URL 전체 입력..."
-                    style={{ width: '100%', padding: '8px 10px', borderRadius: 8, border: '1px solid #e5e7eb', fontSize: 13, boxSizing: 'border-box' }}
-                  />
-                </div>
-                <button onClick={saveDirectUrl} disabled={directSaving || !directSlug.trim()} style={{
-                  padding: '8px 20px', borderRadius: 8, border: 'none',
-                  background: directSlug.trim() ? '#2c5fff' : '#9ca3af', color: '#fff',
-                  fontSize: 13, fontWeight: 700, cursor: directSlug.trim() ? 'pointer' : 'default', flexShrink: 0,
-                }}>{directSaving ? '⏳ 저장 중...' : '✅ 등록'}</button>
-              </div>
-              <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 8 }}>
-                슬러그는 도메인 제외 경로 (예: /posts/health/knee-pain). URL 전체 입력 시 자동 파싱됩니다.
-              </div>
             </div>
           </div>
         )}
@@ -1110,20 +1164,20 @@ export default function SearchAnalytics() {
                           <thead>
                             <tr>
                               <th style={th}>사이트</th>
-                              <th style={th}>슬러그 / URL</th>
+                              <th style={th}>URL (전체)</th>
                               <th style={th}>등록 상태</th>
-                              <th style={th}>등록일시 (KST)</th>
+                              <th style={th}>복사</th>
                               <th style={th}>액션</th>
                             </tr>
                           </thead>
                           <tbody>
                             {filtered.slice(0, 500).map((u, i) => (
-                              <tr key={i} style={{ borderBottom: '1px solid #f9fafb', background: u.registered ? '#f0fdf4' : 'transparent' }}>
+                              <tr key={i} style={{ borderBottom: '1px solid #f9fafb', background: u.registered ? '#f0fdf420' : 'transparent' }}>
                                 <td style={td}><SiteBadge site={u.site} /></td>
                                 <td style={td}>
                                   <a href={u.url} target="_blank" rel="noopener"
-                                    style={{ color: '#2c5fff', textDecoration: 'none', fontSize: 11, fontFamily: 'monospace' }}>
-                                    {u.slug || '/'}
+                                    style={{ color: '#2c5fff', textDecoration: 'none', fontSize: 11, fontFamily: 'monospace', wordBreak: 'break-all' }}>
+                                    {u.url}
                                   </a>
                                 </td>
                                 <td style={td}>
@@ -1136,8 +1190,11 @@ export default function SearchAnalytics() {
                                     {u.registered ? '✅ 등록됨' : '⬜ 미등록'}
                                   </span>
                                 </td>
-                                <td style={{ ...td, fontSize: 11, color: '#9ca3af', whiteSpace: 'nowrap' }}>
-                                  {u.registered_at ? new Date(new Date(u.registered_at).getTime() + 9*3600000).toISOString().slice(0, 16).replace('T', ' ') : '—'}
+                                <td style={td}>
+                                  <button onClick={() => navigator.clipboard.writeText(u.url)} title={u.url} style={{
+                                    padding: '3px 8px', borderRadius: 5, border: '1px solid #e5e7eb',
+                                    background: '#f9fafb', fontSize: 11, cursor: 'pointer', color: '#374151',
+                                  }}>📋</button>
                                 </td>
                                 <td style={td}>
                                   <button onClick={() => toggleRegister(u.slug, u.site, u.registered)} style={{
