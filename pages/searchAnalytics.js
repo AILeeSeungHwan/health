@@ -168,8 +168,8 @@ function doCopy(text, onCount) {
 
 export default function SearchAnalytics() {
   const [activeTab, setActiveTab] = useState('overview')
-  const [preset, setPreset]       = useState(30)
-  const [from, setFrom]           = useState(daysAgo(30))
+  const [preset, setPreset]       = useState(0)
+  const [from, setFrom]           = useState(today())
   const [to, setTo]               = useState(today())
   const [srcFilter, setSrcFilter] = useState('all')
   const [siteFilter, setSiteFilter] = useState('all')
