@@ -81,13 +81,13 @@ function HBar({ value, max, color, label, count }) {
   const m = SOURCE_META[label] || SOURCE_META.unknown
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-      <span style={{ width: 110, fontSize: 12, fontWeight: 500, display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
+      <span className="sa-hbar-label" style={{ width: 110, fontSize: 12, fontWeight: 500, display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
         <span>{m.icon}</span>{m.label}
       </span>
-      <div style={{ flex: 1, height: 22, background: '#f1f3f5', borderRadius: 5, overflow: 'hidden' }}>
+      <div style={{ flex: 1, height: 22, background: '#f1f3f5', borderRadius: 5, overflow: 'hidden', minWidth: 0 }}>
         <div style={{ width: pct + '%', height: '100%', background: color || m.color, borderRadius: 5, transition: 'width 0.5s ease', minWidth: value > 0 ? 4 : 0 }} />
       </div>
-      <span style={{ width: 70, fontSize: 12, textAlign: 'right', flexShrink: 0 }}>
+      <span className="sa-hbar-count" style={{ width: 70, fontSize: 12, textAlign: 'right', flexShrink: 0 }}>
         <strong>{count}</strong> <span style={{ opacity: 0.4, fontSize: 10 }}>({pct.toFixed(0)}%)</span>
       </span>
     </div>
@@ -371,21 +371,64 @@ export default function SearchAnalytics() {
         <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" />
       </Head>
 
-      <div style={{
+      <style jsx global>{`
+        .sa-root, .sa-root *, .sa-root *::before, .sa-root *::after { box-sizing: border-box; }
+        .sa-root { overflow-x: hidden; }
+
+        @media (max-width: 768px) {
+          .sa-root { padding: 14px 10px 60px !important; max-width: 100% !important; }
+          .sa-root h1 { font-size: 18px !important; }
+          .sa-root h2 { font-size: 14px !important; }
+          .sa-header { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; }
+          .sa-header-actions { gap: 6px !important; width: 100%; }
+          .sa-header-actions > * { flex: 1 1 calc(50% - 3px); font-size: 11px !important; padding: 7px 8px !important; white-space: nowrap; }
+          .sa-filter { padding: 12px !important; flex-direction: column !important; align-items: stretch !important; gap: 10px !important; }
+          .sa-filter > div, .sa-filter > select { width: 100%; flex-wrap: wrap !important; }
+          .sa-filter > select { padding: 8px 10px !important; font-size: 13px !important; }
+          .sa-filter input[type="date"] { flex: 1 1 auto; padding: 7px 8px !important; font-size: 12px !important; }
+          .sa-kpi-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+          .sa-kpi-grid > div { padding: 12px 8px !important; }
+          .sa-kpi-grid > div > div:first-child { font-size: 22px !important; }
+          .sa-tabs { gap: 0 !important; }
+          .sa-tabs button { padding: 8px 10px !important; font-size: 12px !important; }
+          .sa-grid-2 { grid-template-columns: 1fr !important; gap: 12px !important; }
+          .sa-grid-2 > div { grid-column: auto !important; }
+          .sa-dist { flex-direction: column !important; gap: 14px !important; }
+          .sa-dist > div { flex: 1 1 auto !important; min-width: 0 !important; width: 100% !important; }
+          .sa-hbar-label { width: auto !important; flex: 0 0 88px !important; font-size: 11px !important; }
+          .sa-hbar-count { width: auto !important; flex: 0 0 auto !important; max-width: 110px !important; font-size: 11px !important; }
+          .sa-root table { font-size: 11px !important; }
+          .sa-root table th, .sa-root table td { padding: 7px 6px !important; font-size: 11px !important; }
+          .sa-root textarea { font-size: 10px !important; height: 140px !important; }
+          .sa-root a { word-break: break-all; }
+          .sa-root [style*="height: 120"][style*="display: flex"] { height: 80px !important; }
+          .sa-card { padding: 14px 12px !important; margin-bottom: 12px !important; }
+        }
+
+        @media (max-width: 480px) {
+          .sa-root { padding: 12px 8px 50px !important; }
+          .sa-kpi-grid > div > div:first-child { font-size: 18px !important; }
+          .sa-tabs button { padding: 8px 8px !important; font-size: 11px !important; }
+          .sa-root table th, .sa-root table td { padding: 6px 4px !important; font-size: 10px !important; }
+          .sa-hbar-label { flex: 0 0 76px !important; font-size: 10px !important; }
+        }
+      `}</style>
+
+      <div className="sa-root" style={{
         maxWidth: 1100, margin: '0 auto', padding: '24px 20px 80px',
         fontFamily: "'Pretendard Variable', Pretendard, -apple-system, sans-serif",
         color: '#1a1a2e', background: '#f8f9fa', minHeight: '100vh',
       }}>
 
         {/* 헤더 */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24, flexWrap: 'wrap', gap: 12 }}>
+        <div className="sa-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24, flexWrap: 'wrap', gap: 12 }}>
           <div>
             <h1 style={{ fontSize: 22, fontWeight: 800, margin: '0 0 4px' }}>검색유입 분석</h1>
             <p style={{ fontSize: 12, color: '#9ca3af', margin: 0 }}>
               {siteFilter === 'all' ? '전체 사이트' : currentHost} · Supabase 통합 (pageview_events)
             </p>
           </div>
-          <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+          <div className="sa-header-actions" style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
             <select value={siteFilter} onChange={e => setSiteFilter(e.target.value)} style={{
               padding: '8px 12px', borderRadius: 8, border: '1px solid #e5e7eb',
               background: '#fff', fontSize: 12, fontWeight: 600, cursor: 'pointer', color: '#374151',
@@ -429,7 +472,7 @@ export default function SearchAnalytics() {
         )}
 
         {/* 필터 바 */}
-        <div style={{ ...card, padding: '14px 20px', display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 16 }}>
+        <div className="sa-card sa-filter" style={{ ...card, padding: '14px 20px', display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 16 }}>
           <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
             {PRESETS.map(p => (
               <button key={p.days} onClick={() => applyPreset(p.days)} style={{
@@ -468,7 +511,7 @@ export default function SearchAnalytics() {
         )}
 
         {/* KPI 카드 */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 10, marginBottom: 16 }}>
+        <div className="sa-kpi-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 10, marginBottom: 16 }}>
           <KpiCard label="총 페이지뷰" value={s.total?.toLocaleString()} color="#2c5fff" />
           <KpiCard label="검색 유입" value={s.search?.toLocaleString()} sub={s.total > 0 ? `전체의 ${(s.search/s.total*100).toFixed(0)}%` : ''} color="#10b981" />
           <KpiCard label="직접 접속" value={s.direct?.toLocaleString()} color="#6b7280" />
@@ -483,7 +526,7 @@ export default function SearchAnalytics() {
         </div>
 
         {/* 탭 */}
-        <div style={{ display: 'flex', gap: 0, borderBottom: '2px solid #e5e7eb', marginBottom: 16, overflowX: 'auto' }}>
+        <div className="sa-tabs" style={{ display: 'flex', gap: 0, borderBottom: '2px solid #e5e7eb', marginBottom: 16, overflowX: 'auto' }}>
           {TABS.map(tab => (
             <button key={tab.key} onClick={() => setActiveTab(tab.key)} style={{
               padding: '10px 18px', fontSize: 13, fontWeight: activeTab === tab.key ? 700 : 400,
@@ -496,7 +539,7 @@ export default function SearchAnalytics() {
 
         {/* ══ 개요 ══ */}
         {activeTab === 'overview' && (
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+          <div className="sa-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={card}>
               <h2 style={{ fontSize: 15, fontWeight: 700, marginBottom: 16 }}>검색엔진별 유입</h2>
               {data?.by_source.length ? (
@@ -544,7 +587,7 @@ export default function SearchAnalytics() {
             {siteFilter === 'all' && data?.by_site?.length > 0 && (
               <div style={{ ...card, gridColumn: '1 / -1' }}>
                 <h2 style={{ fontSize: 15, fontWeight: 700, marginBottom: 16 }}>사이트별 유입</h2>
-                <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+                <div className="sa-dist" style={{ display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'flex-start' }}>
                   <div style={{ flex: '1 1 400px', minWidth: 0 }}>
                     {(() => {
                       const maxSite = Math.max(...data.by_site.map(s => s.total), 1)
@@ -553,13 +596,13 @@ export default function SearchAnalytics() {
                         const pct = (s.total / maxSite * 100)
                         return (
                           <div key={s.site} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                            <span style={{ width: 110, fontSize: 12, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
+                            <span className="sa-hbar-label" style={{ width: 110, fontSize: 12, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
                               {m.icon} {m.label}
                             </span>
-                            <div style={{ flex: 1, height: 22, background: '#f1f3f5', borderRadius: 5, overflow: 'hidden' }}>
+                            <div style={{ flex: 1, height: 22, background: '#f1f3f5', borderRadius: 5, overflow: 'hidden', minWidth: 0 }}>
                               <div style={{ width: pct + '%', height: '100%', background: m.color, borderRadius: 5, transition: 'width 0.5s ease', minWidth: s.total > 0 ? 4 : 0 }} />
                             </div>
-                            <span style={{ width: 140, fontSize: 12, textAlign: 'right', flexShrink: 0 }}>
+                            <span className="sa-hbar-count" style={{ width: 140, fontSize: 12, textAlign: 'right', flexShrink: 0 }}>
                               <strong>{s.total.toLocaleString()}</strong>
                               <span style={{ opacity: 0.5, fontSize: 10, marginLeft: 4 }}>({s.pct}%)</span>
                               <span style={{ fontSize: 10, color: '#10b981', marginLeft: 6 }}>검색 {s.search}</span>
@@ -602,20 +645,20 @@ export default function SearchAnalytics() {
                 }
                 const maxDev = Math.max(...data.by_device.map(d => d.count), 1)
                 return (
-                  <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+                  <div className="sa-dist" style={{ display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'flex-start' }}>
                     <div style={{ flex: '1 1 340px', minWidth: 0 }}>
                       {data.by_device.map(d => {
                         const m = DEVICE_META[d.device] || DEVICE_META.unknown
                         const pct = (d.count / maxDev * 100)
                         return (
                           <div key={d.device} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                            <span style={{ width: 120, fontSize: 12, fontWeight: 500, display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
+                            <span className="sa-hbar-label" style={{ width: 120, fontSize: 12, fontWeight: 500, display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
                               <span>{m.icon}</span>{m.label}
                             </span>
-                            <div style={{ flex: 1, height: 22, background: '#f1f3f5', borderRadius: 5, overflow: 'hidden' }}>
+                            <div style={{ flex: 1, height: 22, background: '#f1f3f5', borderRadius: 5, overflow: 'hidden', minWidth: 0 }}>
                               <div style={{ width: pct + '%', height: '100%', background: m.color, borderRadius: 5, transition: 'width 0.5s ease', minWidth: d.count > 0 ? 4 : 0 }} />
                             </div>
-                            <span style={{ width: 90, fontSize: 12, textAlign: 'right', flexShrink: 0 }}>
+                            <span className="sa-hbar-count" style={{ width: 90, fontSize: 12, textAlign: 'right', flexShrink: 0 }}>
                               <strong>{d.count.toLocaleString()}</strong>
                               <span style={{ opacity: 0.5, fontSize: 10, marginLeft: 4 }}>({d.pct}%)</span>
                             </span>
