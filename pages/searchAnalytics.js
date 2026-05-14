@@ -41,7 +41,7 @@ const SITE_HOST = {
   health: 'health.ambitstock.com',
   insurance: 'insurance.ambitstock.com',
   movie: 'ambitstock.com',
-  finance: 'finance.ambitstock.com',
+  finance: 'financemoa.ambitstock.com',
   travel: 'travel.ambitstock.com',
   dinner: 'dinner.ambitstock.com',
 }
@@ -374,6 +374,7 @@ export default function SearchAnalytics() {
       <style jsx global>{`
         .sa-root, .sa-root *, .sa-root *::before, .sa-root *::after { box-sizing: border-box; }
         .sa-root { overflow-x: hidden; }
+        .sa-root div[style*="overflow-x: auto"], .sa-root div[style*="overflowX:auto"] { max-width: 100%; }
 
         @media (max-width: 768px) {
           .sa-root { padding: 14px 10px 60px !important; max-width: 100% !important; }
@@ -393,8 +394,11 @@ export default function SearchAnalytics() {
           .sa-tabs button { padding: 8px 10px !important; font-size: 12px !important; }
           .sa-grid-2 { grid-template-columns: 1fr !important; gap: 12px !important; }
           .sa-grid-2 > div { grid-column: auto !important; }
-          .sa-dist { flex-direction: column !important; gap: 14px !important; }
-          .sa-dist > div { flex: 1 1 auto !important; min-width: 0 !important; width: 100% !important; }
+          .sa-dist { flex-direction: column !important; gap: 14px !important; align-items: stretch !important; }
+          .sa-dist > div { flex: 1 1 auto !important; min-width: 0 !important; width: 100% !important; max-width: 100% !important; }
+          .sa-root [style*="min-width: 90"], .sa-root [style*="minWidth:90"] { min-width: 70px !important; }
+          .sa-root [style*="min-width: 100"], .sa-root [style*="minWidth:100"] { min-width: 80px !important; }
+          .sa-root [style*="min-width: 140"], .sa-root [style*="minWidth:140"] { min-width: 0 !important; }
           .sa-hbar-label { width: auto !important; flex: 0 0 88px !important; font-size: 11px !important; }
           .sa-hbar-count { width: auto !important; flex: 0 0 auto !important; max-width: 110px !important; font-size: 11px !important; }
           .sa-root table { font-size: 11px !important; }
