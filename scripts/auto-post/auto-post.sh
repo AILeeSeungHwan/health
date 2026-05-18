@@ -30,6 +30,16 @@ fi
 echo "" | tee -a "$LOG_FILE"
 echo "================ [$DATE_STR] auto-post QUEUE (slot=$SLOT count=$COUNT) ================" | tee -a "$LOG_FILE"
 
+# ── 오늘의 인사이트 추천 로그 기록 (Plan B는 AI 호출 0회 구조이므로 큐에 자동 주입은 하지 않음) ──
+# 운영자가 로그에서 추천을 확인 후 수동으로 큐(post-queue.json + queued-posts/*.js)에 추가하도록 안내.
+if [ -x /Users/lee/bin/insight-hint.sh ]; then
+  echo "" | tee -a "$LOG_FILE"
+  echo "── 오늘의 인사이트 추천 (운영자 수동 큐 추가 참고용) ──" | tee -a "$LOG_FILE"
+  /Users/lee/bin/insight-hint.sh health 2>/dev/null | tee -a "$LOG_FILE" || echo "[insight-hint 로드 실패]" | tee -a "$LOG_FILE"
+  echo "────────────────────────────────────────────────" | tee -a "$LOG_FILE"
+  echo "" | tee -a "$LOG_FILE"
+fi
+
 # ── 큐 파일 수집 (bash 3.2 호환: find + while read) ────────
 QUEUE_LIST=$(find "$QUEUE_DIR" -maxdepth 1 -name '*.js' | sort 2>/dev/null)
 
