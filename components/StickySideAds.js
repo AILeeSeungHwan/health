@@ -8,7 +8,7 @@ export function SideAd({ side = 'left', slot }) {
       aria-label={side === 'left' ? '좌측 광고' : '우측 광고'}
     >
       <div className="side-ad-sticky">
-        <AdUnit slot={slot || (side === 'left' ? '3000000001' : '3000000002')} variant="vertical" minHeight={600} />
+        <AdUnit slot={slot || '8518684658'} variant="vertical" minHeight={600} />
       </div>
       <style jsx>{`
         .side-ad { display: none; }

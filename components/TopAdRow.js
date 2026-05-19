@@ -5,9 +5,9 @@ export default function TopAdRow({ slotA, slotB }) {
   return (
     <div className="top-ad-row" style={{ margin:'18px 0 20px' }}>
       <div className="top-ad-grid">
-        <AdUnit slot={slotA || '1000000001'} variant="rectangle" minHeight={250} style={{ margin:0 }} />
+        <AdUnit slot={slotA || '2144847994'} variant="auto" minHeight={250} style={{ margin:0 }} />
         <div className="top-ad-second">
-          <AdUnit slot={slotB || '1000000002'} variant="rectangle" minHeight={250} style={{ margin:0 }} />
+          <AdUnit slot={slotB || '2144847994'} variant="auto" minHeight={250} style={{ margin:0 }} />
         </div>
       </div>
       <style jsx>{`

@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Breadcrumb from './Breadcrumb'
 import AdUnit from './AdUnit'
-import MultiplexAd from './MultiplexAd'
 import TopAdRow from './TopAdRow'
 import Faq from './Faq'
 import CalculatorWidget from './calculators'
@@ -197,9 +196,14 @@ function renderWithAds(sections, coupangLinks, nutrioneLinks, related) {
       h2Index++
       if (h2Index === 1) {
         out.push(<RelatedPostsCard key={`related-${i}`} related={related} />)
-        out.push(<MultiplexAd key={`ad-mx-${i}`} />)
+        out.push(
+          <div key={`ad-ia-${i}`} style={{ margin:'24px 0' }}>
+            <div style={{ fontSize:11, color:'#9ca3af', marginBottom:6, textAlign:'center' }}>— 광고 —</div>
+            <AdUnit slot="9069348993" variant="in-article" minHeight={200} />
+          </div>
+        )
       } else if (h2Index >= 2) {
-        out.push(<AdUnit key={`ad-h2-${i}`} slot="4000000001" variant="auto" />)
+        out.push(<AdUnit key={`ad-h2-${i}`} slot="8518684658" variant="auto" />)
       }
     }
     out.push(<Section key={i} section={s} coupangLinks={coupangLinks} nutrioneLinks={nutrioneLinks} />)

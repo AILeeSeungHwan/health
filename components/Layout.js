@@ -10,7 +10,7 @@ import TopAdRow from './TopAdRow'
 const SITE_NAME = '건강모아'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://health.ambitstock.com'
 const SITE_DESC = '증상·일반의약품·영양제·건강제품을 한 곳에서 — 식약처 기준에 따른 안전한 건강 정보. 계산기·비교·상황별 가이드까지.'
-const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || ''
+const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || 'ca-pub-8640254349508671'
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
 // 사이트 운영용 기본값 (Vercel 환경변수에서 덮어쓸 수 있음)
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || 'whsi4s1oc4'

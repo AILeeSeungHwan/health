@@ -1,15 +1,16 @@
 import { useState } from 'react'
 
 export default function Faq({ items }) {
-  const [open, setOpen] = useState(null)
+  // 기본값: 모든 Q&A 펼침 (사용자가 개별 항목을 접을 수 있음)
+  const [closed, setClosed] = useState({})
   if (!items || items.length === 0) return null
   return (
     <div style={{ margin:'8px 0 16px' }}>
       {items.map((it, i) => {
-        const isOpen = open === i
+        const isOpen = !closed[i]
         return (
           <div key={i} style={{ borderBottom:'1px solid #E5E7EB' }}>
-            <button onClick={() => setOpen(isOpen ? null : i)} style={{
+            <button onClick={() => setClosed(c => ({ ...c, [i]: !c[i] }))} style={{
               width:'100%', textAlign:'left', padding:'14px 0', background:'none', border:'none', cursor:'pointer',
               display:'flex', justifyContent:'space-between', alignItems:'center', fontSize:15, fontWeight:700, color:'#111827'
             }}>

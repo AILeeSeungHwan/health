@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || ''
+const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || 'ca-pub-8640254349508671'
 
 /**
  * 범용 AdSense 광고 컴포넌트
@@ -12,6 +12,7 @@ const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || ''
  *   'rectangle'  — 상단 2분할용 (336x280 주변)
  *   'vertical'   — 사이드 스카이스크래퍼 (160x600 / 300x600)
  *   'multiplex'  — 멀티플렉스 광고 (두 번째 H2용)
+ *   'in-article' — 인아티클 네이티브 광고 (본문 H2 사이 삽입)
  */
 export default function AdUnit({ slot, variant = 'auto', style, minHeight }) {
   const containerRef = useRef(null)
@@ -38,18 +39,21 @@ export default function AdUnit({ slot, variant = 'auto', style, minHeight }) {
 
   // slot/format 변형
   const slotId = slot || '0000000000'
+  const isInArticle = variant === 'in-article'
   const fmt = variant === 'vertical' ? 'vertical'
            : variant === 'rectangle' ? 'rectangle'
            : variant === 'multiplex' ? 'autorelaxed'
+           : isInArticle ? 'fluid'
            : 'auto'
 
-  const baseMinH = minHeight ?? (variant === 'vertical' ? 600 : variant === 'rectangle' ? 250 : variant === 'multiplex' ? 300 : 100)
+  const baseMinH = minHeight ?? (variant === 'vertical' ? 600 : variant === 'rectangle' ? 250 : variant === 'multiplex' ? 300 : isInArticle ? 200 : 100)
 
   // 개발환경 플레이스홀더
   if (process.env.NODE_ENV !== 'production') {
     const dashed = variant === 'vertical' ? '세로 스카이스크래퍼 160×600'
                  : variant === 'rectangle' ? '사각 광고 336×280'
                  : variant === 'multiplex' ? '멀티플렉스 추천 광고'
+                 : isInArticle ? '인아티클 네이티브 광고'
                  : '반응형 광고'
     return (
       <div style={{
@@ -68,11 +72,19 @@ export default function AdUnit({ slot, variant = 'auto', style, minHeight }) {
   return (
     <div ref={containerRef} style={{ margin:'14px 0', textAlign:'center', overflow:'hidden', minHeight: inView ? 'auto' : baseMinH, ...style }}>
       {inView && (
-        <ins className="adsbygoogle" style={{ display:'block' }}
-          data-ad-client={ADSENSE_ID}
-          data-ad-slot={slotId}
-          data-ad-format={fmt}
-          data-full-width-responsive="true" />
+        isInArticle ? (
+          <ins className="adsbygoogle" style={{ display:'block', textAlign:'center' }}
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client={ADSENSE_ID}
+            data-ad-slot={slotId} />
+        ) : (
+          <ins className="adsbygoogle" style={{ display:'block' }}
+            data-ad-client={ADSENSE_ID}
+            data-ad-slot={slotId}
+            data-ad-format={fmt}
+            data-full-width-responsive="true" />
+        )
       )}
     </div>
   )
