@@ -1,9 +1,24 @@
 User-agent: *
 Allow: /
+Allow: /favicon.ico
 Disallow: /admin/
 Disallow: /api/
 Disallow: /search
 Disallow: /searchAnalytics
+
+# 네이버 (Yeti) 명시 허용
+User-agent: Yeti
+Allow: /
+Allow: /favicon.ico
+Disallow: /admin/
+Disallow: /api/
+
+# 다음 (Daumoa) 명시 허용 — 파비콘 수집 보장
+User-agent: Daumoa
+Allow: /
+Allow: /favicon.ico
+Disallow: /admin/
+Disallow: /api/
 
 Sitemap: https://health.ambitstock.com/sitemap.xml
 #DaumWebMasterTool:c0c416acddc71eb8ef66cc348624e99e88c02dca37f5cf2f192e2c199239d1f0:MXew3+NghikGqOqbWdFHbA==
