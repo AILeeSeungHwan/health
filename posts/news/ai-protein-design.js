@@ -1,52 +1,55 @@
 const post = {
   id: 'N0001',
   sections: [
-    { type: 'intro', html: '<p><strong>AI 단백질 설계</strong>가 검색 상위로 올라왔다. 단순한 학계 화제가 아니라, 신약·항체·효소·백신 후보를 실험실 합성 전에 컴퓨터로 "디자인"하는 기술이 현실의 의료 파이프라인을 바꾸고 있기 때문이다. 이 글은 2024 노벨화학상부터 2025–2026 임상 흐름까지, 일반 독자가 헷갈리지 않도록 핵심만 정리한다.</p>' },
+    { type: 'intro', html: '<p>요즘 <strong>"AI 단백질 설계"</strong>라는 말이 자주 보입니다. 어려운 과학 얘기처럼 들리지만, 결론만 보면 단순합니다. <strong>약을 만드는 속도가 크게 빨라지고 있다는 뜻</strong>이에요. 우리 몸의 거의 모든 일은 단백질이 하고, 약도 결국 그 단백질에 잘 맞물리는 분자를 찾는 일입니다. 그 "잘 맞물리는 분자"를 컴퓨터가 미리 디자인해 주는 시대가 열렸습니다.</p>' },
     { type: 'toc' },
 
-    { type: 'callout', html: '<p>핵심 한 줄: <strong>AI 단백질 설계</strong>는 "이미 있는 단백질의 구조를 맞춰보는 단계"를 넘어, "원하는 기능을 가진 단백질을 처음부터 만들어내는 단계"로 진입했다. 신약 개발에서 발견(discovery) 단계의 시간과 비용을 크게 줄이는 도구로 자리 잡고 있다.</p>' },
+    { type: 'callout', html: '<p>한 줄 요약: 예전엔 약 후보 하나 찾는 데 몇 년이 걸렸지만, 이제는 컴퓨터가 "이런 모양의 단백질이 필요해"라고 알려주면 짧으면 며칠 안에 후보를 그려냅니다. 실제 약이 되기까지는 여전히 임상시험이 남아 있지만, 출발점이 완전히 달라졌어요.</p>' },
 
-    { type: 'h2', id: 'what', text: 'AI 단백질 설계란 무엇인가' },
-    { type: 'body', html: '<p>단백질은 아미노산 사슬이 3차원으로 접힌 분자다. 어떤 모양으로 접히느냐가 그 단백질의 기능(효소·항체·수용체 등)을 결정한다. 전통적으로 단백질 구조를 푸는 데는 X-선 결정학·NMR·크라이오 EM으로 수개월~수년이 걸렸고, 새 단백질을 "설계"하는 것은 더 어려운 일이었다.</p><p>AI 단백질 설계는 두 갈래로 나뉜다.</p><ul><li><strong>구조 예측(Structure Prediction)</strong> — 아미노산 서열을 넣으면 3차원 구조를 출력. 대표: AlphaFold 시리즈.</li><li><strong>디노보 설계(De Novo Design)</strong> — "이런 기능을 하는 단백질이 필요해" 라는 목표를 넣으면 자연계에 없던 새 아미노산 서열을 생성. 대표: RFdiffusion·AlphaProteo.</li></ul>' },
+    { type: 'h2', id: 'what', text: '단백질이 뭐고, 왜 그게 약이랑 관련 있나요?' },
+    { type: 'body', html: '<p>단백질은 우리 몸 안에서 일하는 작은 부품들입니다. 소화시키는 효소도, 통증 신호를 전달하는 수용체도, 바이러스를 막는 항체도 전부 단백질이에요. 그리고 거의 모든 약은 <strong>몸 안 어떤 단백질에 달라붙어서 작용</strong>합니다.</p><p>그런데 단백질은 평면이 아니라 3차원으로 꼬여 있어요. 그 꼬임 모양이 곧 그 단백질의 일입니다. 그래서 "약을 만든다 = 그 단백질의 모양에 정확히 맞아 들어가는 또 다른 분자를 만든다" 라고 봐도 큰 무리가 없어요.</p><p>옛날에는 이 모양을 알아내는 데 몇 년이 걸렸습니다. AI가 등장하면서 그 시간이 며칠~몇 분 단위로 줄었습니다.</p>' },
 
-    { type: 'h2', id: 'nobel', text: '왜 지금 주목받나 — 2024 노벨화학상' },
-    { type: 'body', html: '<p>2024년 노벨화학상은 두 진영에 동시에 돌아갔다.</p><ul><li><strong>데이비드 베이커(David Baker, 워싱턴대)</strong> — 디노보 단백질 설계의 개척자. 자연계에 없는 단백질을 컴퓨터로 설계해 실제 실험실에서 합성·작동을 검증한 공로.</li><li><strong>데미스 허사비스(Demis Hassabis)·존 점퍼(John Jumper, 구글 딥마인드)</strong> — AlphaFold로 사실상 모든 알려진 단백질의 구조를 예측 가능하게 만든 공로.</li></ul><p>학계 인사이드에서는 "이미 받았어야 할 상"이라는 평가가 많았다. 단백질 구조 예측은 50년 이상 풀리지 않았던 "단백질 접힘 문제(protein folding problem)"의 사실상 해법으로 받아들여지고 있다.</p>' },
+    { type: 'h2', id: 'nobel', text: '왜 갑자기 화제가 됐나요? — 2024 노벨화학상' },
+    { type: 'body', html: '<p>2024년 노벨화학상이 이 분야 연구자 세 명에게 동시에 돌아갔어요.</p><ul><li><strong>데이비드 베이커</strong> (미국 워싱턴대) — 자연에 없던 단백질을 컴퓨터로 처음부터 그려서 실제 실험실에서 만드는 데 성공.</li><li><strong>데미스 허사비스 / 존 점퍼</strong> (구글 딥마인드) — AlphaFold(알파폴드)로 사실상 알려진 모든 단백질의 모양을 컴퓨터로 풀어냄.</li></ul><p>학계에서는 "이미 줬어야 할 상"이라는 평가가 많았습니다. 50년 넘게 풀리지 않던 문제가 풀린 셈이거든요.</p>' },
 
-    { type: 'h2', id: 'tools', text: '주요 기술 — AlphaFold · RFdiffusion · AlphaProteo' },
-    { type: 'body', html: '<p>2024–2026 현재 시점 기준으로 가장 영향력이 큰 세 가지 도구를 정리한다.</p><table style="width:100%; border-collapse:collapse; font-size:14px; margin:10px 0;"><thead><tr style="background:#F1F5F9;"><th style="padding:8px; text-align:left; border:1px solid #E5E7EB;">도구</th><th style="padding:8px; text-align:left; border:1px solid #E5E7EB;">개발사</th><th style="padding:8px; text-align:left; border:1px solid #E5E7EB;">역할</th></tr></thead><tbody><tr><td style="padding:8px; border:1px solid #E5E7EB;"><strong>AlphaFold 3</strong></td><td style="padding:8px; border:1px solid #E5E7EB;">Google DeepMind · Isomorphic Labs (2024.5)</td><td style="padding:8px; border:1px solid #E5E7EB;">단백질뿐 아니라 DNA·RNA·작은 분자(리간드)와의 상호작용 구조까지 예측. 신약 결합 시뮬레이션의 표준 도구로 빠르게 자리 잡음.</td></tr><tr><td style="padding:8px; border:1px solid #E5E7EB;"><strong>RFdiffusion</strong></td><td style="padding:8px; border:1px solid #E5E7EB;">Baker Lab (UW, 2023~)</td><td style="padding:8px; border:1px solid #E5E7EB;">확산 모델(이미지 생성에서 빌려온 기법) 기반 디노보 단백질 설계. "이 분자에 잘 붙는 단백질을 만들어 줘" 같은 목표 지정 가능.</td></tr><tr><td style="padding:8px; border:1px solid #E5E7EB;"><strong>AlphaProteo</strong></td><td style="padding:8px; border:1px solid #E5E7EB;">Google DeepMind (2024.9)</td><td style="padding:8px; border:1px solid #E5E7EB;">특정 표적 단백질에 강하게 결합하는 "바인더(binder)" 단백질을 설계. 항체·치료용 단백질 후보 발굴 속도 대폭 단축.</td></tr></tbody></table>' },
-    { type: 'info', html: '<p>세 도구는 경쟁 관계라기보다 <strong>파이프라인의 다른 단계</strong>를 맡는다. 표적 단백질 구조(AlphaFold 3) → 결합 바인더 설계(AlphaProteo/RFdiffusion) → 실험실 합성·검증 순으로 흐른다.</p>' },
+    { type: 'h2', id: 'tools', text: '많이 쓰이는 AI 세 가지 — 쉬운 비유로' },
+    { type: 'body', html: '<p>지금 가장 영향력 있는 도구는 셋입니다. 이름이 어려워 보이지만, 역할은 명확해요.</p>' },
+    { type: 'body', html: '<p><strong>① AlphaFold 3 (알파폴드 3, 구글 딥마인드)</strong><br>역할: "이 단백질이 어떻게 생겼지?"를 알려주는 도구. 2024년 5월 공개된 3세대 버전부터는 단백질뿐 아니라 DNA·RNA·약물 분자가 어떻게 서로 붙는지까지 보여줍니다. 신약 회사 입장에서는 "내 약이 표적에 잘 붙을지" 미리 시뮬레이션할 수 있게 된 것이죠.</p>' },
+    { type: 'body', html: '<p><strong>② RFdiffusion (베이커 연구실)</strong><br>역할: "이런 일을 할 새 단백질이 필요해"라고 시키면 자연에 없던 새 모양을 그려내는 도구. 이미지 생성 AI(달리·미드저니)와 비슷한 원리(확산 모델)를 단백질에 가져온 게 핵심이에요.</p>' },
+    { type: 'body', html: '<p><strong>③ AlphaProteo (알파프로테오, 2024년 9월 공개)</strong><br>역할: "이 단백질에 단단히 달라붙는 작은 단백질을 만들어 줘"에 특화. 항체 같은 치료용 단백질 후보를 찾는 속도를 크게 줄였습니다.</p>' },
+    { type: 'info', html: '<p>세 도구는 서로 경쟁이 아니라 <strong>한 줄로 이어집니다</strong>. 표적 단백질의 모양 보기(AlphaFold 3) → 잘 붙는 단백질 디자인(AlphaProteo·RFdiffusion) → 실험실에서 합성·검증, 이런 흐름이에요.</p>' },
 
-    { type: 'h2', id: 'applications', text: '어디에 쓰이는가 — 신약·항체·효소·백신' },
-    { type: 'body', html: '<ul><li><strong>신약(저분자 약물)</strong> — 타깃 단백질에 결합하는 약물 후보 분자를 빠르게 탐색. Isomorphic Labs(딥마인드 자매사)는 노바티스·일라이릴리와 신약 공동개발 계약을 발표.</li><li><strong>치료용 항체·단백질</strong> — 자가면역·암 표적 단백질에 결합하는 디노보 단백질 발굴. 전통적 라이브러리 스크리닝보다 수십~수백 배 빠른 사례 보고.</li><li><strong>효소(산업·진단)</strong> — 특정 반응을 촉매하는 효소를 설계. 친환경 화학·진단 키트·산업용 효소까지 응용 폭이 넓음.</li><li><strong>백신·면역원</strong> — 항원 단백질의 안정성과 면역원성을 높이도록 재설계. 차세대 mRNA·재조합 백신 플랫폼의 표준 단계로 진입 중.</li></ul>' },
+    { type: 'h2', id: 'korea', text: '한국에서도 큰 성과 — 포항공대 × 노벨상 베이커' },
+    { type: 'body', html: '<p>2026년 5월, 국내 연구진이 의미 있는 결과를 발표했습니다. <strong>포항공대 이상민 교수팀이 노벨상 수상자인 데이비드 베이커 교수와 함께</strong> AI로 새로운 단백질 구조체를 설계하는 데 성공했어요.</p><p>핵심은 이렇습니다.</p><ul><li>자연계 바이러스가 자기 껍데기를 스스로 조립하는 원리를 흉내 냈습니다.</li><li>똑같은 단백질 한 종류가 위치에 따라 5각형·6각형으로 다르게 끼워지면서, 70~220나노미터(머리카락 굵기의 약 1000분의 1) 크기의 다양한 구조를 만들어냅니다.</li><li>이전까지는 "완벽한 대칭"이 있어야만 큰 구조를 만들 수 있다는 한계가 있었는데, 이 한계를 넘었습니다.</li></ul><p>이런 구조체는 <strong>약을 안에 담아 몸속 원하는 곳에 정확히 전달하는 그릇</strong>, 또는 <strong>백신을 만들 때 면역세포에게 항원을 보여주는 무대</strong>로 쓸 수 있습니다. 한국 연구가 글로벌 흐름 한가운데에서 같이 움직이고 있다는 점에서 큰 의미가 있어요.</p>' },
 
-    { type: 'h2', id: 'trend-2026', text: '2025–2026 최신 흐름' },
-    { type: 'body', html: '<ul><li><strong>임상 진입</strong> — 2023~2024에 AI로 발굴된 후보 물질이 2025부터 초기 임상(Phase 1)에 진입하는 사례가 누적되고 있다. 단순한 데모를 넘어 규제 트랙에 진입한다는 점이 분기점.</li><li><strong>오픈소스·접근성 확대</strong> — RFdiffusion·OpenFold 등 오픈소스 도구가 학계·중소 바이오에서 광범위하게 채택. 더 이상 빅테크 전유물이 아님.</li><li><strong>웻랩(실험실) 자동화 결합</strong> — AI 설계 → 로봇 실험실 합성 → 자동 측정 → 다시 AI 학습으로 돌아가는 "self-driving lab" 구조가 본격화.</li><li><strong>안전성 평가도 AI로</strong> — 독성·면역원성·간 대사 예측 모델이 신약 안전성 평가에 결합되며, 후보 선별 단계에서 탈락률을 낮춤.</li></ul>' },
+    { type: 'h2', id: 'applications', text: '어디에 쓰이고 있나요?' },
+    { type: 'body', html: '<ul><li><strong>신약</strong> — 표적 단백질에 잘 붙는 약 후보를 빠르게 찾아냅니다. 딥마인드 자매사 Isomorphic Labs는 노바티스·일라이릴리 같은 대형 제약사와 공동개발 계약을 맺었어요.</li><li><strong>치료용 항체</strong> — 암·자가면역 질환에서 핵심인 항체 만들기가 훨씬 빨라졌습니다.</li><li><strong>효소</strong> — 친환경 화학·진단 키트·산업용 효소까지 응용 범위가 넓습니다.</li><li><strong>백신</strong> — 항원 단백질의 모양을 더 안정적으로 다듬어 면역 효과를 끌어올립니다.</li></ul>' },
 
-    { type: 'h2', id: 'korea', text: '한국의 움직임' },
-    { type: 'body', html: '<ul><li><strong>국가 차원</strong> — 2025년 정부의 바이오·디지털헬스 분야 R&D에서 AI 신약·단백질 설계가 주요 트랙으로 편성됨. KAIST·서울대·생명연(KRIBB) 중심으로 구조생물학+AI 연구 활성화.</li><li><strong>국내 AI 신약 기업</strong> — 디어젠·스탠다임·파로스아이바이오·온코크로스 등 AI 기반 후보 발굴 회사들이 글로벌 제약사와 협업 단계로 진입.</li><li><strong>한계</strong> — 고성능 GPU·대규모 단백질 실험실(웻랩)을 한 곳에서 운용하는 환경은 아직 제한적. 글로벌 톱 그룹 대비 격차를 줄이려는 정부·기업 투자가 이어지는 중.</li></ul>' },
+    { type: 'h2', id: 'trend-2026', text: '2025~2026년, 지금 어디까지 와 있나요?' },
+    { type: 'body', html: '<ul><li><strong>임상 진입 사례가 누적</strong> — AI로 찾아낸 후보 물질이 사람 대상 임상 1상에 들어가는 사례가 빠르게 늘고 있습니다. "이론상 가능"에서 "규제 트랙 진입"으로 한 단계 넘어선 거예요.</li><li><strong>오픈소스 확산</strong> — RFdiffusion, OpenFold 같은 도구가 학교·작은 바이오 회사에서도 쉽게 쓸 수 있게 풀려 있습니다. 더 이상 빅테크 전유물이 아닙니다.</li><li><strong>자동 실험실 결합</strong> — AI가 설계 → 로봇이 합성 → 자동으로 측정 → 다시 AI가 학습, 이렇게 사람이 거의 손대지 않는 실험 환경이 늘고 있어요.</li><li><strong>안전성도 AI로 미리 평가</strong> — 독성·면역원성을 사전에 예측해서 후보 탈락률을 낮춥니다.</li></ul>' },
 
-    { type: 'h2', id: 'limits', text: '기대와 한계 — 일반 독자가 알아야 할 것' },
-    { type: 'body', html: '<p>"AI가 단백질을 설계한다"는 표현은 정확하지만, 자주 과장된다. 다음 두 가지를 분리해서 이해하는 것이 중요하다.</p><ol><li><strong>발견(discovery)을 빠르게 한다</strong> — 후보 물질을 찾는 단계에서 시간·비용을 크게 줄인다. 이건 이미 현실.</li><li><strong>"약을 만들었다"가 아니다</strong> — 발견 이후의 임상 1·2·3상, 안전성·유효성 검증은 여전히 수년 단위가 걸리고, 실패율도 높다. AI가 임상 결과까지 보장하지는 못한다.</li></ol>' },
-    { type: 'warning', title: '주의해서 봐야 할 표현', html: '<ul><li>"AI가 신약을 개발했다" — 보통은 후보 물질을 발굴했다는 의미. 임상시험 통과는 별개.</li><li>"단백질 설계 = 만능 치료" — 결합 단백질을 만든다고 약효·안전성이 자동 보장되지 않음.</li><li>"개인 맞춤 단백질 치료제" 광고 — 현 시점 정식 의약품으로 승인된 사례는 매우 제한적. 자가 구매·시술 시 출처와 규제 승인을 반드시 확인.</li></ul>' },
+    { type: 'h2', id: 'limits', text: '오해하기 쉬운 부분 — 일반 독자가 알아둘 것' },
+    { type: 'body', html: '<p>"AI가 약을 만든다"는 표현은 너무 줄여 말한 거예요. 다음 두 가지는 꼭 구분합시다.</p><ol><li><strong>약 후보를 빨리 찾는 것</strong> — 이건 이미 현실. 큰 변화가 일어나고 있는 단계.</li><li><strong>그게 곧 시판되는 약은 아니에요</strong> — 후보를 찾은 뒤에도 임상 1·2·3상, 안전성·유효성 검증이 남아 있고, 보통 몇 년이 걸립니다. 실패율도 여전히 높습니다.</li></ol>' },
+    { type: 'warning', title: '주의해서 봐야 할 표현', html: '<ul><li>"AI가 신약을 개발했다" → 거의 모든 경우 "후보를 찾아냈다"는 뜻. 임상 통과와는 별개.</li><li>"맞춤 단백질 치료제" 광고 → 정식 의약품으로 승인된 사례는 아직 매우 적습니다. 어떤 시술·제품이든 식약처 허가 여부를 먼저 확인하세요.</li><li>건강기능식품 시장에 곧바로 큰 영향을 주는 기술은 아닙니다. 의약품·치료용 단백질 영역이 우선입니다.</li></ul>' },
 
-    { type: 'h2', id: 'faq', text: 'FAQ' },
+    { type: 'h2', id: 'faq', text: '자주 묻는 질문' },
     { type: 'faq', items: [
-      { q: 'AlphaFold 와 RFdiffusion 의 차이는 한 줄로?', a: 'AlphaFold 는 "있는 단백질의 모양을 맞히는" 예측 도구, RFdiffusion 은 "없던 단백질을 새로 그리는" 설계 도구입니다. 예측과 생성으로 역할이 다릅니다.' },
-      { q: '비전공자도 써볼 수 있나요?', a: 'AlphaFold 의 EBI 공개 데이터베이스(alphafold.ebi.ac.uk)에서 알려진 단백질 구조를 무료로 열람할 수 있고, ColabFold 같은 도구로 구글 코랩에서 직접 돌려볼 수 있습니다. 디노보 설계(RFdiffusion 류)는 GPU·생물학 지식이 필요해 일반 사용자가 곧바로 활용하기는 어렵습니다.' },
-      { q: 'AI 단백질 설계로 만든 약이 이미 시중에 있나요?', a: '2026년 5월 시점에는 "AI 발굴 후보가 초기 임상에 진입한 사례"가 빠르게 늘고 있는 단계이고, 임상 후기·시판 단계에 도달한 본격적인 AI-발굴 신약은 아직 매우 제한적입니다. 산업 흐름은 명백히 그 방향으로 가고 있지만, "이미 약국에 있다"고 말하긴 이릅니다.' },
-      { q: '건강기능식품에도 적용되나요?', a: '직접적으로는 의료용 단백질·항체 영역이 중심이고, 건강기능식품 시장은 영향이 간접적입니다. 단, 효소 설계 기술이 식품·발효 산업으로 확산되면서 원료 수급·품질 균일성 측면에서 장기적 변화가 예상됩니다.' },
-      { q: '윤리적 문제는 없나요?', a: '자연계에 없던 단백질을 합성한다는 점에서 생물안전성(biosafety)·이중용도(dual-use, 의료 vs 무기) 우려가 학계에서 활발히 논의 중입니다. 주요 연구자들은 자율적 가이드라인과 합성 DNA 주문 단계의 검열 체계를 강화하는 방향으로 움직이고 있습니다.' },
+      { q: 'AlphaFold 와 RFdiffusion, 한 줄 차이는요?', a: 'AlphaFold는 "이미 있는 단백질의 모양을 알려주는" 도구, RFdiffusion은 "자연에 없던 단백질을 새로 그리는" 도구입니다. 예측이냐 창작이냐의 차이예요.' },
+      { q: '일반인도 직접 써볼 수 있나요?', a: '단백질 모양을 보는 정도라면 가능합니다. alphafold.ebi.ac.uk 에서 알려진 단백질 구조를 누구나 무료로 열람할 수 있고, ColabFold라는 도구를 쓰면 구글 코랩에서 간단히 돌려볼 수도 있어요. 다만 새 단백질을 "디자인"하는 단계는 GPU와 생물학 지식이 필요해서 일반 사용자가 곧장 활용하긴 어렵습니다.' },
+      { q: 'AI가 만든 약이 이미 약국에 있나요?', a: '2026년 5월 기준, 후보 물질이 초기 임상에 진입한 사례는 빠르게 늘고 있지만, "AI가 발굴한 약이 약국에서 팔리는" 상황은 아직입니다. 흐름은 분명 그 방향이에요.' },
+      { q: '한국은 어느 정도 위치인가요?', a: '서울대·KAIST·포항공대·생명연(KRIBB) 같은 기관과 디어젠·스탠다임·파로스아이바이오 같은 회사들이 글로벌 제약사와 협업 단계로 가고 있습니다. 2026년 포항공대×베이커 공동연구처럼 톱 그룹과 직접 협업하는 사례도 나오고 있어요.' },
+      { q: '윤리적인 걱정은 없나요?', a: '자연에 없던 단백질을 만든다는 점에서 생물안전(biosafety) 우려가 있습니다. 주요 연구자들은 합성 DNA 주문 단계에서 위험 서열을 자동 차단하는 등 자율 규제 체계를 만들고 있습니다.' },
     ] },
 
-    { type: 'h2', id: 'summary', text: '요약' },
-    { type: 'body', html: '<ul><li>AI 단백질 설계 = "예측"(AlphaFold) + "디노보 설계"(RFdiffusion·AlphaProteo) 두 축.</li><li>2024 노벨화학상이 이 분야의 학문적 성숙을 공인.</li><li>2025–2026 흐름: 후보 물질 발굴 단계에서 표준 도구화, 임상 진입 사례 누적, 웻랩 자동화 결합.</li><li>일반 독자 입장에서는 "신약 발견이 빨라진다"는 사실은 받아들이되, "이미 검증된 치료제"라는 마케팅 문구는 신중히 볼 것.</li></ul>' },
+    { type: 'h2', id: 'summary', text: '정리' },
+    { type: 'body', html: '<ul><li>AI 단백질 설계 = "단백질 모양 예측"과 "새 단백질 디자인" 두 갈래.</li><li>2024 노벨화학상이 이 분야의 학문적 성숙을 공식 인정.</li><li>2025~2026 흐름: 임상 진입 사례 누적, 자동 실험실 결합, 한국 연구진(포항공대×베이커)도 톱 그룹과 직접 협업.</li><li>일반인 입장에선 "신약 후보 찾는 속도가 빨라진다"까지가 사실, "이미 검증된 치료제"라는 마케팅 문구는 신중히 보기.</li></ul>' },
 
     { type: 'sources', items: [
-      { label: 'AlphaFold 공개 DB (EBI)', url: 'https://alphafold.ebi.ac.uk/', org: 'EMBL-EBI / DeepMind' },
-      { label: '2024 Nobel Prize in Chemistry — protein design & prediction', url: 'https://www.nobelprize.org/prizes/chemistry/2024/summary/', org: 'The Royal Swedish Academy of Sciences' },
-      { label: 'AlphaFold 3 — DeepMind 공식 발표', url: 'https://deepmind.google/discover/blog/alphafold-3-predicts-the-structure-and-interactions-of-all-of-lifes-molecules/', org: 'Google DeepMind' },
-      { label: 'AlphaProteo — DeepMind 공식 발표', url: 'https://deepmind.google/discover/blog/alphaproteo-generates-novel-proteins-for-biology-and-health-research/', org: 'Google DeepMind' },
-      { label: 'RFdiffusion — Baker Lab', url: 'https://www.bakerlab.org/2023/07/11/diffusion-model-for-protein-design/', org: 'Institute for Protein Design, UW' },
+      { label: '국내 연구진, AI로 바이러스 조립 원리 재현한 단백질 구조체 설계 성공 (다음 뉴스, 2026-05-21)', url: 'https://v.daum.net/v/20260521000449434', org: '다음뉴스' },
+      { label: 'AlphaFold 공개 데이터베이스', url: 'https://alphafold.ebi.ac.uk/', org: 'EMBL-EBI / DeepMind' },
+      { label: '2024 노벨화학상 — 단백질 설계와 구조 예측', url: 'https://www.nobelprize.org/prizes/chemistry/2024/summary/', org: 'The Royal Swedish Academy of Sciences' },
+      { label: 'AlphaFold 3 발표', url: 'https://deepmind.google/discover/blog/alphafold-3-predicts-the-structure-and-interactions-of-all-of-lifes-molecules/', org: 'Google DeepMind' },
+      { label: 'AlphaProteo 발표', url: 'https://deepmind.google/discover/blog/alphaproteo-generates-novel-proteins-for-biology-and-health-research/', org: 'Google DeepMind' },
     ] },
 
     { type: 'medDisclaimer' },

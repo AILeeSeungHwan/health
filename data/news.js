@@ -5,8 +5,8 @@ const news = [
   {
     id: 'N0001',
     slug: 'ai-protein-design',
-    title: 'AI 단백질 설계 — 2024 노벨화학상이 연 신약 혁명, 어디까지 왔나',
-    description: 'AlphaFold·RFdiffusion·AlphaProteo 가 단백질 구조 예측을 넘어 디노보(de novo) 설계 단계로 진입했다. 2024 노벨화학상부터 2025–2026 임상 후보까지, 일반 독자가 알아둘 핵심을 정리합니다.',
+    title: 'AI 단백질 설계 — 한국 연구진까지 가세, 약 만드는 속도가 달라졌다',
+    description: '포항공대 이상민 교수가 노벨상 수상자 베이커 교수와 함께 새 단백질 구조체를 설계하는 데 성공했어요. AI가 어떻게 신약·백신·항체를 만드는 시간을 줄이고 있는지, 어려운 표현 없이 쉽게 정리합니다.',
     category: 'news',
     ymylLevel: 'B',
     medicallyReviewed: false,

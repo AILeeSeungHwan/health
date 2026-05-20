@@ -11,7 +11,8 @@
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "generate-rss": "node scripts/generate-rss.js",
     "validate": "for f in posts/**/*.js; do node --check \"$f\" || echo \"FAIL: $f\"; done",
-    "generate-favicons": "node scripts/generate-favicons.js"
+    "generate-favicons": "node scripts/generate-favicons.js",
+    "titles-index": "node scripts/generate-titles-index.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.2",

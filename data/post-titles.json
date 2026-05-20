@@ -1,0 +1,1394 @@
+{
+  "generatedAt": "2026-05-20T17:47:00.249Z",
+  "count": 84,
+  "note": "자동화 포스팅 중복 판단 전용. 이 파일의 title/tags 만 보고 새 주제와 충돌 여부를 결정한다. 포스트 본문 파일(posts/**/*.js) 은 절대 자동화 단계에서 읽지 말 것.",
+  "titles": [
+    {
+      "id": "N0001",
+      "slug": "ai-protein-design",
+      "category": "news",
+      "categoryLabel": "건강뉴스",
+      "title": "AI 단백질 설계 — 한국 연구진까지 가세, 약 만드는 속도가 달라졌다",
+      "publishedAt": "2026-05-21",
+      "updatedAt": "2026-05-21",
+      "url": "/news/ai-protein-design/",
+      "tags": [
+        "AI 단백질 설계",
+        "AlphaFold",
+        "RFdiffusion",
+        "신약 개발",
+        "디노보 단백질",
+        "바이오 AI",
+        "노벨화학상"
+      ]
+    },
+    {
+      "id": "S0013",
+      "slug": "dry-eye",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "안구건조증 — 원인·인공눈물 선택·치료 옵션",
+      "publishedAt": "2026-05-12",
+      "updatedAt": "2026-05-12",
+      "url": "/symptoms/dry-eye/",
+      "tags": [
+        "안구건조증",
+        "인공눈물",
+        "눈물층",
+        "마이봄샘",
+        "눈 영양제"
+      ]
+    },
+    {
+      "id": "C0002",
+      "slug": "omega3-brands",
+      "category": "compare",
+      "categoryLabel": "비교",
+      "title": "오메가3 브랜드 비교 — rTG·TG·EE 형태별 차이와 선택",
+      "publishedAt": "2026-05-12",
+      "updatedAt": "2026-05-12",
+      "url": "/compare/omega3-brands/",
+      "tags": [
+        "오메가3",
+        "rTG 오메가3",
+        "EPA DHA",
+        "오메가3 비교",
+        "생선기름"
+      ]
+    },
+    {
+      "id": "S0012",
+      "slug": "hair-loss",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "탈모 유형 구분·원인·치료 시점",
+      "publishedAt": "2026-05-11",
+      "updatedAt": "2026-05-11",
+      "url": "/symptoms/hair-loss/",
+      "tags": [
+        "탈모",
+        "남성형 탈모",
+        "원형 탈모",
+        "탈모약",
+        "모발이식"
+      ]
+    },
+    {
+      "id": "G0005",
+      "slug": "medical-insurance-claim",
+      "category": "guide",
+      "categoryLabel": "가이드",
+      "title": "실손보험 청구 완전 가이드 — 항목별 보장 여부 확인",
+      "publishedAt": "2026-05-11",
+      "updatedAt": "2026-05-11",
+      "url": "/guides/medical-insurance-claim/",
+      "tags": [
+        "실손보험",
+        "의료비 청구",
+        "보험금 청구",
+        "실비보험",
+        "건강보험 청구"
+      ]
+    },
+    {
+      "id": "S0011",
+      "slug": "menopause-symptoms",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "갱년기 증상 — 호르몬 변화·폐경기 관리",
+      "publishedAt": "2026-05-10",
+      "updatedAt": "2026-05-10",
+      "url": "/symptoms/menopause-symptoms/",
+      "tags": [
+        "갱년기",
+        "폐경",
+        "안면홍조",
+        "여성호르몬",
+        "갱년기 영양제"
+      ]
+    },
+    {
+      "id": "G0004",
+      "slug": "health-checkup-guide",
+      "category": "guide",
+      "categoryLabel": "가이드",
+      "title": "건강검진 항목 완전 해설 — 일반·종합·정밀 차이",
+      "publishedAt": "2026-05-10",
+      "updatedAt": "2026-05-10",
+      "url": "/guides/health-checkup-guide/",
+      "tags": [
+        "건강검진",
+        "종합검진",
+        "위내시경",
+        "대장내시경",
+        "MRI 비용",
+        "국가검진"
+      ]
+    },
+    {
+      "id": "S0010",
+      "slug": "frozen-shoulder",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "오십견(유착성 관절낭염) 단계별 증상과 치료",
+      "publishedAt": "2026-05-09",
+      "updatedAt": "2026-05-09",
+      "url": "/symptoms/frozen-shoulder/",
+      "tags": [
+        "오십견",
+        "유착성 관절낭염",
+        "어깨 굳음",
+        "어깨 주사",
+        "어깨 관절경"
+      ]
+    },
+    {
+      "id": "U0007",
+      "slug": "lutein",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "루테인 — 황반 건강·눈 영양제 선택 완전 가이드",
+      "publishedAt": "2026-05-09",
+      "updatedAt": "2026-05-09",
+      "url": "/supplements/lutein/",
+      "tags": [
+        "루테인",
+        "지아잔틴",
+        "황반변성",
+        "눈 영양제",
+        "황반색소"
+      ]
+    },
+    {
+      "id": "S0009",
+      "slug": "knee-pain",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "무릎 통증 원인·관절염·연골 손상 구분",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/symptoms/knee-pain/",
+      "tags": [
+        "무릎 통증",
+        "관절염",
+        "연골 재생",
+        "반월상연골",
+        "무릎MRI"
+      ]
+    },
+    {
+      "id": "O0003",
+      "slug": "naproxen",
+      "category": "otc",
+      "categoryLabel": "일반의약품",
+      "title": "나프록센(탁센·낙센) 효능·용법·부작용",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/otc/naproxen/",
+      "tags": [
+        "나프록센",
+        "탁센",
+        "낙센",
+        "NSAIDs",
+        "진통제"
+      ]
+    },
+    {
+      "id": "O0004",
+      "slug": "cold-medicine",
+      "category": "otc",
+      "categoryLabel": "일반의약품",
+      "title": "종합감기약 성분 비교 — 판피린·판콜·화이투벤 어떻게 고르나",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/otc/cold-medicine/",
+      "tags": [
+        "종합감기약",
+        "판피린",
+        "판콜",
+        "화이투벤",
+        "감기약"
+      ]
+    },
+    {
+      "id": "O0005",
+      "slug": "antacid",
+      "category": "otc",
+      "categoryLabel": "일반의약품",
+      "title": "제산제 종류별 비교 — 겔포스·개비스콘·알마겔·노루모 어떻게 고르나",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/otc/antacid/",
+      "tags": [
+        "제산제",
+        "겔포스",
+        "개비스콘",
+        "알마겔",
+        "속쓰림",
+        "역류성식도염"
+      ]
+    },
+    {
+      "id": "O0006",
+      "slug": "digestive-enzyme-otc",
+      "category": "otc",
+      "categoryLabel": "일반의약품",
+      "title": "소화제 종류 비교 — 훼스탈·베아제·닥터베아제 뭐가 다른가",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/otc/digestive-enzyme-otc/",
+      "tags": [
+        "소화제",
+        "훼스탈",
+        "베아제",
+        "닥터베아제",
+        "소화효소"
+      ]
+    },
+    {
+      "id": "O0007",
+      "slug": "oral-ulcer",
+      "category": "otc",
+      "categoryLabel": "일반의약품",
+      "title": "구내염약 종류 비교 — 알보칠·오라메디·아프니벤 올바른 사용법",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/otc/oral-ulcer/",
+      "tags": [
+        "구내염",
+        "알보칠",
+        "오라메디",
+        "아프니벤",
+        "구내염약"
+      ]
+    },
+    {
+      "id": "U0006",
+      "slug": "probiotics",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "프로바이오틱스 균주·CFU·복용 시점 완전 정리",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/probiotics/",
+      "tags": [
+        "프로바이오틱스",
+        "유산균",
+        "락토바실러스",
+        "비피도박테리움",
+        "CFU",
+        "장 건강"
+      ]
+    },
+    {
+      "id": "U0008",
+      "slug": "collagen",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "콜라겐 효능·종류·올바른 선택법 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/collagen/",
+      "tags": [
+        "콜라겐",
+        "저분자콜라겐",
+        "피부영양제",
+        "관절영양제"
+      ]
+    },
+    {
+      "id": "U0009",
+      "slug": "milk-thistle",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "밀크씨슬 효능·복용법·간 건강 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/milk-thistle/",
+      "tags": [
+        "밀크씨슬",
+        "실리마린",
+        "간건강",
+        "영양제"
+      ]
+    },
+    {
+      "id": "U0010",
+      "slug": "vitamin-c-liposomal",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "리포좀 비타민C vs 일반 비타민C — 흡수율 비교와 선택 기준",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/vitamin-c-liposomal/",
+      "tags": [
+        "리포좀비타민C",
+        "비타민C",
+        "항산화",
+        "면역영양제"
+      ]
+    },
+    {
+      "id": "U0011",
+      "slug": "albumin",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "알부민 효능·결핍 원인·보충 방법 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/albumin/",
+      "tags": [
+        "알부민",
+        "단백질",
+        "저알부민혈증",
+        "시니어영양제"
+      ]
+    },
+    {
+      "id": "U0012",
+      "slug": "olive-shot",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "올레샷(올리브오일+레몬즙) 효능·복용법·주의사항",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/olive-shot/",
+      "tags": [
+        "올레샷",
+        "올리브오일",
+        "레몬즙",
+        "항산화"
+      ]
+    },
+    {
+      "id": "U0013",
+      "slug": "blueberry-juice",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "블루베리 착즙액 효능 — 안토시아닌·NFC 착즙의 모든 것",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/blueberry-juice/",
+      "tags": [
+        "블루베리착즙액",
+        "안토시아닌",
+        "NFC착즙",
+        "눈건강"
+      ]
+    },
+    {
+      "id": "U0014",
+      "slug": "chondroitin",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "콘드로이친·뮤코다당단백 효능 — 관절 영양제 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/chondroitin/",
+      "tags": [
+        "콘드로이친",
+        "뮤코다당단백",
+        "관절영양제",
+        "연골"
+      ]
+    },
+    {
+      "id": "U0015",
+      "slug": "arginine",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "아르기닌 효능·복용법·주의사항 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/arginine/",
+      "tags": [
+        "아르기닌",
+        "산화질소",
+        "혈행개선",
+        "운동영양제"
+      ]
+    },
+    {
+      "id": "U0016",
+      "slug": "curcumin",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "커큐민 효능·수용성 커큐민이란 — 흡수율을 높이는 방법",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/curcumin/",
+      "tags": [
+        "커큐민",
+        "강황",
+        "항염",
+        "수용성커큐민"
+      ]
+    },
+    {
+      "id": "U0017",
+      "slug": "astaxanthin",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "아스타잔틴 효능 — 최강 항산화제 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/astaxanthin/",
+      "tags": [
+        "아스타잔틴",
+        "항산화",
+        "눈피로",
+        "피부영양제"
+      ]
+    },
+    {
+      "id": "U0018",
+      "slug": "multivitamin",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "종합비타민 선택 가이드 — 장용성·흡수율·필요한 사람",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/multivitamin/",
+      "tags": [
+        "종합비타민",
+        "멀티비타민",
+        "장용성캡슐",
+        "면역영양제"
+      ]
+    },
+    {
+      "id": "U0019",
+      "slug": "iron-supplement",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "철분제 효능·부작용·복용법 — 여성 철분 결핍 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/iron-supplement/",
+      "tags": [
+        "철분제",
+        "빈혈",
+        "철분결핍",
+        "여성영양제"
+      ]
+    },
+    {
+      "id": "U0020",
+      "slug": "phosphatidylserine",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "포스파티딜세린 효능 — 기억력·뇌 건강 영양제 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/phosphatidylserine/",
+      "tags": [
+        "포스파티딜세린",
+        "기억력",
+        "뇌건강",
+        "인지기능"
+      ]
+    },
+    {
+      "id": "U0021",
+      "slug": "calcium-magnesium",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "칼슘·마그네슘·비타민D 트리오 — 뼈 건강 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/calcium-magnesium/",
+      "tags": [
+        "칼슘",
+        "마그네슘",
+        "비타민D",
+        "뼈건강",
+        "어골칼슘"
+      ]
+    },
+    {
+      "id": "U0022",
+      "slug": "estro-up",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "이소플라본(식물성 에스트로겐) — 갱년기 여성 건강 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/estro-up/",
+      "tags": [
+        "이소플라본",
+        "갱년기",
+        "식물성에스트로겐",
+        "여성영양제"
+      ]
+    },
+    {
+      "id": "U0023",
+      "slug": "blood-sugar-care",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "혈당·혈행·간 복합 영양제 — 성분 분석과 선택 기준",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/blood-sugar-care/",
+      "tags": [
+        "혈당영양제",
+        "혈행개선",
+        "간건강",
+        "복합영양제"
+      ]
+    },
+    {
+      "id": "U0024",
+      "slug": "kale-supplement",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "유기농 동결건조 케일 — 영양성분·주의사항 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/kale-supplement/",
+      "tags": [
+        "케일",
+        "동결건조",
+        "컬리케일",
+        "슈퍼푸드"
+      ]
+    },
+    {
+      "id": "U0025",
+      "slug": "black-goat",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "흑염소 진액 — 전통 보양식의 영양·효능·복용법",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/black-goat/",
+      "tags": [
+        "흑염소진액",
+        "보양식",
+        "기력회복",
+        "산후조리"
+      ]
+    },
+    {
+      "id": "U0026",
+      "slug": "apple-cider-vinegar",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "애플사이다비네거(ACV) 효능 — 혈당·체중 관리 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/apple-cider-vinegar/",
+      "tags": [
+        "애플사이다비네거",
+        "ACV",
+        "사과식초",
+        "혈당"
+      ]
+    },
+    {
+      "id": "U0027",
+      "slug": "xanthigen",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "잔티젠(Xanthigen) — 푸코잔틴·석류씨오일 효능 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/xanthigen/",
+      "tags": [
+        "잔티젠",
+        "푸코잔틴",
+        "석류씨오일",
+        "다이어트영양제"
+      ]
+    },
+    {
+      "id": "U0028",
+      "slug": "pineapple-enzyme",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "파인애플 효소(브로멜라인) — 소화·항염 효과 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/pineapple-enzyme/",
+      "tags": [
+        "브로멜라인",
+        "파인애플효소",
+        "소화효소",
+        "항염"
+      ]
+    },
+    {
+      "id": "U0029",
+      "slug": "cissus",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "시서스(Cissus) 다이어트 효능·관절 건강 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/cissus/",
+      "tags": [
+        "시서스",
+        "Cissus",
+        "다이어트영양제",
+        "관절영양제"
+      ]
+    },
+    {
+      "id": "U0030",
+      "slug": "kids-vitamins",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "어린이 종합비타민 — 성장기 필수 영양소와 올바른 선택법",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/kids-vitamins/",
+      "tags": [
+        "어린이영양제",
+        "종합비타민",
+        "성장기영양",
+        "웰키즈"
+      ]
+    },
+    {
+      "id": "U0031",
+      "slug": "digestive-enzyme",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "소화 효소 영양제 — 종류·효과·올바른 복용법",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/digestive-enzyme/",
+      "tags": [
+        "소화효소",
+        "아밀라제",
+        "브로멜라인",
+        "유당불내증"
+      ]
+    },
+    {
+      "id": "U0032",
+      "slug": "premium-herbal",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "프리미엄 한방 진액 — 산수유·오미자·홍경천 성분과 효능",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/premium-herbal/",
+      "tags": [
+        "한방진액",
+        "오미자",
+        "산수유",
+        "홍경천",
+        "프리미엄보양"
+      ]
+    },
+    {
+      "id": "U0033",
+      "slug": "nutrione-albumin-gold",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 프리미엄 알부민 골드 — 성분·효능·복용법 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-albumin-gold/",
+      "tags": [
+        "알부민",
+        "단백질",
+        "뉴트리원",
+        "알부민골드"
+      ]
+    },
+    {
+      "id": "U0034",
+      "slug": "nutrione-omega3-coq10",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 초임계 알티지 오메가3 코큐텐 — 심혈관 복합 영양제 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-omega3-coq10/",
+      "tags": [
+        "오메가3",
+        "코큐텐",
+        "알티지",
+        "뉴트리원",
+        "심혈관"
+      ]
+    },
+    {
+      "id": "U0035",
+      "slug": "nutrione-probiotics-max",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 프로바이오틱스 100억 맥스 — 유산균 제품 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-probiotics-max/",
+      "tags": [
+        "프로바이오틱스",
+        "유산균",
+        "뉴트리원",
+        "장건강"
+      ]
+    },
+    {
+      "id": "U0036",
+      "slug": "nutrione-milk-thistle-pure",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 유기농 밀크씨슬 퓨어 — 간 건강 실리마린 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-milk-thistle-pure/",
+      "tags": [
+        "밀크씨슬",
+        "실리마린",
+        "간건강",
+        "뉴트리원",
+        "유기농"
+      ]
+    },
+    {
+      "id": "U0037",
+      "slug": "nutrione-brain-alpha-ps",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 브레인 알파 피에스 — 포스파티딜세린 인지기능 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-brain-alpha-ps/",
+      "tags": [
+        "포스파티딜세린",
+        "PS",
+        "기억력",
+        "뉴트리원",
+        "브레인"
+      ]
+    },
+    {
+      "id": "U0038",
+      "slug": "nutrione-chondroitin-1200",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 관절연골엔 뮤코다당단백 콘드로이친 1200 — 관절 건강 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-chondroitin-1200/",
+      "tags": [
+        "콘드로이친",
+        "뮤코다당단백",
+        "관절",
+        "뉴트리원",
+        "연골"
+      ]
+    },
+    {
+      "id": "U0039",
+      "slug": "nutrione-vitamin-c-gold",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 리포좀 비타민C 골드 — 고흡수 비타민C 완벽 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-vitamin-c-gold/",
+      "tags": [
+        "비타민C",
+        "리포좀",
+        "항산화",
+        "뉴트리원",
+        "면역"
+      ]
+    },
+    {
+      "id": "U0040",
+      "slug": "nutrione-olleshot",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 올레샷 — 엑스트라버진 올리브오일·레몬즙 라인업 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-olleshot/",
+      "tags": [
+        "올리브오일",
+        "레몬즙",
+        "올레샷",
+        "뉴트리원",
+        "공복"
+      ]
+    },
+    {
+      "id": "U0041",
+      "slug": "nutrione-blueberry-nfc",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 NFC 유기농 블루베리·하스카프베리 착즙액 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-blueberry-nfc/",
+      "tags": [
+        "블루베리",
+        "하스카프베리",
+        "NFC",
+        "안토시아닌",
+        "뉴트리원"
+      ]
+    },
+    {
+      "id": "U0042",
+      "slug": "nutrione-collagen-s",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 저분자 콜라겐 S — 전 라인업 성분·효능 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-collagen-s/",
+      "tags": [
+        "콜라겐",
+        "저분자콜라겐",
+        "뉴트리원",
+        "피부",
+        "관절"
+      ]
+    },
+    {
+      "id": "U0043",
+      "slug": "nutrione-lutein-ax",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 루테인지아잔틴 에이엑스 GR — 프리미엄 눈 영양제 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-lutein-ax/",
+      "tags": [
+        "루테인",
+        "아스타잔틴",
+        "오메가3",
+        "뉴트리원",
+        "황반변성"
+      ]
+    },
+    {
+      "id": "U0044",
+      "slug": "nutrione-astaxanthin7",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "뉴트리원 아스타잔틴7 루테인지아잔틴 — 7mg 아스타잔틴 눈 영양제 가이드",
+      "publishedAt": "2026-05-08",
+      "updatedAt": "2026-05-08",
+      "url": "/supplements/nutrione-astaxanthin7/",
+      "tags": [
+        "아스타잔틴",
+        "루테인",
+        "눈피로",
+        "뉴트리원",
+        "디지털눈피로"
+      ]
+    },
+    {
+      "id": "S0008",
+      "slug": "shoulder-pain",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "어깨 통증 — 충돌증후군·오십견·회전근개 파열 구분",
+      "publishedAt": "2026-05-07",
+      "updatedAt": "2026-05-07",
+      "url": "/symptoms/shoulder-pain/",
+      "tags": [
+        "어깨 통증",
+        "충돌증후군",
+        "회전근개",
+        "오십견",
+        "어깨MRI"
+      ]
+    },
+    {
+      "id": "U0005",
+      "slug": "red-ginseng",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "홍삼 효능·식약처 인정 기능성·선택법",
+      "publishedAt": "2026-05-07",
+      "updatedAt": "2026-05-07",
+      "url": "/supplements/red-ginseng/",
+      "tags": [
+        "홍삼",
+        "진세노사이드",
+        "6년근 홍삼",
+        "정관장",
+        "홍삼 효능"
+      ]
+    },
+    {
+      "id": "S0007",
+      "slug": "neck-pain",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "목 통증 원인·일자목·목디스크 구분",
+      "publishedAt": "2026-05-06",
+      "updatedAt": "2026-05-06",
+      "url": "/symptoms/neck-pain/",
+      "tags": [
+        "목 통증",
+        "목디스크",
+        "경추",
+        "일자목",
+        "경추 MRI"
+      ]
+    },
+    {
+      "id": "S0006",
+      "slug": "hantavirus",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "한타바이러스 증상·전파 경로·예방법",
+      "publishedAt": "2026-05-05",
+      "updatedAt": "2026-05-05",
+      "url": "/symptoms/hantavirus/",
+      "tags": [
+        "한타바이러스",
+        "신증후출혈열",
+        "유행성출혈열",
+        "들쥐",
+        "야외활동 감염"
+      ]
+    },
+    {
+      "id": "S0005",
+      "slug": "diabetes-early-signs",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "당뇨 초기 증상 — 자가 점검과 당뇨 검사 기준",
+      "publishedAt": "2026-05-04",
+      "updatedAt": "2026-05-04",
+      "url": "/symptoms/diabetes-early-signs/",
+      "tags": [
+        "당뇨 초기 증상",
+        "당뇨 검사",
+        "당화혈색소",
+        "전당뇨",
+        "당뇨약"
+      ]
+    },
+    {
+      "id": "H0005",
+      "slug": "diet",
+      "category": "situation",
+      "categoryLabel": "상황별",
+      "title": "다이어트 종합 가이드 — 칼로리·운동·정체기·의학적 비만 관리",
+      "publishedAt": "2026-05-04",
+      "updatedAt": "2026-05-04",
+      "url": "/situations/diet/",
+      "tags": [
+        "다이어트",
+        "칼로리 적자",
+        "정체기",
+        "다이어트 약",
+        "비만 클리닉",
+        "위절제술"
+      ]
+    },
+    {
+      "id": "G0003",
+      "slug": "otc-safe-use",
+      "category": "guide",
+      "categoryLabel": "가이드",
+      "title": "일반의약품 안전 복용 가이드 — 중복·상호작용·부작용",
+      "publishedAt": "2026-05-04",
+      "updatedAt": "2026-05-04",
+      "url": "/guides/otc-safe-use/",
+      "tags": [
+        "일반의약품",
+        "진통제 부작용",
+        "약 상호작용",
+        "타이레놀",
+        "이부프로펜"
+      ]
+    },
+    {
+      "id": "S0004",
+      "slug": "back-pain",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "허리 통증 원인·대처법·디스크 의심 신호",
+      "publishedAt": "2026-05-03",
+      "updatedAt": "2026-05-03",
+      "url": "/symptoms/back-pain/",
+      "tags": [
+        "허리 통증",
+        "허리디스크",
+        "요통",
+        "디스크 수술비",
+        "허리MRI"
+      ]
+    },
+    {
+      "id": "H0004",
+      "slug": "back-pain-care",
+      "category": "situation",
+      "categoryLabel": "상황별",
+      "title": "허리가 아플 때 — 자세·운동·치료 단계 종합 가이드",
+      "publishedAt": "2026-05-03",
+      "updatedAt": "2026-05-03",
+      "url": "/situations/back-pain-care/",
+      "tags": [
+        "허리 통증",
+        "허리디스크",
+        "디스크 치료",
+        "허리 시술",
+        "척추관 협착증"
+      ]
+    },
+    {
+      "id": "G0002",
+      "slug": "diet-principles",
+      "category": "guide",
+      "categoryLabel": "가이드",
+      "title": "다이어트 원칙 — 칼로리·근손실 방지 완벽 가이드",
+      "publishedAt": "2026-05-03",
+      "updatedAt": "2026-05-03",
+      "url": "/guides/diet-principles/",
+      "tags": [
+        "다이어트",
+        "다이어트 식단",
+        "근손실",
+        "요요",
+        "칼로리"
+      ]
+    },
+    {
+      "id": "S0001",
+      "slug": "headache",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "두통 원인·대처법·병원 가야 할 때",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/symptoms/headache/",
+      "tags": [
+        "두통",
+        "긴장성두통",
+        "편두통",
+        "진통제"
+      ]
+    },
+    {
+      "id": "S0002",
+      "slug": "migraine",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "편두통 원인·전조증상·대처법",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/symptoms/migraine/",
+      "tags": [
+        "편두통",
+        "박동성두통",
+        "전조증상",
+        "예방약"
+      ]
+    },
+    {
+      "id": "S0003",
+      "slug": "insomnia",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "불면증 원인·대처법·병원 가야 할 때",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/symptoms/insomnia/",
+      "tags": [
+        "불면",
+        "수면",
+        "수면위생",
+        "멜라토닌"
+      ]
+    },
+    {
+      "id": "O0001",
+      "slug": "tylenol-acetaminophen",
+      "category": "otc",
+      "categoryLabel": "일반의약품",
+      "title": "타이레놀 아세트아미노펜 효능·용법·부작용",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/otc/tylenol-acetaminophen/",
+      "tags": [
+        "타이레놀",
+        "아세트아미노펜",
+        "진통제",
+        "해열제"
+      ]
+    },
+    {
+      "id": "O0002",
+      "slug": "ibuprofen",
+      "category": "otc",
+      "categoryLabel": "일반의약품",
+      "title": "이부프로펜 효능·용법·부작용",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/otc/ibuprofen/",
+      "tags": [
+        "이부프로펜",
+        "부루펜",
+        "이지엔6",
+        "소염진통제"
+      ]
+    },
+    {
+      "id": "U0001",
+      "slug": "omega-3",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "오메가3 효능·권장량·추천 대상 완벽 가이드",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/supplements/omega-3/",
+      "tags": [
+        "오메가3",
+        "EPA",
+        "DHA",
+        "혈행개선"
+      ]
+    },
+    {
+      "id": "U0002",
+      "slug": "magnesium",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "마그네슘 효능·섭취법·추천 대상",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/supplements/magnesium/",
+      "tags": [
+        "마그네슘",
+        "근육경련",
+        "수면",
+        "영양제"
+      ]
+    },
+    {
+      "id": "U0003",
+      "slug": "vitamin-d",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "비타민 D 효능·권장량·결핍 증상",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/supplements/vitamin-d/",
+      "tags": [
+        "비타민D",
+        "결핍",
+        "뼈건강",
+        "면역"
+      ]
+    },
+    {
+      "id": "U0004",
+      "slug": "coq10",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "코엔자임Q10(CoQ10) 효능·섭취법·추천 대상",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/supplements/coq10/",
+      "tags": [
+        "코큐텐",
+        "CoQ10",
+        "항산화",
+        "혈압"
+      ]
+    },
+    {
+      "id": "P0001",
+      "slug": "chicken-breast-sausage",
+      "category": "product",
+      "categoryLabel": "건강제품",
+      "title": "닭가슴살 소시지 추천·선택 가이드",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/products/chicken-breast-sausage/",
+      "tags": [
+        "닭가슴살",
+        "단백질",
+        "다이어트",
+        "간편식"
+      ]
+    },
+    {
+      "id": "P0002",
+      "slug": "whey-protein",
+      "category": "product",
+      "categoryLabel": "건강제품",
+      "title": "유청 단백질(웨이 프로틴) 선택 가이드",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/products/whey-protein/",
+      "tags": [
+        "웨이프로틴",
+        "WPC",
+        "WPI",
+        "단백질보충제"
+      ]
+    },
+    {
+      "id": "H0001",
+      "slug": "headache",
+      "category": "situation",
+      "categoryLabel": "상황별",
+      "title": "두통 종합 가이드 — 원인·약·영양제·생활습관 총정리",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/situations/headache/",
+      "tags": [
+        "두통",
+        "편두통",
+        "진통제",
+        "마그네슘"
+      ]
+    },
+    {
+      "id": "H0002",
+      "slug": "sleep-issue",
+      "category": "situation",
+      "categoryLabel": "상황별",
+      "title": "잠 안 올 때 — 불면 해결 종합 가이드",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/situations/sleep-issue/",
+      "tags": [
+        "불면",
+        "수면위생",
+        "멜라토닌",
+        "마그네슘"
+      ]
+    },
+    {
+      "id": "H0003",
+      "slug": "immune-boost",
+      "category": "situation",
+      "categoryLabel": "상황별",
+      "title": "면역력 관리 종합 가이드 — 영양·수면·운동",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/situations/immune-boost/",
+      "tags": [
+        "면역력",
+        "비타민D",
+        "오메가3",
+        "수면"
+      ]
+    },
+    {
+      "id": "T0001",
+      "slug": "bmi",
+      "category": "tool",
+      "categoryLabel": "계산기",
+      "title": "BMI 계산기 — 체질량지수 자동 계산",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/tools/bmi/",
+      "tags": [
+        "BMI",
+        "체질량지수",
+        "계산기",
+        "비만"
+      ]
+    },
+    {
+      "id": "T0002",
+      "slug": "bmr",
+      "category": "tool",
+      "categoryLabel": "계산기",
+      "title": "기초대사량(BMR) 계산기",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/tools/bmr/",
+      "tags": [
+        "BMR",
+        "기초대사량",
+        "칼로리",
+        "TDEE"
+      ]
+    },
+    {
+      "id": "T0003",
+      "slug": "daily-protein",
+      "category": "tool",
+      "categoryLabel": "계산기",
+      "title": "단백질 권장 섭취량 계산기",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/tools/daily-protein/",
+      "tags": [
+        "단백질",
+        "운동",
+        "다이어트",
+        "영양"
+      ]
+    },
+    {
+      "id": "T0004",
+      "slug": "water-intake",
+      "category": "tool",
+      "categoryLabel": "계산기",
+      "title": "물 섭취량 계산기",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/tools/water-intake/",
+      "tags": [
+        "물",
+        "수분",
+        "탈수",
+        "건강습관"
+      ]
+    },
+    {
+      "id": "T0005",
+      "slug": "sleep-debt",
+      "category": "tool",
+      "categoryLabel": "계산기",
+      "title": "수면 부채 계산기",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/tools/sleep-debt/",
+      "tags": [
+        "수면부채",
+        "수면",
+        "피로",
+        "불면"
+      ]
+    },
+    {
+      "id": "C0001",
+      "slug": "painkillers",
+      "category": "compare",
+      "categoryLabel": "비교",
+      "title": "진통제 성분 비교 — 아세트아미노펜 vs 이부프로펜 vs 나프록센",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/compare/painkillers/",
+      "tags": [
+        "진통제",
+        "타이레놀",
+        "이부프로펜",
+        "나프록센"
+      ]
+    },
+    {
+      "id": "G0001",
+      "slug": "how-to-choose-supplement",
+      "category": "guide",
+      "categoryLabel": "가이드",
+      "title": "영양제 고르는 법 — 성분·인증·상호작용까지 완벽 가이드",
+      "publishedAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "url": "/guides/how-to-choose-supplement/",
+      "tags": [
+        "영양제",
+        "건강기능식품",
+        "선택법"
+      ]
+    }
+  ]
+}

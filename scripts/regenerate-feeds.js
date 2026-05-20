@@ -3,4 +3,5 @@
 
 require('./generate-sitemap')
 require('./generate-rss')
-console.log('✓ feeds (sitemap + rss) regenerated.')
+require('./generate-titles-index')
+console.log('✓ feeds (sitemap + rss + post-titles) regenerated.')
