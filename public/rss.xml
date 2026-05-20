@@ -6,9 +6,17 @@
     <description>증상·일반의약품·영양제·건강제품 통합 가이드 — 식약처 기준의 안전한 건강 정보.</description>
     <language>ko</language>
     <copyright>© 2026 건강모아</copyright>
-    <lastBuildDate>Tue, 19 May 2026 05:16:35 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 17:06:00 +0000</lastBuildDate>
     <generator>healthmoa scripts/generate-rss.js</generator>
     <atom:link href="https://health.ambitstock.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI 단백질 설계 — 2024 노벨화학상이 연 신약 혁명, 어디까지 왔나</title>
+      <link>https://health.ambitstock.com/news/ai-protein-design/</link>
+      <description><![CDATA[AlphaFold·RFdiffusion·AlphaProteo 가 단백질 구조 예측을 넘어 디노보(de novo) 설계 단계로 진입했다. 2024 노벨화학상부터 2025–2026 임상 후보까지, 일반 독자가 알아둘 핵심을 정리합니다.]]></description>
+      <pubDate>Thu, 21 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/news/ai-protein-design/</guid>
+      <category>건강뉴스</category>
+    </item>
     <item>
       <title>안구건조증 — 원인·인공눈물 선택·치료 옵션</title>
       <link>https://health.ambitstock.com/symptoms/dry-eye/</link>

@@ -55,6 +55,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://health.ambitstock.com/news/</loc>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://health.ambitstock.com/about/</loc>
     
     <changefreq>weekly</changefreq>
@@ -669,6 +675,12 @@
   <url>
     <loc>https://health.ambitstock.com/guides/medical-insurance-claim/</loc>
     <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://health.ambitstock.com/news/ai-protein-design/</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

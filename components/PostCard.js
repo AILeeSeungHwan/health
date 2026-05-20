@@ -9,6 +9,7 @@ const CATEGORY_COLORS = {
   tool:       { color: '#0284C7', bg: '#E0F2FE', label: '계산기' },
   compare:    { color: '#0891B2', bg: '#CFFAFE', label: '비교' },
   guide:      { color: '#475569', bg: '#F1F5F9', label: '가이드' },
+  news:       { color: '#4F46E5', bg: '#E0E7FF', label: '건강뉴스' },
 }
 
 export function GridCard({ post }) {

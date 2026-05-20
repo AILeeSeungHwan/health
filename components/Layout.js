@@ -28,13 +28,16 @@ const NAV_TOPICS = topics.filter(t => t.featured).sort((a, b) => a.priority - b.
  * - topAd:      상단 광고 노출 여부 (기본 true). 포스트 상세는 PostRenderer 내부에서 처리하므로 false.
  * - sideAds:    좌우 세로 스티키 광고 (기본 true). admin/search 등 noindex 페이지는 false.
  * - narrow:     콘텐츠를 더 좁게 (기본 false)
+ * - bareTitle:  true 면 사이트명 suffix("— 건강모아") 미부착. 새 카테고리/페이지에서 사용. 기존 페이지는 false(=기본) 유지.
  */
-export default function Layout({ children, title, description, topAd = true, sideAds = true, narrow = false }) {
+export default function Layout({ children, title, description, topAd = true, sideAds = true, narrow = false, bareTitle = false }) {
   const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   useEffect(() => { setMobileMenuOpen(false) }, [router.asPath])
 
-  const pageTitle = title ? `${title} — ${SITE_NAME}` : `${SITE_NAME} — 증상·의약품·영양제·건강제품 통합 가이드`
+  const pageTitle = title
+    ? (bareTitle ? title : `${title} — ${SITE_NAME}`)
+    : `${SITE_NAME} — 증상·의약품·영양제·건강제품 통합 가이드`
   const pageDesc = description || SITE_DESC
 
   return (

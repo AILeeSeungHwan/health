@@ -21,11 +21,13 @@ const PREFIX = {
   supplement: '/supplements', product: '/products',
   situation:  '/situations',  tool:    '/tools',
   compare:    '/compare',     guide:   '/guides',
+  news:       '/news',
 }
 
 const CAT_LABEL = {
   symptom:'증상', otc:'일반의약품', supplement:'영양제', product:'건강제품',
-  situation:'상황허브', tool:'계산기', compare:'비교', guide:'가이드'
+  situation:'상황허브', tool:'계산기', compare:'비교', guide:'가이드',
+  news:'건강뉴스'
 }
 
 function TOC({ sections }) {
@@ -58,6 +60,7 @@ const CAT_BADGE = {
   guide:     { label: '가이드',     bg: '#E0F2FE', color: '#0369A1' },
   compare:   { label: '비교',       bg: '#FCE7F3', color: '#BE185D' },
   tool:      { label: '계산기',     bg: '#F1F5F9', color: '#475569' },
+  news:      { label: '건강뉴스',   bg: '#E0E7FF', color: '#4F46E5' },
 }
 
 function RelatedPostsCard({ related }) {

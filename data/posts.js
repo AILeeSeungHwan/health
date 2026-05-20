@@ -9,6 +9,7 @@ const situations  = require('./situations')
 const tools       = require('./tools')
 const compares    = require('./compares')
 const guides      = require('./guides')
+const news        = require('./news')
 
 // 카테고리별 URL prefix
 const PREFIX = {
@@ -20,6 +21,7 @@ const PREFIX = {
   tool:       '/tools',
   compare:    '/compare',
   guide:      '/guides',
+  news:       '/news',
 }
 
 function withUrl(arr) {
@@ -35,6 +37,7 @@ const posts = [
   ...withUrl(tools),
   ...withUrl(compares),
   ...withUrl(guides),
+  ...withUrl(news),
 ]
 
 module.exports = posts

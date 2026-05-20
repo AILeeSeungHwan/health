@@ -35,6 +35,7 @@ function toRfc822(dateStr) {
 const CAT_LABEL = {
   symptom: '증상', otc: '일반의약품', supplement: '영양제', product: '건강제품',
   situation: '상황허브', tool: '계산기', compare: '비교', guide: '가이드',
+  news: '건강뉴스',
 }
 
 // 최신 순으로 정렬

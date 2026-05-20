@@ -10,7 +10,7 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://health.ambitstock.com'
 
 const staticRoutes = [
   '/', '/symptoms/', '/otc/', '/supplements/', '/products/',
-  '/situations/', '/tools/', '/compare/', '/guides/',
+  '/situations/', '/tools/', '/compare/', '/guides/', '/news/',
   '/about/', '/editorial-policy/', '/disclaimer/', '/privacy/', '/terms/', '/contact/',
 ]
 
