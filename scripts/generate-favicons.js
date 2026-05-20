@@ -59,10 +59,10 @@ async function main() {
   fs.writeFileSync(path.join(OUT, 'favicon.ico'), await toIco(buffers))
   console.log('✓ favicon.ico (16+32+48 멀티사이즈)')
 
-  // Safari pinned tab (모노크롬 마스크)
-  const safari = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="96"/><text x="256" y="368" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="320">健</text></svg>`
+  // Safari pinned tab — 하트 실루엣 모노크롬 마스크 (배경 투명)
+  const safari = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 440 C 236 420, 60 296, 60 188 C 60 122, 114 70, 180 70 C 218 70, 248 92, 258 124 C 268 92, 298 70, 336 70 C 402 70, 456 122, 456 188 C 456 296, 276 420, 256 440 Z"/></svg>`
   fs.writeFileSync(path.join(OUT, 'safari-pinned-tab.svg'), safari)
-  console.log('✓ safari-pinned-tab.svg')
+  console.log('✓ safari-pinned-tab.svg (heart silhouette)')
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
