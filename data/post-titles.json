@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-05-20T17:47:00.249Z",
-  "count": 84,
+  "generatedAt": "2026-05-21T12:32:26.839Z",
+  "count": 93,
   "note": "자동화 포스팅 중복 판단 전용. 이 파일의 title/tags 만 보고 새 주제와 충돌 여부를 결정한다. 포스트 본문 파일(posts/**/*.js) 은 절대 자동화 단계에서 읽지 말 것.",
   "titles": [
+    {
+      "id": "U0045",
+      "slug": "vitamin-b-complex",
+      "category": "supplement",
+      "categoryLabel": "영양제",
+      "title": "비타민 B군 — 8가지 비타민B 효능과 올바른 선택법",
+      "publishedAt": "2026-05-21",
+      "updatedAt": "2026-05-21",
+      "url": "/supplements/vitamin-b-complex/",
+      "tags": [
+        "비타민B",
+        "비타민B군",
+        "엽산",
+        "B12",
+        "피로"
+      ]
+    },
+    {
+      "id": "H0006",
+      "slug": "digestion-care",
+      "category": "situation",
+      "categoryLabel": "상황별",
+      "title": "속이 자주 불편할 때 — 소화불량·위장 종합 가이드",
+      "publishedAt": "2026-05-21",
+      "updatedAt": "2026-05-21",
+      "url": "/situations/digestion-care/",
+      "tags": [
+        "소화불량",
+        "위장 관리",
+        "속쓰림",
+        "더부룩함",
+        "소화 종합 가이드"
+      ]
+    },
     {
       "id": "N0001",
       "slug": "ai-protein-design",
@@ -20,6 +54,125 @@
         "디노보 단백질",
         "바이오 AI",
         "노벨화학상"
+      ]
+    },
+    {
+      "id": "N0004",
+      "slug": "colonoscopy-cost",
+      "category": "news",
+      "categoryLabel": "건강뉴스",
+      "title": "대장내시경 비용 — 수면·일반 차이부터 국가검진 무료 대상까지",
+      "publishedAt": "2026-05-21",
+      "updatedAt": "2026-05-21",
+      "url": "/news/colonoscopy-cost/",
+      "tags": [
+        "대장내시경 비용",
+        "대장내시경",
+        "수면내시경",
+        "국가암검진",
+        "대장암 검진"
+      ]
+    },
+    {
+      "id": "S0015",
+      "slug": "constipation",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "변비 — 원인·식습관 교정·병원 가야 할 때",
+      "publishedAt": "2026-05-20",
+      "updatedAt": "2026-05-20",
+      "url": "/symptoms/constipation/",
+      "tags": [
+        "변비",
+        "배변",
+        "식이섬유",
+        "변비약",
+        "장 건강"
+      ]
+    },
+    {
+      "id": "P0003",
+      "slug": "blood-pressure-monitor",
+      "category": "product",
+      "categoryLabel": "건강제품",
+      "title": "가정용 혈압계 — 커프식·손목식 차이와 정확히 재는 법",
+      "publishedAt": "2026-05-20",
+      "updatedAt": "2026-05-20",
+      "url": "/products/blood-pressure-monitor/",
+      "tags": [
+        "가정용 혈압계",
+        "혈압계",
+        "혈압 측정",
+        "커프식",
+        "고혈압 관리"
+      ]
+    },
+    {
+      "id": "N0003",
+      "slug": "obesity-drug-2026",
+      "category": "news",
+      "categoryLabel": "건강뉴스",
+      "title": "비만 치료제 — 위고비·삭센다, 2026년 처방 기준이 달라졌다",
+      "publishedAt": "2026-05-20",
+      "updatedAt": "2026-05-20",
+      "url": "/news/obesity-drug-2026/",
+      "tags": [
+        "비만 치료제",
+        "위고비",
+        "삭센다",
+        "GLP-1",
+        "비만 약"
+      ]
+    },
+    {
+      "id": "S0014",
+      "slug": "indigestion",
+      "category": "symptom",
+      "categoryLabel": "증상",
+      "title": "소화불량 — 원인·대처법·병원 가야 할 신호",
+      "publishedAt": "2026-05-19",
+      "updatedAt": "2026-05-19",
+      "url": "/symptoms/indigestion/",
+      "tags": [
+        "소화불량",
+        "기능성 소화불량",
+        "더부룩함",
+        "명치 통증",
+        "위장"
+      ]
+    },
+    {
+      "id": "O0008",
+      "slug": "antihistamine",
+      "category": "otc",
+      "categoryLabel": "일반의약품",
+      "title": "항히스타민제(알레르기약) — 1세대·2세대 차이와 졸음 없는 선택",
+      "publishedAt": "2026-05-19",
+      "updatedAt": "2026-05-19",
+      "url": "/otc/antihistamine/",
+      "tags": [
+        "항히스타민제",
+        "알레르기약",
+        "비염약",
+        "콧물약",
+        "두드러기"
+      ]
+    },
+    {
+      "id": "N0002",
+      "slug": "seasonal-cold-recovery",
+      "category": "news",
+      "categoryLabel": "건강뉴스",
+      "title": "환절기 감기 — 빨리 낫는 회복 순서와 병원 가야 할 신호",
+      "publishedAt": "2026-05-19",
+      "updatedAt": "2026-05-19",
+      "url": "/news/seasonal-cold-recovery/",
+      "tags": [
+        "환절기 감기",
+        "감기",
+        "감기 회복",
+        "콧물",
+        "기침"
       ]
     },
     {

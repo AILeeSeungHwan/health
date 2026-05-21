@@ -41,6 +41,22 @@ const products = [
     relatedSymptomsOrGoals: ['muscle-gain', 'diet'],
     relatedSlugs: ['chicken-breast-sausage'],
   },
+  {
+    id: 'P0003',
+    slug: 'blood-pressure-monitor',
+    title: '가정용 혈압계 — 커프식·손목식 차이와 정확히 재는 법',
+    description: '가정에서 혈압을 재는 이유, 위팔 커프식과 손목식의 차이, 검증된 제품 고르는 법, 정확하게 측정하는 방법을 정리합니다.',
+    category: 'product', ymylLevel: 'C', medicallyReviewed: false, author: 'healthmoa',
+    publishedAt: '2026-05-20', updatedAt: '2026-05-20',
+    tags: ['가정용 혈압계', '혈압계', '혈압 측정', '커프식', '고혈압 관리'],
+    productName: '가정용 혈압계',
+    productCategory: '건강측정기기',
+    subCategory: '혈압계',
+    priceRange: '30,000~120,000원',
+    coupangProductKey: 'blood-pressure-monitor',
+    relatedSymptomsOrGoals: ['hypertension-care'],
+    relatedSlugs: [],
+  },
 ]
 
 module.exports = products

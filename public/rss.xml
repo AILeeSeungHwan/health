@@ -6,15 +6,87 @@
     <description>증상·일반의약품·영양제·건강제품 통합 가이드 — 식약처 기준의 안전한 건강 정보.</description>
     <language>ko</language>
     <copyright>© 2026 건강모아</copyright>
-    <lastBuildDate>Wed, 20 May 2026 17:47:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2026 12:32:26 +0000</lastBuildDate>
     <generator>healthmoa scripts/generate-rss.js</generator>
     <atom:link href="https://health.ambitstock.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>비타민 B군 — 8가지 비타민B 효능과 올바른 선택법</title>
+      <link>https://health.ambitstock.com/supplements/vitamin-b-complex/</link>
+      <description><![CDATA[B1부터 B12까지 비타민 B군 8종의 역할, 보충이 도움될 수 있는 사람, 피로 회복에 대한 정확한 시선, 고를 때 확인할 점을 정리합니다.]]></description>
+      <pubDate>Thu, 21 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/vitamin-b-complex/</guid>
+      <category>영양제</category>
+    </item>
+    <item>
+      <title>속이 자주 불편할 때 — 소화불량·위장 종합 가이드</title>
+      <link>https://health.ambitstock.com/situations/digestion-care/</link>
+      <description><![CDATA[더부룩함·쓰림·배변 변화 등 위장 불편을 양상별로 나눠 보고, 생활 교정·약 활용·영양제·병원 가야 할 신호까지 한 번에 정리하는 종합 가이드.]]></description>
+      <pubDate>Thu, 21 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/situations/digestion-care/</guid>
+      <category>상황허브</category>
+    </item>
     <item>
       <title>AI 단백질 설계 — 한국 연구진까지 가세, 약 만드는 속도가 달라졌다</title>
       <link>https://health.ambitstock.com/news/ai-protein-design/</link>
       <description><![CDATA[포항공대 이상민 교수가 노벨상 수상자 베이커 교수와 함께 새 단백질 구조체를 설계하는 데 성공했어요. AI가 어떻게 신약·백신·항체를 만드는 시간을 줄이고 있는지, 어려운 표현 없이 쉽게 정리합니다.]]></description>
       <pubDate>Thu, 21 May 2026 03:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://health.ambitstock.com/news/ai-protein-design/</guid>
+      <category>건강뉴스</category>
+    </item>
+    <item>
+      <title>대장내시경 비용 — 수면·일반 차이부터 국가검진 무료 대상까지</title>
+      <link>https://health.ambitstock.com/news/colonoscopy-cost/</link>
+      <description><![CDATA[대장내시경 비용이 병원마다 다른 이유, 수면·일반 검사의 차이, 국가암검진으로 부담을 줄이는 방법까지 정리합니다.]]></description>
+      <pubDate>Thu, 21 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/news/colonoscopy-cost/</guid>
+      <category>건강뉴스</category>
+    </item>
+    <item>
+      <title>변비 — 원인·식습관 교정·병원 가야 할 때</title>
+      <link>https://health.ambitstock.com/symptoms/constipation/</link>
+      <description><![CDATA[배변이 힘들고 잔변감이 남는 변비의 정의와 원인, 식이섬유·수분·배변 습관 교정법, 변비약 올바른 사용과 경고 신호를 정리합니다.]]></description>
+      <pubDate>Wed, 20 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/symptoms/constipation/</guid>
+      <category>증상</category>
+    </item>
+    <item>
+      <title>가정용 혈압계 — 커프식·손목식 차이와 정확히 재는 법</title>
+      <link>https://health.ambitstock.com/products/blood-pressure-monitor/</link>
+      <description><![CDATA[가정에서 혈압을 재는 이유, 위팔 커프식과 손목식의 차이, 검증된 제품 고르는 법, 정확하게 측정하는 방법을 정리합니다.]]></description>
+      <pubDate>Wed, 20 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/products/blood-pressure-monitor/</guid>
+      <category>건강제품</category>
+    </item>
+    <item>
+      <title>비만 치료제 — 위고비·삭센다, 2026년 처방 기준이 달라졌다</title>
+      <link>https://health.ambitstock.com/news/obesity-drug-2026/</link>
+      <description><![CDATA[위고비·삭센다 같은 비만 치료제가 어떤 약인지, 누가 처방 대상인지, 2026년 달라진 점과 부작용까지 균형 있게 정리합니다.]]></description>
+      <pubDate>Wed, 20 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/news/obesity-drug-2026/</guid>
+      <category>건강뉴스</category>
+    </item>
+    <item>
+      <title>소화불량 — 원인·대처법·병원 가야 할 신호</title>
+      <link>https://health.ambitstock.com/symptoms/indigestion/</link>
+      <description><![CDATA[명치 더부룩함·조기 포만감·메스꺼움이 반복되는 소화불량의 원인, 생활 교정법, 약 활용, 검사가 필요한 경고 신호를 정리합니다.]]></description>
+      <pubDate>Tue, 19 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/symptoms/indigestion/</guid>
+      <category>증상</category>
+    </item>
+    <item>
+      <title>항히스타민제(알레르기약) — 1세대·2세대 차이와 졸음 없는 선택</title>
+      <link>https://health.ambitstock.com/otc/antihistamine/</link>
+      <description><![CDATA[콧물·재채기·가려움에 쓰는 항히스타민제의 작용 원리, 1세대와 2세대의 졸음·지속시간 차이, 안전하게 고르고 복용하는 법을 정리합니다.]]></description>
+      <pubDate>Tue, 19 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/otc/antihistamine/</guid>
+      <category>일반의약품</category>
+    </item>
+    <item>
+      <title>환절기 감기 — 빨리 낫는 회복 순서와 병원 가야 할 신호</title>
+      <link>https://health.ambitstock.com/news/seasonal-cold-recovery/</link>
+      <description><![CDATA[환절기 감기를 빨리 떨쳐내는 회복 순서, 증상별 약 고르는 법, 단순 감기로 보기 어려운 경고 신호를 정리합니다.]]></description>
+      <pubDate>Tue, 19 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/news/seasonal-cold-recovery/</guid>
       <category>건강뉴스</category>
     </item>
     <item>

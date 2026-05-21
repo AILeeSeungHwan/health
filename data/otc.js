@@ -162,6 +162,25 @@ const otc = [
     relatedSymptoms: [],
     relatedSlugs: [],
   },
+  {
+    id: 'O0008',
+    slug: 'antihistamine',
+    title: '항히스타민제(알레르기약) — 1세대·2세대 차이와 졸음 없는 선택',
+    description: '콧물·재채기·가려움에 쓰는 항히스타민제의 작용 원리, 1세대와 2세대의 졸음·지속시간 차이, 안전하게 고르고 복용하는 법을 정리합니다.',
+    category: 'otc', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
+    publishedAt: '2026-05-19', updatedAt: '2026-05-19',
+    tags: ['항히스타민제', '알레르기약', '비염약', '콧물약', '두드러기'],
+    productName: '항히스타민제(1세대·2세대)',
+    ingredient: '클로르페니라민·세티리진·로라타딘·펙소페나딘 등',
+    dosageForm: '정제·시럽',
+    classification: '항히스타민제',
+    manufacturer: '여러 제약사',
+    prescription: 'OTC',
+    priceRange: '3,000~10,000원',
+    coupangProductKey: 'antihistamine',
+    relatedSymptoms: [],
+    relatedSlugs: ['cold-medicine'],
+  },
 ]
 
 module.exports = otc

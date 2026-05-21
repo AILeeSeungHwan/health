@@ -106,6 +106,23 @@ const situations = [
     relatedTools: ['bmi', 'bmr', 'daily-protein'],
     relatedSlugs: ['diet-principles'],
   },
+  {
+    id: 'H0006',
+    slug: 'digestion-care',
+    title: '속이 자주 불편할 때 — 소화불량·위장 종합 가이드',
+    description: '더부룩함·쓰림·배변 변화 등 위장 불편을 양상별로 나눠 보고, 생활 교정·약 활용·영양제·병원 가야 할 신호까지 한 번에 정리하는 종합 가이드.',
+    category: 'situation', ymylLevel: 'A', medicallyReviewed: false, author: 'healthmoa',
+    publishedAt: '2026-05-21', updatedAt: '2026-05-21',
+    tags: ['소화불량', '위장 관리', '속쓰림', '더부룩함', '소화 종합 가이드'],
+    bodyPart: 'stomach',
+    includedSymptoms: ['indigestion', 'constipation'],
+    includedOtc: ['digestive-enzyme-otc', 'antacid'],
+    includedSupplements: ['probiotics', 'digestive-enzyme'],
+    includedProducts: [],
+    includedGuides: [],
+    relatedTools: [],
+    relatedSlugs: ['indigestion', 'constipation'],
+  },
 ]
 
 module.exports = situations

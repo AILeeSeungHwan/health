@@ -711,6 +711,23 @@ const supplements = [
     certifications: ['건강기능식품', '개별인정형'],
     relatedSymptoms: ['dry-eye'], relatedSlugs: ['astaxanthin', 'lutein', 'nutrione-lutein-ax'],
   },
+  {
+    id: 'U0045',
+    slug: 'vitamin-b-complex',
+    title: '비타민 B군 — 8가지 비타민B 효능과 올바른 선택법',
+    description: 'B1부터 B12까지 비타민 B군 8종의 역할, 보충이 도움될 수 있는 사람, 피로 회복에 대한 정확한 시선, 고를 때 확인할 점을 정리합니다.',
+    category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
+    publishedAt: '2026-05-21', updatedAt: '2026-05-21',
+    tags: ['비타민B', '비타민B군', '엽산', 'B12', '피로'],
+    productName: '비타민 B 컴플렉스',
+    mainIngredient: '비타민 B1·B2·B3·B5·B6·B7·B9·B12',
+    functionality: ['에너지 대사에 필요', '신경·혈액 세포 정상 기능에 필요'],
+    dailyIntake: '제품 표시 기준 1일 1회',
+    priceRange: '월 5,000~20,000원',
+    certifications: ['건강기능식품'],
+    relatedSymptoms: [],
+    relatedSlugs: ['multivitamin', 'iron-supplement'],
+  },
 ]
 
 module.exports = supplements
