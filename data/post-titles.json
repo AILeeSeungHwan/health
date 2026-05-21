@@ -1,8 +1,59 @@
 {
-  "generatedAt": "2026-05-21T12:32:26.839Z",
-  "count": 93,
+  "generatedAt": "2026-05-21T22:06:21.779Z",
+  "count": 96,
   "note": "자동화 포스팅 중복 판단 전용. 이 파일의 title/tags 만 보고 새 주제와 충돌 여부를 결정한다. 포스트 본문 파일(posts/**/*.js) 은 절대 자동화 단계에서 읽지 말 것.",
   "titles": [
+    {
+      "id": "N0005",
+      "slug": "food-poisoning",
+      "category": "news",
+      "categoryLabel": "건강뉴스",
+      "title": "식중독 증상과 대처법 — 토하고 설사할 때 집에서 할 일과 병원 갈 신호",
+      "publishedAt": "2026-05-22",
+      "updatedAt": "2026-05-22",
+      "url": "/news/food-poisoning/",
+      "tags": [
+        "식중독",
+        "식중독 증상",
+        "장염",
+        "구토",
+        "설사"
+      ]
+    },
+    {
+      "id": "N0006",
+      "slug": "sfts-tick-disease",
+      "category": "news",
+      "categoryLabel": "건강뉴스",
+      "title": "SFTS(중증열성혈소판감소증후군) — 봄철 진드기 물림 주의보, 증상과 예방법",
+      "publishedAt": "2026-05-22",
+      "updatedAt": "2026-05-22",
+      "url": "/news/sfts-tick-disease/",
+      "tags": [
+        "SFTS",
+        "중증열성혈소판감소증후군",
+        "진드기",
+        "진드기 물림",
+        "살인진드기"
+      ]
+    },
+    {
+      "id": "N0007",
+      "slug": "dental-implant-cost",
+      "category": "news",
+      "categoryLabel": "건강뉴스",
+      "title": "임플란트 비용 — 개당 가격이 갈리는 이유와 건강보험 적용 조건",
+      "publishedAt": "2026-05-22",
+      "updatedAt": "2026-05-22",
+      "url": "/news/dental-implant-cost/",
+      "tags": [
+        "임플란트",
+        "임플란트 비용",
+        "치아 임플란트",
+        "건강보험 임플란트",
+        "틀니"
+      ]
+    },
     {
       "id": "U0045",
       "slug": "vitamin-b-complex",

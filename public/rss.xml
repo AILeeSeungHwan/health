@@ -6,9 +6,33 @@
     <description>증상·일반의약품·영양제·건강제품 통합 가이드 — 식약처 기준의 안전한 건강 정보.</description>
     <language>ko</language>
     <copyright>© 2026 건강모아</copyright>
-    <lastBuildDate>Thu, 21 May 2026 12:32:26 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2026 22:06:21 +0000</lastBuildDate>
     <generator>healthmoa scripts/generate-rss.js</generator>
     <atom:link href="https://health.ambitstock.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>식중독 증상과 대처법 — 토하고 설사할 때 집에서 할 일과 병원 갈 신호</title>
+      <link>https://health.ambitstock.com/news/food-poisoning/</link>
+      <description><![CDATA[식중독이 의심될 때 집에서 가장 먼저 할 일, 수분 보충 방법, 그리고 단순 장염으로 넘기면 안 되는 위험 신호를 정리합니다.]]></description>
+      <pubDate>Fri, 22 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/news/food-poisoning/</guid>
+      <category>건강뉴스</category>
+    </item>
+    <item>
+      <title>SFTS(중증열성혈소판감소증후군) — 봄철 진드기 물림 주의보, 증상과 예방법</title>
+      <link>https://health.ambitstock.com/news/sfts-tick-disease/</link>
+      <description><![CDATA[야외활동이 늘어나는 봄, 진드기가 옮기는 SFTS가 다시 주의보 단계에 들어섰습니다. 어떤 진드기가 위험한지, 물렸을 때 대처와 예방 수칙을 정리합니다.]]></description>
+      <pubDate>Fri, 22 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/news/sfts-tick-disease/</guid>
+      <category>건강뉴스</category>
+    </item>
+    <item>
+      <title>임플란트 비용 — 개당 가격이 갈리는 이유와 건강보험 적용 조건</title>
+      <link>https://health.ambitstock.com/news/dental-implant-cost/</link>
+      <description><![CDATA[임플란트 가격이 병원마다 크게 다른 이유, 건강보험이 적용되는 조건, 그리고 가격만 보고 고르면 안 되는 이유를 비용 중심으로 정리합니다.]]></description>
+      <pubDate>Fri, 22 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/news/dental-implant-cost/</guid>
+      <category>건강뉴스</category>
+    </item>
     <item>
       <title>비타민 B군 — 8가지 비타민B 효능과 올바른 선택법</title>
       <link>https://health.ambitstock.com/supplements/vitamin-b-complex/</link>
