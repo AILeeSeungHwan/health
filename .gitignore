@@ -9,3 +9,5 @@ node_modules
 docs/
 templates/
 data/coupang-seed.json
+
+manage/
