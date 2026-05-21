@@ -1,12 +1,15 @@
 #!/bin/bash
 # scripts/auto-post/run-claude.sh
 # launchd 가 슬롯별 시각(07/12/18)에 호출. Claude Code CLI 를 비대화형으로 돌려
-# docs/AUTO_POST_RULES.md 규칙대로 포스트를 생성·feeds 재생성·커밋·푸시까지 자동 진행.
+# docs/AUTO_POST_RULES.md 규칙대로 포스트 생성·feeds 재생성·커밋·푸시까지 자동 진행.
 #
-# 사용: bash scripts/auto-post/run-claude.sh <slot>
-#   slot = morning | noon | evening
+# 사용: bash scripts/auto-post/run-claude.sh <slot>   (slot = morning|noon|evening)
 #
-# 의존: claude CLI (/opt/homebrew/bin/claude), node, npm, git
+# 이력:
+#  v2 — 행(hang) 버그 수정. 원인: `--add-dir DIR PROMPT` 에서 --add-dir 이 가변인자라
+#       PROMPT 까지 디렉토리로 흡수 → claude 가 프롬프트 미수신 → stdin 무한대기.
+#       대응: --add-dir 제거(이미 cd 로 작업디렉토리), 프롬프트는 stdin 으로 전달,
+#       하드 타임아웃 워치독, 중복 실행 방지 락 추가.
 
 set -u
 PROJECT_DIR="/Users/lee/Desktop/Project/health/health"
@@ -14,31 +17,41 @@ SLOT="${1:-}"
 CLAUDE_BIN="/opt/homebrew/bin/claude"
 LOG_DIR="$PROJECT_DIR/scripts/auto-post"
 LOG_FILE="$LOG_DIR/log.txt"
+LOCK_DIR="$LOG_DIR/.run-claude.lock"
+TIMEOUT_SEC=2700          # 45분. 초과 시 강제 종료 (행 방지 안전판)
 DATE_STR=$(date '+%Y-%m-%d %H:%M:%S')
 
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 export HOME="${HOME:-/Users/lee}"
 
+log() { echo "$*" | tee -a "$LOG_FILE"; }
+
+# ── 인자 검증 ──────────────────────────────────────────────
 if [ -z "$SLOT" ]; then
-  echo "[$DATE_STR] ERROR: slot 인자 누락 (morning|noon|evening)" | tee -a "$LOG_FILE"
-  exit 1
+  log "[$DATE_STR] ERROR: slot 인자 누락 (morning|noon|evening)"; exit 1
 fi
 case "$SLOT" in morning|noon|evening) ;; *)
-  echo "[$DATE_STR] ERROR: 잘못된 slot=$SLOT" | tee -a "$LOG_FILE"
-  exit 1 ;;
+  log "[$DATE_STR] ERROR: 잘못된 slot=$SLOT"; exit 1 ;;
 esac
-
 if [ ! -x "$CLAUDE_BIN" ]; then
-  echo "[$DATE_STR] ERROR: claude CLI 미발견 ($CLAUDE_BIN)" | tee -a "$LOG_FILE"
-  exit 1
+  log "[$DATE_STR] ERROR: claude CLI 미발견 ($CLAUDE_BIN)"; exit 1
 fi
+cd "$PROJECT_DIR" || { log "[$DATE_STR] ERROR: cd 실패"; exit 2; }
 
-cd "$PROJECT_DIR" || { echo "[$DATE_STR] ERROR: cd 실패" | tee -a "$LOG_FILE"; exit 2; }
+# ── 중복 실행 방지 락 (mkdir 은 원자적) ────────────────────
+if ! mkdir "$LOCK_DIR" 2>/dev/null; then
+  STALE=$(cat "$LOCK_DIR/pid" 2>/dev/null || echo "?")
+  log "[$DATE_STR] SKIP slot=$SLOT — 다른 auto-post 실행 중 (lock pid=$STALE)"
+  exit 0
+fi
+echo "$$" > "$LOCK_DIR/pid"
+cleanup() { rm -rf "$LOCK_DIR" 2>/dev/null; }
+trap cleanup EXIT INT TERM
 
-echo "" | tee -a "$LOG_FILE"
-echo "================ [$DATE_STR] CLAUDE auto-post (slot=$SLOT) ================" | tee -a "$LOG_FILE"
+log ""
+log "================ [$DATE_STR] CLAUDE auto-post (slot=$SLOT) ================"
 
-# 슬롯별 작업 요약 (Claude 가 docs/AUTO_POST_RULES.md 의 §1·§2 를 그대로 따름)
+# ── 슬롯별 작업 계획 ───────────────────────────────────────
 case "$SLOT" in
   morning) PLAN="건강뉴스 3개 (① 일반 고트래픽 ② 현재 트렌드 키워드 ③ 건강영역 고단가)" ;;
   noon)    PLAN="증상 2개 + 영양제 1개" ;;
@@ -48,7 +61,7 @@ esac
 PROMPT=$(cat <<EOF
 당신은 건강모아(healthmoa) 사이트의 자동화 포스팅 세션입니다.
 
-작업 디렉토리: $PROJECT_DIR
+작업 디렉토리(현재 cwd): $PROJECT_DIR
 슬롯(slot): $SLOT
 오늘 작업 계획: $PLAN
 
@@ -77,15 +90,32 @@ PROMPT=$(cat <<EOF
 EOF
 )
 
-# Claude CLI 비대화형 실행. 권한 프롬프트는 신뢰된 자동화 환경이므로 스킵.
-"$CLAUDE_BIN" \
+# ── Claude CLI 비대화형 실행 ───────────────────────────────
+#  · 프롬프트는 stdin 으로 전달 (인자 흡수 버그 회피)
+#  · --add-dir 미사용: 이미 cwd 가 프로젝트라 불필요
+#  · 출력은 로그에 append
+#  · 워치독으로 TIMEOUT_SEC 초과 시 강제 종료
+printf '%s' "$PROMPT" | "$CLAUDE_BIN" \
   --print \
+  --permission-mode bypassPermissions \
   --dangerously-skip-permissions \
-  --add-dir "$PROJECT_DIR" \
-  "$PROMPT" \
-  2>&1 | tee -a "$LOG_FILE"
-RC=${PIPESTATUS[0]}
+  >>"$LOG_FILE" 2>&1 &
+CLAUDE_PID=$!
 
-echo "" | tee -a "$LOG_FILE"
-echo "[$DATE_STR] slot=$SLOT 종료 RC=$RC" | tee -a "$LOG_FILE"
+( sleep "$TIMEOUT_SEC"; kill -9 "$CLAUDE_PID" 2>/dev/null ) &
+WATCHDOG_PID=$!
+
+wait "$CLAUDE_PID" 2>/dev/null
+RC=$?
+kill "$WATCHDOG_PID" 2>/dev/null
+wait "$WATCHDOG_PID" 2>/dev/null
+
+END_STR=$(date '+%Y-%m-%d %H:%M:%S')
+if [ "$RC" -eq 137 ] || [ "$RC" -eq 9 ]; then
+  log "[$END_STR] slot=$SLOT ❌ 타임아웃(${TIMEOUT_SEC}s) 강제종료 RC=$RC"
+elif [ "$RC" -ne 0 ]; then
+  log "[$END_STR] slot=$SLOT ❌ 종료 RC=$RC"
+else
+  log "[$END_STR] slot=$SLOT ✅ 정상 종료 RC=0"
+fi
 exit "$RC"
