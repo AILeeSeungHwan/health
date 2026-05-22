@@ -557,3 +557,13 @@ To https://github.com/AILeeSeungHwan/health.git
 ================ [2026-05-21 18:00:04] CLAUDE auto-post (slot=evening) ================
 
 ================ [2026-05-22 07:00:01] CLAUDE auto-post (slot=morning) ================
+morning 슬롯 완료 · 작성 3개 · 커밋 `c3d9413`
+
+- N0005 식중독 증상과 대처법 (고트래픽 에버그린) — `/news/food-poisoning/`
+- N0006 SFTS 중증열성혈소판감소증후군 (실시간 트렌드, 질병관리청 봄철 진드기 주의보 근거) — `/news/sfts-tick-disease/`
+- N0007 임플란트 비용 (고단가 키워드) — `/news/dental-implant-cost/`
+
+feeds 재생성(sitemap 126 URL · rss 96 items · post-titles 96개) 완료, 푸시 성공.
+[2026-05-22 07:06:46] slot=morning ✅ 정상 종료 RC=0
+
+================ [2026-05-22 12:00:01] CLAUDE auto-post (slot=noon) ================

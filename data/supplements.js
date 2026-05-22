@@ -728,6 +728,23 @@ const supplements = [
     relatedSymptoms: [],
     relatedSlugs: ['multivitamin', 'iron-supplement'],
   },
+  {
+    id: 'U0046',
+    slug: 'zinc',
+    title: '아연 — 면역·세포분열에 필요한 미네랄 완벽 가이드',
+    description: '아연의 식약처 인정 기능성(면역기능·세포분열), 하루 권장 섭취량과 상한, 복용 시점, 항생제·철분제 상호작용, 굴·육류 등 식품 대체법을 정리합니다.',
+    category: 'supplement', ymylLevel: 'B', medicallyReviewed: false, author: 'healthmoa',
+    publishedAt: '2026-05-22', updatedAt: '2026-05-22',
+    tags: ['아연', 'Zinc', '면역', '미네랄', '미량영양소'],
+    productName: '아연 (Zinc)',
+    mainIngredient: '아연 (글루콘산아연·아연비스글리시네이트 등)',
+    functionality: ['정상적인 면역기능에 필요', '정상적인 세포분열에 필요'],
+    dailyIntake: '1일 2.55~12mg (영양성분 기준치 약 8.5mg, 상한 약 35mg)',
+    priceRange: '월 5,000~15,000원',
+    certifications: ['건강기능식품'],
+    relatedSymptoms: ['hair-loss'],
+    relatedSlugs: ['multivitamin', 'vitamin-c-liposomal'],
+  },
 ]
 
 module.exports = supplements

@@ -6,9 +6,33 @@
     <description>증상·일반의약품·영양제·건강제품 통합 가이드 — 식약처 기준의 안전한 건강 정보.</description>
     <language>ko</language>
     <copyright>© 2026 건강모아</copyright>
-    <lastBuildDate>Thu, 21 May 2026 22:06:21 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 03:04:33 +0000</lastBuildDate>
     <generator>healthmoa scripts/generate-rss.js</generator>
     <atom:link href="https://health.ambitstock.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>어지럼증 — 원인·대처법·병원 가야 할 신호</title>
+      <link>https://health.ambitstock.com/symptoms/dizziness/</link>
+      <description><![CDATA[빙글빙글 도는 회전성 어지럼부터 어찔함·실신감까지, 어지럼증의 종류별 원인과 집에서 할 수 있는 대처, 뇌졸중을 의심해야 할 응급 신호를 정리합니다.]]></description>
+      <pubDate>Fri, 22 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/symptoms/dizziness/</guid>
+      <category>증상</category>
+    </item>
+    <item>
+      <title>손발 저림 — 원인·대처법·병원 가야 할 신호</title>
+      <link>https://health.ambitstock.com/symptoms/limb-numbness/</link>
+      <description><![CDATA[손발이 찌릿하거나 둔해지는 저림의 원인(자세성 압박·손목터널증후군·디스크·말초신경병증), 집에서 할 수 있는 대처, 뇌졸중·척수 압박을 의심할 응급 신호를 정리합니다.]]></description>
+      <pubDate>Fri, 22 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/symptoms/limb-numbness/</guid>
+      <category>증상</category>
+    </item>
+    <item>
+      <title>아연 — 면역·세포분열에 필요한 미네랄 완벽 가이드</title>
+      <link>https://health.ambitstock.com/supplements/zinc/</link>
+      <description><![CDATA[아연의 식약처 인정 기능성(면역기능·세포분열), 하루 권장 섭취량과 상한, 복용 시점, 항생제·철분제 상호작용, 굴·육류 등 식품 대체법을 정리합니다.]]></description>
+      <pubDate>Fri, 22 May 2026 03:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://health.ambitstock.com/supplements/zinc/</guid>
+      <category>영양제</category>
+    </item>
     <item>
       <title>식중독 증상과 대처법 — 토하고 설사할 때 집에서 할 일과 병원 갈 신호</title>
       <link>https://health.ambitstock.com/news/food-poisoning/</link>
